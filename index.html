@@ -1,44 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Car Specs Comparator</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Attn: | Coming Soon</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <h1>Car Power & Torque Comparator</h1>
+    <div class="liquid-bg"></div>
+    
+    <main class="glass-panel">
+        <h1 class="brand">The Attn:</h1>
+        <p class="tagline">Something sharp is coming into focus.</p>
+        
+        <form class="cta-form" onsubmit="event.preventDefault();">
+            <input type="email" placeholder="Enter your email" required class="email-input">
+            <button type="submit" class="notify-btn">Notify Me</button>
+        </form>
+    </main>
 
-    <div class="selectors">
-      <select id="year-select"><option value="">Select Year</option></select>
-      <select id="brand-select" disabled><option value="">Select Brand</option></select>
-      <select id="model-select" disabled><option value="">Select Model</option></select>
-    </div>
-
-    <div id="selected-car" class="selected-car hidden">
-      <h2>Selected Car</h2>
-      <p id="car-name">—</p>
-      <p>Power: <span id="power">—</span> kW | Torque: <span id="torque">—</span> Nm</p>
-    </div>
-
-    <div class="toggle">
-      <button id="toggle-kw" class="active">Power (kW)</button>
-      <button id="toggle-nm">Torque (Nm)</button>
-    </div>
-
-    <div class="comparison">
-      <div id="lower-box" class="box">
-        <h3>Lower <span id="metric-label">Power</span></h3>
-        <ul id="lower-list"></ul>
-      </div>
-      <div id="higher-box" class="box">
-        <h3>Higher <span id="metric-label-2">Power</span></h3>
-        <ul id="higher-list"></ul>
-      </div>
-    </div>
-  </div>
-
-  <script src="script.js"></script>
+    <footer class="footer">
+        <p>Powered by <a href="https://Akhtar.co.za" target="_blank" rel="noopener noreferrer">Akhtar.co.za</a></p>
+    </footer>
 </body>
 </html>
