@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="description" content="Property Agent Profile" />
+  <title>Agent Profile | Evolate Properties</title>
+  
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="agent.css" />
+  <link rel="stylesheet" href="footer2.css" />
+</head>
+<body>
+  <!-- Animated Background -->
+  <div class="bg-gradient"></div>
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+
+  <!-- Main Container -->
+  <main class="container">
+    
+    <!-- Profile Section (Left on Desktop) -->
+    <section class="profile-section glass">
+      <div class="profile-header">
+        <a class="avatar-link" id="avatarLink" href="#" target="_blank" aria-label="View portfolio">
+          <div class="avatar-ring">
+            <div class="avatar" id="avatar"></div>
+          </div>
+        </a>
+        <h1 class="name" id="agentName">Loading...</h1>
+        <p class="title" id="agentTitle"></p>
+        <span class="badge glass" id="agentBadge"></span>
+        <a class="short-link" id="shortLink" href="#" target="_blank">
+          <i class="fas fa-link"></i><span id="shortLinkText"></span>
+        </a>
+      </div>
+      
+      <!-- Social Links -->
+      <div class="social-links" id="socialLinks">
+        <!-- Populated by JS -->
+      </div>
+    </section>
+
+    <!-- Listings & Links Section (Right on Desktop) -->
+    <section class="links-box">
+      <h2 class="box-title">Quick Links</h2>
+      
+      <!-- Mobile: Vertical List -->
+      <div class="mobile-links glass" id="mobileLinks">
+        <!-- Populated by JS -->
+      </div>
+      
+      <!-- Desktop: Grid Cards -->
+      <div class="desktop-cards" id="desktopCards">
+        <!-- Populated by JS -->
+      </div>
+    </section>
+
+    <!-- Company Footer -->
+    <footer class="company-section glass" id="companyFooter">
+      <div class="company-logo-wrap">
+        <a id="companyLink" href="#" target="_blank">
+          <img class="company-logo-img" id="companyLogo" src="" alt="Company Logo" />
+        </a>
+      </div>
+      <div>
+        <p class="company-info" id="companyTagline"></p>
+        <p class="company-tag">
+          <span id="copyright"></span> 
+          <a id="companyName" href="#" target="_blank"></a>
+        </p>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Theme Toggle -->
+  <button class="theme-toggle glass" id="themeToggle" aria-label="Toggle theme">
+    <i class="fas fa-sun theme-icon sun"></i>
+    <i class="fas fa-moon theme-icon moon"></i>
+  </button>
+
+  <!-- Fixed Corner Footer Link -->
+  <a href="https://optco.netlify.app/" class="fixed-corner-link" target="_blank" rel="noopener">
+    <img src="https://optco.netlify.app/assets/brand/optco-badge.webp" alt="Optco" class="fixed-corner-img" />
+  </a>
+
+  <!-- Scripts -->
+  <script src="agent.js"></script>
+</body>
+</html>
