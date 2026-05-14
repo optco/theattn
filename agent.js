@@ -41,7 +41,7 @@ function getAgentName() {
   const hash = window.location.hash.replace('#', '').toLowerCase();
   if (hash) return hash;
   const query = new URLSearchParams(window.location.search);
-  return query.get('agent') || 'javeria'; // fallback
+  return query.get('d') || 'javeria'; // fallback
 }
 
 /**
@@ -59,7 +59,7 @@ async function loadAgentData() {
     renderAgent(data);
     
     // Update page title
-    document.title = `${data.agent.name} | Evolate Properties`;
+    document.title = `${data..name} | Evolate Properties`;
     
   } catch (error) {
     console.error('Failed to load agent data:', error);
