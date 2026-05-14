@@ -6,14 +6,11 @@
   <script>
     (function() {
       const path = window.location.pathname.replace(/\/$/, '');
-      // Ignore root, actual files, and the template itself
       if (!path || path.includes('.') || path === '/agent' || path === '/404') {
         window.location.href = '/';
         return;
       }
-      // Extract agent slug from /javeria or /agents/javeria
       const slug = path.split('/').pop().toLowerCase();
-      // Redirect to template with query param
       window.location.replace(`/agent.html?agent=${slug}`);
     })();
   </script>
