@@ -6,19 +6,19 @@
   <script>
     (function() {
       const path = window.location.pathname.replace(/\/$/, '');
-      if (!path || path.includes('.') || path === '/agent' || path === '/404') {
+      // Skip real files and system pages
+      if (!path || path.includes('.') || ['/i','/404','/index'].includes(path)) {
         window.location.href = '/';
         return;
       }
+      // Extract slug: /javeria → javeria
       const slug = path.split('/').pop().toLowerCase();
-      window.location.replace(`/i.html?agent=${slug}`);
+      // Redirect to template with clean param
+      window.location.replace(`/i?d=${slug}`);
     })();
   </script>
 </head>
-<body>
-  <p style="font-family:sans-serif;text-align:center;padding:40px">
-    Loading agent profile...<br>
-    <small>If stuck, <a href="/">go home</a></small>
-  </p>
+<body style="font-family:sans-serif;text-align:center;padding:40px;color:#fff;background:#0f0c29">
+  <p>Loading profile...<br><small><a href="/" style="color:#aaa">Go home</a></small></p>
 </body>
 </html>
