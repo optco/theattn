@@ -36,19 +36,12 @@ function initThemeToggle() {
  * Extract agent name from URL path
  * Supports: /javeria, /agent/javeria, ?agent=javeria
  */
+// In agent.js, replace getAgentName() with:
 function getAgentName() {
-  const path = window.location.pathname;
+  const hash = window.location.hash.replace('#', '').toLowerCase();
+  if (hash) return hash;
   const query = new URLSearchParams(window.location.search);
-  
-  // Check query param first
-  if (query.has('agent')) return query.get('agent');
-  
-  // Extract from path: /agent-name or /agents/agent-name
-  const segments = path.split('/').filter(Boolean);
-  const last = segments[segments.length - 1];
-  
-  // Remove .html if present
-  return last.replace('.html', '').toLowerCase();
+  return query.get('agent') || 'javeria'; // fallback
 }
 
 /**
