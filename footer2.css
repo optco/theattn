@@ -16,3 +16,9 @@
   display: block;
   border: none;
 }
+.fixed-center-img {
+  width: 200px;        /* Fixed pixel size - never shrinks or grows */
+  height: auto;       /* Maintain aspect ratio */
+  display: block;
+  border: none;
+}
