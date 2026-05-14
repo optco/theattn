@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Redirecting...</title>
+  <script>
+    (function() {
+      const path = window.location.pathname.replace(/\/$/, '');
+      // Ignore root, actual files, and the template itself
+      if (!path || path.includes('.') || path === '/agent' || path === '/404') {
+        window.location.href = '/';
+        return;
+      }
+      // Extract agent slug from /javeria or /agents/javeria
+      const slug = path.split('/').pop().toLowerCase();
+      // Redirect to template with query param
+      window.location.replace(`/agent.html?agent=${slug}`);
+    })();
+  </script>
+</head>
+<body>
+  <p style="font-family:sans-serif;text-align:center;padding:40px">
+    Loading agent profile...<br>
+    <small>If stuck, <a href="/">go home</a></small>
+  </p>
+</body>
+</html>
