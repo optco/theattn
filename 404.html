@@ -1,24 +1,34 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <title>Redirecting...</title>
-  <script>
-    (function() {
-      const path = window.location.pathname.replace(/\/$/, '');
-      // Skip real files and system pages
-      if (!path || path.includes('.') || ['/i','/404','/index'].includes(path)) {
-        window.location.href = '/';
-        return;
-      }
-      // Extract slug: /javeria → javeria
-      const slug = path.split('/').pop().toLowerCase();
-      // Redirect to template with clean param
-      window.location.replace(`/i?d=${slug}`);
+    <meta charset="utf-8">
+    <title>Redirecting...</title>
+    <script>
+    (function(){
+        const path = window.location.pathname.replace(/\/$/,'');
+        // Prevent infinite loops or redirecting core files
+        if(!path || path.includes('.') || ['/i','/404','/index'].includes(path)){
+            window.location.href = '/';
+            return;
+        }
+        
+        const slug = path.split('/').pop().toLowerCase();
+        const target = `/i.html?d=${slug}`;
+        
+        console.log("Redirecting to:", target);
+        window.location.replace(target);
     })();
-  </script>
+    </script>
 </head>
 <body style="font-family:sans-serif;text-align:center;padding:40px;color:#fff;background:#0f0c29">
-  <p>Loading profile...<br><small><a href="/" style="color:#aaa">Go home</a></small></p>
+    <div style="max-width: 400px; margin: auto; border: 1px solid #302b63; padding: 20px; border-radius: 15px; background: rgba(255,255,255,0.05);">
+        <p>Finding property profile...</p>
+        <small style="color:#888">If you aren't redirected, <a id="manualLink" href="/" style="color:#2575fc">click here</a></small>
+    </div>
+    <script>
+        // Fallback: Show the link if JS takes too long
+        const slug = window.location.pathname.split('/').pop().toLowerCase();
+        document.getElementById('manualLink').href = `/i.html?d=${slug}`;
+    </script>
 </body>
 </html>
