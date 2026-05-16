@@ -1,25 +1,28 @@
 export default {
-  async fetch(request, env) {
+  async fetch(request) {
     const url = new URL(request.url);
-    const path = url.pathname;
 
-    // Match single-segment paths like /javeria (profile URLs)
-    // Skip known static paths and file extensions
-    const isProfilePath = /^\/[a-zA-Z0-9_-]+$/.test(path)
-      && !path.startsWith('/i')
-      && !path.startsWith('/api')
-      && !path.startsWith('/assets');
-
-    if (isProfilePath) {
-      const username = path.slice(1); // remove leading "/"
-      // Rewrite internally to /i?d=username
-      const rewriteUrl = new URL(request.url);
-      rewriteUrl.pathname = "/i";
-      rewriteUrl.search = `d=${encodeURIComponent(username)}`;
-      return env.ASSETS.fetch(new Request(rewriteUrl.toString(), request));
+    // Your existing routes
+    if (url.pathname === "/") {
+      return new Response("Home", { status: 200 });
     }
 
-    // For all other paths, serve assets normally
-    return env.ASSETS.fetch(request);
-  }
+    // Catch-all: return 404 for any unmatched path
+    return new Response(
+      `<!DOCTYPE html>
+<html>
+<head><title>404 - Not Found</title></head>
+<body>
+  <h1>404 - Page Not Found</h1>
+  <p>The page <code>${url.pathname}</code> does not exist.</p>
+  <a href="/">Go home</a>
+</body>
+</html>`,
+      {
+        status: 404,
+        headers: { "Content-Type": "text/html; charset=utf-8" },
+      }
+    );
+  },
 };
+
