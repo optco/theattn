@@ -1,34 +1,48 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>Redirecting...</title>
-    <script>
-    (function(){
-        const path = window.location.pathname.replace(/\/$/,'');
-        // Prevent infinite loops or redirecting core files
-        if(!path || path.includes('.') || ['/i','/404','/index'].includes(path)){
-            window.location.href = '/';
-            return;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            text-align: center;
+            padding: 50px 20px;
         }
-        
-        const slug = path.split('/').pop().toLowerCase();
-        const target = `/i.html?d=${slug}`;
-        
-        console.log("Redirecting to:", target);
-        window.location.replace(target);
-    })();
-    </script>
+        .container {
+            max-width: 500px;
+            margin: auto;
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        h1 { font-size: 5rem; margin: 0; color: #ff4757; }
+        p { font-size: 1.2rem; color: #555; }
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 24px;
+            background-color: #2f3542;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        .btn:hover { background-color: #57606f; }
+    </style>
 </head>
-<body style="font-family:sans-serif;text-align:center;padding:40px;color:#fff;background:#0f0c29">
-    <div style="max-width: 400px; margin: auto; border: 1px solid #302b63; padding: 20px; border-radius: 15px; background: rgba(255,255,255,0.05);">
-        <p>Finding property profile...</p>
-        <small style="color:#888">If you aren't redirected, <a id="manualLink" href="/" style="color:#2575fc">click here</a></small>
+<body>
+
+    <div class="container">
+        <h1>404</h1>
+        <h2>Oops! Page Not Found</h2>
+        <p>The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.</p>
+        <a href="/" class="btn">Go Back Home</a>
     </div>
-    <script>
-        // Fallback: Show the link if JS takes too long
-        const slug = window.location.pathname.split('/').pop().toLowerCase();
-        document.getElementById('manualLink').href = `/i.html?d=${slug}`;
-    </script>
+
 </body>
 </html>
