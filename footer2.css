@@ -11,15 +11,8 @@
 }
 
 .fixed-corner-img {
-  width: 120px;        /* Fixed pixel size - never shrinks or grows */
+  width: 90px;        /* Fixed pixel size - never shrinks or grows */
   height: auto;       /* Maintain aspect ratio */
   display: block;
-  border: none;
-}
-.fixed-center-img {
-  width: 300px;
-  height: auto;
-  display: block;
-  margin: 0 auto; /* Centers horizontally */
   border: none;
 }
