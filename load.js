@@ -15,7 +15,7 @@
 
     const container = document.createElement('div');
     container.id = 'pl-indicator';
-    container.innerHTML = '<div class="pl-dot"></div><div class="pl-dot"></div><div class="pl-dot"></div>';
+    container.innerHTML = '<div class="pl-dot"></div><div class="pl-dot"></div><div class="pl-dot"></div><a href="https://akhtar.co.za" class="fixed-corner-link"><img src="opthead.png" alt="Akhtar Home" class="fixed-corner-img"></a>';
     document.body.appendChild(container);
 
     setTimeout(() => {
