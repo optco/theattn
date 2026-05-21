@@ -42,11 +42,11 @@
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 50px; /* Increased to accommodate 120px-wide image + padding */
+    height: 40px; /* Increased to accommodate 120px-wide image + padding */
     background: rgba(255, 255, 255, 0.5);
     z-index: 9999; /* Below the link (10000) */
     pointer-events: none;
-    border-radius: 24px 24px 0 0;
+    border-radius: 48px 48px 0 0;
   `;
   document.body.appendChild(stripe);
   // --- END STRIPE ---
