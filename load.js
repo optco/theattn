@@ -42,14 +42,16 @@
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 35px; /* Increased to accommodate 120px-wide image + padding */
+    height: 35px;
     background: rgba(0, 0, 0, 0.5);
-    z-index: 9999; /* Below the link (10000) */
+    z-index: 9999;
     pointer-events: none;
     border-radius: 48px 48px 0 0;
+    transform: translateY(100%); /* Start hidden below viewport */
+    opacity: 0;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.6s ease;
   `;
   document.body.appendChild(stripe);
-  // --- END STRIPE ---
   
   const link = document.createElement('a');
   link.href = 'https://theattn.com';
@@ -58,13 +60,15 @@
     position: fixed;
     bottom: 10px;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%) translateY(100px); /* Start hidden + centered horizontally */
     display: block;
     z-index: 10000;
     line-height: 0;
     width: auto;
     max-width: none;
     min-width: 0;
+    opacity: 0;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.6s ease;
   `;
   
   const img = document.createElement('img');
@@ -80,4 +84,17 @@
   
   link.appendChild(img);
   document.body.appendChild(link);
+  
+  // --- TRIGGER ANIMATION ---
+  // Force reflow to ensure initial styles apply before transition
+  void stripe.offsetWidth;
+  void link.offsetWidth;
+  
+  // Animate to final position
+  stripe.style.transform = 'translateY(0)';
+  stripe.style.opacity = '1';
+  
+  link.style.transform = 'translateX(-50%) translateY(0)';
+  link.style.opacity = '1';
+  // --- END ANIMATION ---
 })();
