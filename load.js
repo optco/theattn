@@ -37,7 +37,7 @@
   const link = document.createElement('a');
   link.href = 'https://akhtar.co.za';
   link.className = 'fixed-corner-link';
-  link.style.cssText = 'position:fixed;top:26px;left:50%;transform:translateX(-50%);z-index:1000;display:block;';
+  link.style.cssText = 'position:fixed;bottom:26px;left:50%;transform:translateX(-50%);z-index:1000;display:block;';
   
   const img = document.createElement('img');
   img.src = 'opthead.png';
