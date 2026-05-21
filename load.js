@@ -36,18 +36,19 @@
   
   // --- STRIPE BACKGROUND ---
   const stripe = document.createElement('div');
-  stripe.className = 'fixed-corner-stripe';
-  stripe.style.cssText = `
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 60px; /* Adjust to cover image + padding */
-    background: rgba(255, 255, 255, 0.5);
-    z-index: 999; /* Below the link (1000) */
-    pointer-events: none; /* Let clicks pass through to content below */
-  `;
-  document.body.appendChild(stripe);
+stripe.className = 'fixed-corner-stripe';
+stripe.style.cssText = `
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.5);
+  z-index: 999;
+  pointer-events: none;
+  border-radius: 12px 12px 0 0; /* Top-left & top-right rounded */
+`;
+document.body.appendChild(stripe);
   // --- END STRIPE ---
   
   const link = document.createElement('a');
