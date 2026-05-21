@@ -15,7 +15,7 @@
 
     const container = document.createElement('div');
     container.id = 'pl-indicator';
-    container.innerHTML = '<div class="pl-dot"></div><div class="pl-dot"></div><div class="pl-dot"></div><a href="https://akhtar.co.za" class="fixed-corner-link"><img src="opthead.png" alt="Akhtar Home" class="fixed-corner-img"></a>';
+    container.innerHTML = '<div class="pl-dot"></div><div class="pl-dot"></div><div class="pl-dot"></div>';
     document.body.appendChild(container);
 
     setTimeout(() => {
@@ -29,4 +29,22 @@
   } else {
     initLoader();
   }
+})();
+
+(function() {
+  if (document.querySelector('.fixed-corner-link')) return; // prevent duplicates
+  
+  const link = document.createElement('a');
+  link.href = 'https://akhtar.co.za';
+  link.className = 'fixed-corner-link';
+  link.style.cssText = 'position:fixed;top:26px;left:50%;transform:translateX(-50%);z-index:1000;display:block;';
+  
+  const img = document.createElement('img');
+  img.src = 'opthead.png';
+  img.alt = 'Akhtar Home';
+  img.className = 'fixed-corner-img';
+  img.style.cssText = 'display:block;height:40px;width:auto;';
+  
+  link.appendChild(img);
+  document.body.appendChild(link);
 })();
