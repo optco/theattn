@@ -35,7 +35,7 @@
   if (document.querySelector('.fixed-corner-link')) return; // prevent duplicates
   
   const link = document.createElement('a');
-  link.href = 'https://akhtar.co.za';
+  link.href = 'https://theattn.com';
   link.className = 'fixed-corner-link';
   link.style.cssText = 'position:fixed;bottom:26px;left:50%;transform:translateX(-50%);z-index:1000;display:block;';
   
@@ -43,7 +43,7 @@
   img.src = 'opthead.png';
   img.alt = 'Akhtar Home';
   img.className = 'fixed-corner-img';
-  img.style.cssText = 'display:block;height:40px;width:auto;';
+  img.style.cssText = 'display:block;height:20px;width:auto;';
   
   link.appendChild(img);
   document.body.appendChild(link);
