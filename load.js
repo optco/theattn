@@ -36,31 +36,47 @@
   
   // --- STRIPE BACKGROUND ---
   const stripe = document.createElement('div');
-stripe.className = 'fixed-corner-stripe';
-stripe.style.cssText = `
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 50px;
-  background: rgba(255, 255, 255, 0.5);
-  z-index: 999;
-  pointer-events: none;
-  border-radius: 12px 12px 0 0; /* Top-left & top-right rounded */
-`;
-document.body.appendChild(stripe);
+  stripe.className = 'fixed-corner-stripe';
+  stripe.style.cssText = `
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80px; /* Increased to accommodate 120px-wide image + padding */
+    background: rgba(255, 255, 255, 0.5);
+    z-index: 9999; /* Below the link (10000) */
+    pointer-events: none;
+    border-radius: 24px 24px 0 0;
+  `;
+  document.body.appendChild(stripe);
   // --- END STRIPE ---
   
   const link = document.createElement('a');
   link.href = 'https://theattn.com';
   link.className = 'fixed-corner-link';
-  link.style.cssText = 'position:fixed;bottom:26px;left:50%;transform:translateX(-50%);z-index:1000;display:block;';
+  link.style.cssText = `
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: block;
+    z-index: 10000;
+    line-height: 0;
+    width: auto;
+    max-width: none;
+    min-width: 0;
+  `;
   
   const img = document.createElement('img');
-  img.src = 'opthead.png';
+  img.src = 'https://theattn.com/opthead.png';
   img.alt = 'theattn.com';
   img.className = 'fixed-corner-img';
-  img.style.cssText = 'display:block;height:20px;width:auto;';
+  img.style.cssText = `
+    width: 120px;
+    height: auto;
+    display: block;
+    border: none;
+  `;
   
   link.appendChild(img);
   document.body.appendChild(link);
