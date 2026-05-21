@@ -34,6 +34,22 @@
 (function() {
   if (document.querySelector('.fixed-corner-link')) return; // prevent duplicates
   
+  // --- STRIPE BACKGROUND ---
+  const stripe = document.createElement('div');
+  stripe.className = 'fixed-corner-stripe';
+  stripe.style.cssText = `
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px; /* Adjust to cover image + padding */
+    background: rgba(255, 255, 255, 0.5);
+    z-index: 999; /* Below the link (1000) */
+    pointer-events: none; /* Let clicks pass through to content below */
+  `;
+  document.body.appendChild(stripe);
+  // --- END STRIPE ---
+  
   const link = document.createElement('a');
   link.href = 'https://theattn.com';
   link.className = 'fixed-corner-link';
@@ -41,7 +57,7 @@
   
   const img = document.createElement('img');
   img.src = 'opthead.png';
-  img.alt = 'Akhtar Home';
+  img.alt = 'theattn.com';
   img.className = 'fixed-corner-img';
   img.style.cssText = 'display:block;height:20px;width:auto;';
   
