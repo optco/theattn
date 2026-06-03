@@ -8,7 +8,68 @@
   --accent-red: #dc2626;
   --gradient-accent: linear-gradient(135deg, #2563eb 0%, #dc2626 100%);
 }
+        .managed-sites-section {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
 
+        .managed-sites-section h2 {
+            font-size: 1.5rem;
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
+
+        .sites-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .site-card {
+            background: var(--card-bg);
+            border: 1px solid #e9ecef;
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .site-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            border-color: var(--accent-color);
+        }
+
+        .site-card h3 {
+            margin: 0 0 0.5rem 0;
+            font-size: 1.1rem;
+            color: var(--text-primary);
+        }
+
+        .site-card a {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 500;
+            word-break: break-all;
+        }
+
+        .site-card a:hover {
+            text-decoration: underline;
+        }
+
+        .site-status {
+            display: inline-block;
+            margin-top: 1rem;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            background: var(--bg-color);
+            padding: 0.25rem 0.75rem;
+            border-radius: 999px;
+        }
 .fixed-center-img {
     /* Fluid height scaling */
     height: clamp(40px, 8vw, 80px);
