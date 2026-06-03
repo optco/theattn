@@ -7,7 +7,7 @@
   --text-active: #00D100;
   --accent-blue: #2563eb;
   --accent-red: #dc2626;
-  --gradient-accent: linear-gradient(135deg, #2563eb 0%, #dc2626 100%);
+  --gradient-accent: linear-gradient(135deg, #d90000 0%, #008c00 100%);
 }
 
 .managed-sites-section {
