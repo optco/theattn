@@ -143,7 +143,7 @@ body.modal-open {
   background: var(--glass-bg);
   backdrop-filter: blur(24px) saturate(130%);
   -webkit-backdrop-filter: blur(24px) saturate(130%);
-  border: 0px solid var(--glass-border);
+  border: 1px solid var(--glass-border);
   border-radius: 18px;
   padding: 4rem 3rem;
   text-align: center;
