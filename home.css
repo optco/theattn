@@ -9,11 +9,9 @@
   --accent-red: #d90000;
   --gradient-accent: linear-gradient(135deg, #008c00 0%, #008c00 50%, #008c00 100%);
 }
-.status-dot {
-    width: 6px; height: 6px;
-    border-radius: 50%;
-    background: var(--accent);
-    box-shadow: 0 0 8px var(--accent);
+ .status-text {
+      font-size: 11px;
+    color: var(--text-dim);
     animation: pulse-dot 2s ease-in-out infinite;
   }
 .managed-sites-section {
