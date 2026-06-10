@@ -199,6 +199,88 @@ const RESTAURANTS = [
     tags: ["Dine-in", "Takeaway"]
   },
 
+  // --- Johannesburg (NEW) ---
+  {
+    name: "Adega Norwood",
+    cuisine: "Portuguese / Seafood",
+    address: "71 Iris Rd, Norwood, Johannesburg, 2192",
+    lat: -26.1555,
+    lng: 28.0760,
+    phone: "+27 11 728 9000",
+    notes: "Strictly halal · No alcohol · Flaming espetadas & seafood platters · Beautiful courtyard",
+    tags: ["Dine-in", "Takeaway"]
+  },
+  {
+    name: "Habibi Lebanese Restaurant",
+    cuisine: "Lebanese / Middle Eastern",
+    address: "Norwood, Johannesburg, 2192",
+    lat: -26.1560,
+    lng: 28.0750,
+    phone: "+27 11 694 5269",
+    notes: "Strictly halal · Freshly prepared mezze · Slow-cooked lamb specialties",
+    tags: ["Dine-in", "Takeaway"]
+  },
+  {
+    name: "My Diners",
+    cuisine: "South African / Café",
+    address: "Rosebank, Johannesburg, 2196",
+    lat: -26.1460,
+    lng: 28.0430,
+    phone: "+27 11 447 0000",
+    notes: "Halal casual comfort food · Burgers, wraps & all-day breakfast · Budget-friendly",
+    tags: ["Dine-in", "Takeaway", "Delivery"]
+  },
+  {
+    name: "Baluchi Indian Restaurant",
+    cuisine: "Indian / Fine Dining",
+    address: "Illovo Junction, Rivonia Rd, Illovo, Sandton, 2196",
+    lat: -26.1320,
+    lng: 28.0590,
+    phone: "+27 11 268 5000",
+    notes: "Fully halal · Fine Indian dining in Illovo · Tandoori specialties",
+    tags: ["Dine-in", "Fine Dining"]
+  },
+  {
+    name: "AJ Whisks",
+    cuisine: "Lebanese / Desserts / Café",
+    address: "Melrose Arch, 1 Melrose Blvd, Melrose, Johannesburg, 2076",
+    lat: -26.1392,
+    lng: 28.0618,
+    phone: "+27 11 684 0000",
+    notes: "Halal bakery & café · Lebanese-inspired desserts · Signature Conuts & gourmet shakes",
+    tags: ["Dine-in", "Takeaway"]
+  },
+  {
+    name: "Empire Steak Florida Road",
+    cuisine: "Steakhouse / Grill",
+    address: "Florida Rd, Morningside, Durban, 4001",
+    lat: -29.8369,
+    lng: 31.0178,
+    phone: "+27 31 303 5760",
+    notes: "Halal certified · Laid-back family steakhouse · Ever-changing seasonal menu",
+    tags: ["Dine-in", "Takeaway"]
+  },
+  {
+    name: "Tadinda Mediterranean Eatery",
+    cuisine: "Mediterranean / Turkish",
+    address: "Norwood, Johannesburg, 2192",
+    lat: -26.1570,
+    lng: 28.0775,
+    phone: "+27 11 483 2200",
+    notes: "Halal certified · Mezze, grills & Turkish classics",
+    tags: ["Dine-in", "Takeaway"]
+  },
+  {
+    name: "Castello Milano",
+    cuisine: "Italian / Pizza",
+    address: "Grant Ave, Norwood, Johannesburg, 2192",
+    lat: -26.1580,
+    lng: 28.0770,
+    phone: "+27 11 728 5050",
+    notes: "SANHA certified · Wood-fired pizzas & pasta · Cosy Italian ambiance",
+    tags: ["Dine-in", "Takeaway", "Delivery"]
+  },
+
   // --- Cape Town Expansion ---
   {
     name: "The Andalousse Moroccan Restaurant",
@@ -343,6 +425,68 @@ const RESTAURANTS = [
     tags: ["Dine-in", "Takeaway"]
   },
 
+  // --- Cape Town (NEW) ---
+  {
+    name: "Pigalle Cape Town",
+    cuisine: "Seafood / Portuguese / Grill",
+    address: "57A Somerset Rd, Green Point, Cape Town, 8005",
+    lat: -33.9112,
+    lng: 18.4168,
+    phone: "+27 21 421 4848",
+    notes: "Halal certified · 2025 World Luxury Restaurant Award winner · Best luxury seafood in SA",
+    tags: ["Dine-in", "Fine Dining"]
+  },
+  {
+    name: "Mesopotamia",
+    cuisine: "Kurdish / Middle Eastern",
+    address: "36 Burg St, Cape Town City Centre, 8001",
+    lat: -33.9200,
+    lng: 18.4175,
+    phone: "+27 21 422 0854",
+    notes: "Halal certified · Authentic Kurdish cuisine · Pide (Kurdish pizza) & best shisha in town",
+    tags: ["Dine-in", "Takeaway"]
+  },
+  {
+    name: "L.A. Farms Green Point",
+    cuisine: "Steakhouse / Butchery",
+    address: "Green Point, Cape Town, 8005",
+    lat: -33.9115,
+    lng: 18.4145,
+    phone: "+27 21 434 0000",
+    notes: "Fully halal · Grass-fed free-range Wagyu & Angus · Wagyu brisket burgers & seekh kebabs",
+    tags: ["Dine-in", "Fine Dining"]
+  },
+  {
+    name: "Bo-Kaap Deli",
+    cuisine: "Cape Malay / Deli",
+    address: "Bo-Kaap, Cape Town, 8001",
+    lat: -33.9218,
+    lng: 18.4142,
+    phone: "+27 21 422 2800",
+    notes: "Halal deli & café in the heart of Bo-Kaap · Pastries, light meals & coffee",
+    tags: ["Dine-in", "Takeaway"]
+  },
+  {
+    name: "Pedros Woodstock",
+    cuisine: "Portuguese / Chicken",
+    address: "Woodstock, Cape Town, 7925",
+    lat: -33.9300,
+    lng: 18.4490,
+    phone: "+27 21 448 0000",
+    notes: "Halal certified · Flame-grilled Portuguese chicken · Multiple Cape Town branches",
+    tags: ["Dine-in", "Takeaway", "Delivery"]
+  },
+  {
+    name: "Brocka Rondebosch",
+    cuisine: "American / Burgers",
+    address: "Rondebosch, Cape Town, 7700",
+    lat: -33.9630,
+    lng: 18.4730,
+    phone: "+27 21 685 0000",
+    notes: "Halal certified · Craft burgers, wings & loaded fries · Also at Canal Walk",
+    tags: ["Dine-in", "Takeaway", "Delivery"]
+  },
+
   // --- Durban Expansion ---
   {
     name: "Caminettos Overport",
@@ -437,7 +581,49 @@ const RESTAURANTS = [
     tags: ["Dine-in", "Takeaway"]
   },
 
-  // --- Pretoria Expansion (NEW) ---
+  // --- Durban (NEW) ---
+  {
+    name: "Kasbah Restaurant Durban",
+    cuisine: "Middle Eastern / Mediterranean",
+    address: "Musgrave Centre, Durban, 4001",
+    lat: -29.8490,
+    lng: 31.0060,
+    phone: "+27 31 201 5500",
+    notes: "Halal certified · Grills, shawarma & mezze platters · North African-inspired décor",
+    tags: ["Dine-in", "Takeaway"]
+  },
+  {
+    name: "Akhalwayas Durban",
+    cuisine: "Indian / South African",
+    address: "Victoria St Market, Victoria Street, Durban CBD, 4001",
+    lat: -29.8570,
+    lng: 31.0145,
+    phone: "+27 31 306 1446",
+    notes: "Muslim-owned institution · Bunny chow & curry since 1940s · Durban icon",
+    tags: ["Dine-in", "Takeaway"]
+  },
+  {
+    name: "Shalawat Restaurant",
+    cuisine: "Indian / Pakistani",
+    address: "Grey Street, Durban CBD, 4001",
+    lat: -29.8555,
+    lng: 31.0138,
+    phone: "+27 31 306 2100",
+    notes: "Halal certified · Grey Street landmark · Biryani & grilled specialties",
+    tags: ["Dine-in", "Takeaway"]
+  },
+  {
+    name: "Café 1999",
+    cuisine: "Fusion / Café / Grill",
+    address: "Shop 15, Musgrave Centre, Durban, 4001",
+    lat: -29.8488,
+    lng: 31.0062,
+    phone: "+27 31 201 1999",
+    notes: "Halal certified · Trendy café with fusion menu · Signature mocktails & desserts",
+    tags: ["Dine-in", "Takeaway"]
+  },
+
+  // --- Pretoria Expansion ---
   {
     name: "Geet Indian Restaurant",
     cuisine: "Indian / Fine Dining",
@@ -476,6 +662,230 @@ const RESTAURANTS = [
     lng: 28.1850,
     phone: "+27 12 545 6789",
     notes: "Halal certified · Late-night dining · Fresh tikka & grilled specialties",
+    tags: ["Dine-in", "Takeaway"]
+  },
+
+  // --- Pretoria (NEW) ---
+  {
+    name: "Akhalwayas Bree Street",
+    cuisine: "Indian / South African",
+    address: "Bree Street, Pretoria CBD, 0002",
+    lat: -25.7480,
+    lng: 28.1880,
+    phone: "+27 12 323 2200",
+    notes: "Muslim-owned institution · Legendary samosas & curry · Pretoria stalwart",
+    tags: ["Dine-in", "Takeaway"]
+  },
+  {
+    name: "Akhalwayas Church Street",
+    cuisine: "Indian / South African",
+    address: "Church Street, Pretoria CBD, 0002",
+    lat: -25.7460,
+    lng: 28.1900,
+    phone: "+27 12 323 1100",
+    notes: "Muslim-owned · Famous for halal snacks, samoosas & bunny chow",
+    tags: ["Dine-in", "Takeaway"]
+  },
+  {
+    name: "Tamarind of India Centurion",
+    cuisine: "Indian",
+    address: "Centurion Mall, Akkerboom Rd, Centurion, Pretoria, 0157",
+    lat: -25.8592,
+    lng: 28.1887,
+    phone: "+27 12 663 1888",
+    notes: "Halal certified · Rich north and south Indian menu · Popular for weekend family dining",
+    tags: ["Dine-in", "Takeaway", "Delivery"]
+  },
+  {
+    name: "Mochachos Menlyn",
+    cuisine: "Portuguese / Chicken",
+    address: "Menlyn Park Shopping Centre, Pretoria, 0181",
+    lat: -25.7840,
+    lng: 28.2760,
+    phone: "+27 12 348 3200",
+    notes: "SANHA certified · Flame-grilled chicken & prego rolls · Family casual dining",
+    tags: ["Dine-in", "Takeaway", "Delivery"]
+  },
+
+  // --- Bloemfontein (NEW) ---
+  {
+    name: "Mochachos Bloemfontein",
+    cuisine: "Portuguese / Chicken",
+    address: "Preller Square Shopping Centre, Preller St, Westdene, Bloemfontein, 9301",
+    lat: -29.1110,
+    lng: 26.1870,
+    phone: "+27 51 430 5200",
+    notes: "SANHA certified · Famous halal grilled chicken & Portuguese-style dishes",
+    tags: ["Dine-in", "Takeaway", "Delivery"]
+  },
+  {
+    name: "Al-Mostafa Shawarma Bloemfontein",
+    cuisine: "Middle Eastern / Shawarma",
+    address: "Preller Square, Bloemfontein, 9301",
+    lat: -29.1108,
+    lng: 26.1875,
+    phone: "+27 51 430 2400",
+    notes: "Halal certified · Authentic Lebanese shawarma · Quick service, generous portions",
+    tags: ["Dine-in", "Takeaway"]
+  },
+  {
+    name: "Real Foodies Bloemfontein",
+    cuisine: "South African / Burgers / Comfort Food",
+    address: "Westdene, Bloemfontein, 9301",
+    lat: -29.1130,
+    lng: 26.1890,
+    phone: "+27 51 444 1800",
+    notes: "Halal certified · Comfort food burgers & light meals · Family-friendly casual dining",
+    tags: ["Dine-in", "Takeaway"]
+  },
+  {
+    name: "Fatima's Restaurant Bloemfontein",
+    cuisine: "Indian / Cape Malay",
+    address: "Bloemfontein CBD, 9300",
+    lat: -29.1180,
+    lng: 26.2150,
+    phone: "+27 51 447 2600",
+    notes: "Muslim-owned · Home-style Indian & Cape Malay cooking · Well-loved local favourite",
+    tags: ["Dine-in", "Takeaway"]
+  },
+
+  // --- Port Elizabeth / Gqeberha (NEW) ---
+  {
+    name: "Latinos Pizza Port Elizabeth",
+    cuisine: "Italian / Pizza",
+    address: "Various branches, Port Elizabeth (Gqeberha), 6001",
+    lat: -33.9608,
+    lng: 25.6022,
+    phone: "+27 41 363 1111",
+    notes: "Halal certified · Popular gourmet pizzas · Dough made fresh daily",
+    tags: ["Dine-in", "Takeaway", "Delivery"]
+  },
+  {
+    name: "La Fiesta Port Elizabeth",
+    cuisine: "Portuguese / Grill",
+    address: "Port Elizabeth (Gqeberha), 6001",
+    lat: -33.9700,
+    lng: 25.6100,
+    phone: "+27 41 374 3800",
+    notes: "Halal certified · Portuguese grills, chicken espetada & seafood",
+    tags: ["Dine-in", "Takeaway", "Delivery"]
+  },
+  {
+    name: "This is Eat Seafood Restaurant",
+    cuisine: "Seafood",
+    address: "16 Lower Valley Road, The Harbour, Port Elizabeth (Gqeberha), 6001",
+    lat: -33.9570,
+    lng: 25.6200,
+    phone: "+27 41 585 0000",
+    notes: "Halal-friendly · Fresh harbour seafood · Calamari & fish specialties",
+    tags: ["Dine-in", "Takeaway"]
+  },
+  {
+    name: "Honchos Port Elizabeth",
+    cuisine: "Chicken / Fast Food",
+    address: "Port Elizabeth (Gqeberha), 6001",
+    lat: -33.9640,
+    lng: 25.6070,
+    phone: "+27 41 374 0000",
+    notes: "SANHA certified · Halal fried chicken & burgers · Affordable family meals",
+    tags: ["Dine-in", "Takeaway", "Delivery"]
+  },
+
+  // --- Pietermaritzburg (NEW) ---
+  {
+    name: "Curry Palace PMB",
+    cuisine: "Indian / Curry",
+    address: "Church Street, Pietermaritzburg, 3201",
+    lat: -29.6166,
+    lng: 30.3929,
+    phone: "+27 33 342 6500",
+    notes: "Halal certified · Authentic KZN-style curries · Famous for bunny chow & biryani",
+    tags: ["Dine-in", "Takeaway"]
+  },
+  {
+    name: "Nandos Pietermaritzburg",
+    cuisine: "Portuguese / Chicken",
+    address: "Cascades Shopping Centre, Peter Brown Drive, Pietermaritzburg, 3201",
+    lat: -29.5990,
+    lng: 30.3790,
+    phone: "+27 33 347 1700",
+    notes: "Halal certified branch · Peri-peri chicken · Family-friendly",
+    tags: ["Dine-in", "Takeaway", "Delivery"]
+  },
+
+  // --- Polokwane (NEW) ---
+  {
+    name: "Akhalwayas Polokwane",
+    cuisine: "Indian / South African",
+    address: "10 Jorrisen Street, Polokwane, 0699",
+    lat: -23.9045,
+    lng: 29.4689,
+    phone: "+27 76 279 1340",
+    notes: "Muslim-owned · Legendary samoosas & curry · Polokwane institution",
+    tags: ["Dine-in", "Takeaway"]
+  },
+  {
+    name: "Mayets Takeaways",
+    cuisine: "Indian / Fast Food",
+    address: "Nirvana X1, Polokwane, 0699",
+    lat: -23.9120,
+    lng: 29.4750,
+    phone: "+27 15 292 6664",
+    notes: "Halal certified · Quick halal meals, curries & savouries",
+    tags: ["Takeaway", "Delivery"]
+  },
+  {
+    name: "Curry Palace Polokwane",
+    cuisine: "Indian / Curry",
+    address: "Penina Park X1, Polokwane, 0699",
+    lat: -23.9200,
+    lng: 29.4800,
+    phone: "+27 15 291 3300",
+    notes: "Halal certified · Next to Sasol · Indian curries & grills",
+    tags: ["Dine-in", "Takeaway"]
+  },
+
+  // --- Garden Route (NEW) ---
+  {
+    name: "Kasbah George",
+    cuisine: "Middle Eastern / Mediterranean",
+    address: "York St, George, 6530",
+    lat: -33.9630,
+    lng: 22.4615,
+    phone: "+27 44 874 5500",
+    notes: "Halal certified · Shawarma, grills & mezze · Popular stop on the Garden Route",
+    tags: ["Dine-in", "Takeaway"]
+  },
+  {
+    name: "Spice of India George",
+    cuisine: "Indian",
+    address: "Knysna Rd, George, 6530",
+    lat: -33.9690,
+    lng: 22.4720,
+    phone: "+27 44 873 3800",
+    notes: "Halal certified · Authentic Indian curries & tandoori · Garden Route favourite",
+    tags: ["Dine-in", "Takeaway", "Delivery"]
+  },
+
+  // --- Kimberley (NEW) ---
+  {
+    name: "The Diamond Grill Kimberley",
+    cuisine: "Steakhouse / South African",
+    address: "Du Toitspan Rd, Kimberley, 8301",
+    lat: -28.7380,
+    lng: 24.7720,
+    phone: "+27 53 832 4000",
+    notes: "Halal certified · Steaks & grills · Named for the city's diamond heritage",
+    tags: ["Dine-in", "Takeaway"]
+  },
+  {
+    name: "Eastern Spice Kimberley",
+    cuisine: "Indian / Middle Eastern",
+    address: "Jones Street, Kimberley, 8301",
+    lat: -28.7350,
+    lng: 24.7700,
+    phone: "+27 53 831 2200",
+    notes: "Muslim-owned · Halal curries, biryani & shawarma · Budget-friendly",
     tags: ["Dine-in", "Takeaway"]
   }
 ];
