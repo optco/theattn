@@ -476,3 +476,76 @@ body.modal-open {
       grid-template-columns: 1fr;
   }
 }
+/* ===== Useful Links Strip ===== */
+.links-strip {
+  width: 90%;
+  max-width: 900px;
+  margin: 1.8rem auto 0;
+  padding: 0.75rem 0;
+}
+
+.links-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(16px) saturate(120%);
+  -webkit-backdrop-filter: blur(16px) saturate(120%);
+  border: 1px solid var(--glass-border);
+  border-radius: 14px;
+  padding: 0.6rem 0.8rem;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+}
+
+.link-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.5rem 0.9rem;
+  border-radius: 10px;
+  color: var(--text-primary);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  background: transparent;
+}
+
+.link-item i {
+  font-size: 0.9rem;
+  color: var(--accent-blue);
+  transition: color 0.2s ease;
+  width: 16px;
+  text-align: center;
+}
+
+.link-item:hover {
+  background: rgba(37, 99, 235, 0.12);
+  transform: translateY(-1px);
+}
+
+.link-item:hover i {
+  color: var(--accent-red);
+}
+
+.link-item:active {
+  transform: translateY(0);
+}
+
+/* Mobile: wrap more aggressively */
+@media (max-width: 640px) {
+  .links-container {
+    padding: 0.5rem;
+    gap: 0.4rem;
+  }
+  .link-item {
+    padding: 0.45rem 0.75rem;
+    font-size: 0.8rem;
+  }
+  .link-item i {
+    font-size: 0.85rem;
+  }
+}
