@@ -10,8 +10,8 @@
   --gradient-accent: linear-gradient(135deg, #008c00 0%, #008c00 50%, #008c00 100%);
 }
  .status-text {
-      font-size: 11px;
-    color: var(--text-dim);
+      font-size: 14px;
+    color: #ff0000;
     animation: pulse-dot 2s ease-in-out infinite;
   }
   @keyframes pulse-dot {
