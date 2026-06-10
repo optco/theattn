@@ -9,15 +9,7 @@
   --accent-red: #d90000;
   --gradient-accent: linear-gradient(135deg, #008c00 0%, #008c00 50%, #008c00 100%);
 }
- .status-text {
-      font-size: 11px;
-    color: var(--text-dim);
-    animation: pulse-dot 2s ease-in-out infinite;
-  }
-  @keyframes pulse-dot {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.3; }
-  }
+
 .managed-sites-section {
     margin-top: 2.5rem;
     padding-top: 2rem;
