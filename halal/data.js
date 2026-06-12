@@ -887,5 +887,420 @@ const RESTAURANTS = [
     phone: "+27 53 831 2200",
     notes: "Muslim-owned · Halal curries, biryani & shawarma · Budget-friendly",
     tags: ["Dine-in", "Takeaway"]
+  },
+  
+  // --- Johannesburg & Surrounds (Extended) ---
+  {
+    name: "Miha Melrose Arch",
+    cuisine: "International / Café",
+    address: "Shop 004, The Arch, Melrose Square, Melrose Arch, 2076",
+    lat: -26.1396,
+    lng: 28.0619,
+    phone: "+27 10 443 3254",
+    notes: "Strictly Halal · Premium café dining · Gourmet burgers, tapas & masterfully crafted mocktails",
+    tags: ["Dine-in", "Cafe", "Fine Dining"]
+  },
+  {
+    name: "Le Kreamery Illovo",
+    cuisine: "Fusion / Desserts",
+    address: "Illovo Junction, Corlett Dr, Illovo, Sandton, 2196",
+    lat: -26.1330,
+    lng: 28.0560,
+    phone: "+27 83 438 7084",
+    notes: "Fully Halal · Decadent artisan desserts & premium fusion meals · Highly Instagrammable",
+    tags: ["Dine-in", "Cafe", "Takeaway"]
+  },
+  {
+    name: "Jimmy's Killer Prawns Fordsburg",
+    cuisine: "Seafood / Grill",
+    address: "Shop 4, Rose Ave, Fordsburg, Johannesburg, 2092",
+    lat: -26.2052,
+    lng: 28.0225,
+    phone: "+27 11 833 0380",
+    notes: "SANHA certified · Famous signature prawns, seafood platters & sushi",
+    tags: ["Dine-in", "Takeaway", "Delivery"]
+  },
+  {
+    name: "Syriana Restaurant",
+    cuisine: "Middle Eastern / Syrian",
+    address: "73 Grant Ave, Norwood, Johannesburg, 2192",
+    lat: -26.1580,
+    lng: 28.0770,
+    phone: "+27 11 483 1234",
+    notes: "Authentic Syrian cuisine · Vibrant atmosphere · Premium Shisha lounge attached",
+    tags: ["Dine-in", "Takeaway"]
+  },
+  {
+    name: "Pizza News Fordsburg",
+    cuisine: "Italian / Pizza",
+    address: "54 Crown Rd, Fordsburg, Johannesburg, 2092",
+    lat: -26.2061,
+    lng: 28.0245,
+    phone: "+27 11 834 8888",
+    notes: "SANHA certified · Famous for deep-dish, fully-loaded halal pizzas & subs",
+    tags: ["Takeaway", "Delivery"]
+  },
+
+  // --- Midrand & Centurion (NEW) ---
+  {
+    name: "Istanbul Kebab Waterfall",
+    cuisine: "Turkish / Grill",
+    address: "Waterfall Corner, Woodmead Dr, Midrand, 2066",
+    lat: -26.0150,
+    lng: 28.1060,
+    phone: "+27 11 026 1234",
+    notes: "Halal certified · Premium Turkish grills, pide, and baklava near Waterfall City",
+    tags: ["Dine-in", "Takeaway"]
+  },
+  {
+    name: "Adega Midrand",
+    cuisine: "Portuguese / Seafood",
+    address: "San Ridge Square, New Rd, Midrand, 1685",
+    lat: -25.9655,
+    lng: 28.1255,
+    phone: "+27 11 318 0123",
+    notes: "Strictly Halal · Famous Portuguese flame-grilled chicken & massive seafood combos",
+    tags: ["Dine-in", "Takeaway", "Delivery"]
+  },
+  {
+    name: "Al Makka Restaurant",
+    cuisine: "Indian / Pakistani",
+    address: "288 Tangerine St, Laudium, Centurion, 0037",
+    lat: -25.7950,
+    lng: 28.0930,
+    phone: "+27 12 374 4440",
+    notes: "Long-standing Laudium favorite · Authentic curries, karahi & tandoori",
+    tags: ["Dine-in", "Takeaway"]
+  },
+
+  // --- Cape Town (Extended Legends & Gourmet) ---
+  {
+    name: "Wembley Roadhouse",
+    cuisine: "Cape Malay / Fast Food",
+    address: "Belgravia Rd, Athlone, Cape Town, 7764",
+    lat: -33.9667,
+    lng: 18.5167,
+    phone: "+27 21 697 1435",
+    notes: "Iconic Cape Town institution · Famous for hotdogs, gatsbys, and falooda eaten in your car",
+    tags: ["Takeaway", "Casual"]
+  },
+  {
+    name: "Cosy Corner",
+    cuisine: "Cape Malay / Fast Food",
+    address: "119 Ottery Rd, Wynberg, Cape Town, 7800",
+    lat: -34.0094,
+    lng: 18.4719,
+    phone: "+27 21 797 2498",
+    notes: "Serving since 1973 · Legendary full-house steak gatsbys and authentic curries",
+    tags: ["Dine-in", "Takeaway"]
+  },
+  {
+    name: "Nuri Sushi Factory CBD",
+    cuisine: "Asian / Sushi",
+    address: "8 Parliament St, Cape Town City Centre, 8001",
+    lat: -33.9265,
+    lng: 18.4208,
+    phone: "+27 21 461 8719",
+    notes: "MJC Certified · Fresh gourmet sushi · Innovative halal Asian street food",
+    tags: ["Dine-in", "Takeaway", "Delivery"]
+  },
+  {
+    name: "Mariam's Kitchen CBD",
+    cuisine: "Cape Malay / Fast Food",
+    address: "31 Heerengracht St, Cape Town City Centre, 8000",
+    lat: -33.9185,
+    lng: 18.4232,
+    phone: "+27 21 423 0772",
+    notes: "MJC certified · The quintessential Cape Town lunch spot · Known for toasted steak sandwiches and salomies",
+    tags: ["Takeaway"]
+  },
+  {
+    name: "Against the Grain Coffee Shop",
+    cuisine: "Café / Bakery",
+    address: "102 Wale St, Bo-Kaap, Cape Town, 8001",
+    lat: -33.9215,
+    lng: 18.4150,
+    phone: "+27 81 510 5286",
+    notes: "Muslim-owned · Gesmoorde snoek bagels & artisan coffee · Incredible views of Table Mountain",
+    tags: ["Dine-in", "Cafe"]
+  },
+  {
+    name: "La Rocca",
+    cuisine: "International / Café",
+    address: "Canal Walk Shopping Centre, Century City, Cape Town, 7441",
+    lat: -33.8920,
+    lng: 18.5130,
+    phone: "+27 21 555 0909",
+    notes: "Strictly Halal · Extensive premium menu from gourmet breakfasts to aged steaks",
+    tags: ["Dine-in", "Takeaway"]
+  },
+  {
+    name: "Woodies Burgers",
+    cuisine: "American / Burgers",
+    address: "V&A Waterfront Food Court, Cape Town, 8001",
+    lat: -33.9030,
+    lng: 18.4180,
+    phone: "+27 79 123 4567",
+    notes: "MJC certified · Massive, handcrafted artisanal halal burgers with gourmet toppings",
+    tags: ["Takeaway", "Delivery"]
+  },
+  {
+    name: "The Grillfather Woodstock",
+    cuisine: "Steakhouse / Grill",
+    address: "15 Wicht St, Woodstock, Cape Town, 7915",
+    lat: -33.9315,
+    lng: 18.4480,
+    phone: "+27 21 447 4484",
+    notes: "Halal certified · Massive, rustic BBQ ribs, steaks, and towering burgers",
+    tags: ["Dine-in", "Takeaway"]
+  },
+
+  // --- Durban & KZN (Extended) ---
+  {
+    name: "Sunrise Chip 'N Ranch (Johnny's Roti)",
+    cuisine: "South African / Fast Food",
+    address: "89 Sparks Rd, Overport, Durban, 4067",
+    lat: -29.8330,
+    lng: 30.9950,
+    phone: "+27 31 209 2020",
+    notes: "Legendary 24/7 spot · Famous for the 'Triple Cheese and Chip' roti",
+    tags: ["Takeaway", "Late Night"]
+  },
+  {
+    name: "Vapor Café",
+    cuisine: "Café / Grill / Fusion",
+    address: "131 Florida Rd, Morningside, Durban, 4001",
+    lat: -29.8375,
+    lng: 31.0185,
+    phone: "+27 31 303 3333",
+    notes: "Strictly Halal · Premium shisha, gourmet mocktails, and high-end fusion grills",
+    tags: ["Dine-in", "Takeaway"]
+  },
+  {
+    name: "Adega Gateway",
+    cuisine: "Portuguese / Seafood",
+    address: "Gateway Theatre of Shopping, Umhlanga, 4319",
+    lat: -29.7260,
+    lng: 31.0660,
+    phone: "+27 31 566 2222",
+    notes: "Fully Halal branch · Upscale Portuguese seafood and chicken dining",
+    tags: ["Dine-in", "Takeaway"]
+  },
+  {
+    name: "Palki Indian Restaurant",
+    cuisine: "Indian",
+    address: "223 Musgrave Rd, Berea, Durban, 4001",
+    lat: -29.8450,
+    lng: 31.0055,
+    phone: "+27 31 201 0019",
+    notes: "SANHA certified · Authentic traditional Indian curries and tandoori in an elegant setting",
+    tags: ["Dine-in", "Takeaway", "Delivery"]
+  },
+  // --- Johannesburg & Surrounds (Extended) ---
+  {
+    name: "Miha Melrose Arch",
+    cuisine: "International / Café",
+    address: "Shop 004, The Arch, Melrose Square, Melrose Arch, 2076",
+    lat: -26.1396,
+    lng: 28.0619,
+    phone: "+27 10 443 3254",
+    notes: "Strictly Halal · Premium café dining · Gourmet burgers, tapas & masterfully crafted mocktails",
+    tags: ["Dine-in", "Cafe", "Fine Dining"]
+  },
+  {
+    name: "Le Kreamery Illovo",
+    cuisine: "Fusion / Desserts",
+    address: "Illovo Junction, Corlett Dr, Illovo, Sandton, 2196",
+    lat: -26.1330,
+    lng: 28.0560,
+    phone: "+27 83 438 7084",
+    notes: "Fully Halal · Decadent artisan desserts & premium fusion meals · Highly Instagrammable",
+    tags: ["Dine-in", "Cafe", "Takeaway"]
+  },
+  {
+    name: "Jimmy's Killer Prawns Fordsburg",
+    cuisine: "Seafood / Grill",
+    address: "Shop 4, Rose Ave, Fordsburg, Johannesburg, 2092",
+    lat: -26.2052,
+    lng: 28.0225,
+    phone: "+27 11 833 0380",
+    notes: "SANHA certified · Famous signature prawns, seafood platters & sushi",
+    tags: ["Dine-in", "Takeaway", "Delivery"]
+  },
+  {
+    name: "Syriana Restaurant",
+    cuisine: "Middle Eastern / Syrian",
+    address: "73 Grant Ave, Norwood, Johannesburg, 2192",
+    lat: -26.1580,
+    lng: 28.0770,
+    phone: "+27 11 483 1234",
+    notes: "Authentic Syrian cuisine · Vibrant atmosphere · Premium Shisha lounge attached",
+    tags: ["Dine-in", "Takeaway"]
+  },
+  {
+    name: "Pizza News Fordsburg",
+    cuisine: "Italian / Pizza",
+    address: "54 Crown Rd, Fordsburg, Johannesburg, 2092",
+    lat: -26.2061,
+    lng: 28.0245,
+    phone: "+27 11 834 8888",
+    notes: "SANHA certified · Famous for deep-dish, fully-loaded halal pizzas & subs",
+    tags: ["Takeaway", "Delivery"]
+  },
+
+  // --- Midrand & Centurion (NEW) ---
+  {
+    name: "Istanbul Kebab Waterfall",
+    cuisine: "Turkish / Grill",
+    address: "Waterfall Corner, Woodmead Dr, Midrand, 2066",
+    lat: -26.0150,
+    lng: 28.1060,
+    phone: "+27 11 026 1234",
+    notes: "Halal certified · Premium Turkish grills, pide, and baklava near Waterfall City",
+    tags: ["Dine-in", "Takeaway"]
+  },
+  {
+    name: "Adega Midrand",
+    cuisine: "Portuguese / Seafood",
+    address: "San Ridge Square, New Rd, Midrand, 1685",
+    lat: -25.9655,
+    lng: 28.1255,
+    phone: "+27 11 318 0123",
+    notes: "Strictly Halal · Famous Portuguese flame-grilled chicken & massive seafood combos",
+    tags: ["Dine-in", "Takeaway", "Delivery"]
+  },
+  {
+    name: "Al Makka Restaurant",
+    cuisine: "Indian / Pakistani",
+    address: "288 Tangerine St, Laudium, Centurion, 0037",
+    lat: -25.7950,
+    lng: 28.0930,
+    phone: "+27 12 374 4440",
+    notes: "Long-standing Laudium favorite · Authentic curries, karahi & tandoori",
+    tags: ["Dine-in", "Takeaway"]
+  },
+
+  // --- Cape Town (Extended Legends & Gourmet) ---
+  {
+    name: "Wembley Roadhouse",
+    cuisine: "Cape Malay / Fast Food",
+    address: "Belgravia Rd, Athlone, Cape Town, 7764",
+    lat: -33.9667,
+    lng: 18.5167,
+    phone: "+27 21 697 1435",
+    notes: "Iconic Cape Town institution · Famous for hotdogs, gatsbys, and falooda eaten in your car",
+    tags: ["Takeaway", "Casual"]
+  },
+  {
+    name: "Cosy Corner",
+    cuisine: "Cape Malay / Fast Food",
+    address: "119 Ottery Rd, Wynberg, Cape Town, 7800",
+    lat: -34.0094,
+    lng: 18.4719,
+    phone: "+27 21 797 2498",
+    notes: "Serving since 1973 · Legendary full-house steak gatsbys and authentic curries",
+    tags: ["Dine-in", "Takeaway"]
+  },
+  {
+    name: "Nuri Sushi Factory CBD",
+    cuisine: "Asian / Sushi",
+    address: "8 Parliament St, Cape Town City Centre, 8001",
+    lat: -33.9265,
+    lng: 18.4208,
+    phone: "+27 21 461 8719",
+    notes: "MJC Certified · Fresh gourmet sushi · Innovative halal Asian street food",
+    tags: ["Dine-in", "Takeaway", "Delivery"]
+  },
+  {
+    name: "Mariam's Kitchen CBD",
+    cuisine: "Cape Malay / Fast Food",
+    address: "31 Heerengracht St, Cape Town City Centre, 8000",
+    lat: -33.9185,
+    lng: 18.4232,
+    phone: "+27 21 423 0772",
+    notes: "MJC certified · The quintessential Cape Town lunch spot · Known for toasted steak sandwiches and salomies",
+    tags: ["Takeaway"]
+  },
+  {
+    name: "Against the Grain Coffee Shop",
+    cuisine: "Café / Bakery",
+    address: "102 Wale St, Bo-Kaap, Cape Town, 8001",
+    lat: -33.9215,
+    lng: 18.4150,
+    phone: "+27 81 510 5286",
+    notes: "Muslim-owned · Gesmoorde snoek bagels & artisan coffee · Incredible views of Table Mountain",
+    tags: ["Dine-in", "Cafe"]
+  },
+  {
+    name: "La Rocca",
+    cuisine: "International / Café",
+    address: "Canal Walk Shopping Centre, Century City, Cape Town, 7441",
+    lat: -33.8920,
+    lng: 18.5130,
+    phone: "+27 21 555 0909",
+    notes: "Strictly Halal · Extensive premium menu from gourmet breakfasts to aged steaks",
+    tags: ["Dine-in", "Takeaway"]
+  },
+  {
+    name: "Woodies Burgers",
+    cuisine: "American / Burgers",
+    address: "V&A Waterfront Food Court, Cape Town, 8001",
+    lat: -33.9030,
+    lng: 18.4180,
+    phone: "+27 79 123 4567",
+    notes: "MJC certified · Massive, handcrafted artisanal halal burgers with gourmet toppings",
+    tags: ["Takeaway", "Delivery"]
+  },
+  {
+    name: "The Grillfather Woodstock",
+    cuisine: "Steakhouse / Grill",
+    address: "15 Wicht St, Woodstock, Cape Town, 7915",
+    lat: -33.9315,
+    lng: 18.4480,
+    phone: "+27 21 447 4484",
+    notes: "Halal certified · Massive, rustic BBQ ribs, steaks, and towering burgers",
+    tags: ["Dine-in", "Takeaway"]
+  },
+
+  // --- Durban & KZN (Extended) ---
+  {
+    name: "Sunrise Chip 'N Ranch (Johnny's Roti)",
+    cuisine: "South African / Fast Food",
+    address: "89 Sparks Rd, Overport, Durban, 4067",
+    lat: -29.8330,
+    lng: 30.9950,
+    phone: "+27 31 209 2020",
+    notes: "Legendary 24/7 spot · Famous for the 'Triple Cheese and Chip' roti",
+    tags: ["Takeaway", "Late Night"]
+  },
+  {
+    name: "Vapor Café",
+    cuisine: "Café / Grill / Fusion",
+    address: "131 Florida Rd, Morningside, Durban, 4001",
+    lat: -29.8375,
+    lng: 31.0185,
+    phone: "+27 31 303 3333",
+    notes: "Strictly Halal · Premium shisha, gourmet mocktails, and high-end fusion grills",
+    tags: ["Dine-in", "Takeaway"]
+  },
+  {
+    name: "Adega Gateway",
+    cuisine: "Portuguese / Seafood",
+    address: "Gateway Theatre of Shopping, Umhlanga, 4319",
+    lat: -29.7260,
+    lng: 31.0660,
+    phone: "+27 31 566 2222",
+    notes: "Fully Halal branch · Upscale Portuguese seafood and chicken dining",
+    tags: ["Dine-in", "Takeaway"]
+  },
+  {
+    name: "Palki Indian Restaurant",
+    cuisine: "Indian",
+    address: "223 Musgrave Rd, Berea, Durban, 4001",
+    lat: -29.8450,
+    lng: 31.0055,
+    phone: "+27 31 201 0019",
+    notes: "SANHA certified · Authentic traditional Indian curries and tandoori in an elegant setting",
+    tags: ["Dine-in", "Takeaway", "Delivery"]
   }
 ];
