@@ -234,7 +234,7 @@ body.modal-open {
 .notify-btn {
   padding: 14px 28px;
   border-radius: 12px;
-  border: none;
+  border: 1px;
   background: var(--gradient-accent);
   color: #000000;
   font-weight: 700;
@@ -410,9 +410,9 @@ body.modal-open {
   margin-top: 0.5rem;
   padding: 14px 24px;
   border-radius: 12px;
-  border: none;
+  border: 1px;
   background: var(--gradient-accent);
-  color: #ffffff;
+  color: #000000;
   font-weight: 700;
   font-size: 1rem;
   letter-spacing: 0.02em;
