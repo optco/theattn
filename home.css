@@ -9,7 +9,18 @@
   --accent-red: #d90000;
   --gradient-accent: linear-gradient(135deg, #f1dde0 0%, #c6d5f3 100%);
 }
-
+.notify-btn, .submit-btn {
+  /* ... your existing styles ... */
+  border: none; /* Kills the default button border */
+  outline: none; /* Kills the ugly default blue focus ring */
+}
+.notify-btn:focus-visible, 
+.submit-btn:focus-visible {
+  /* A soft, thin inner glow instead of a hard border */
+  box-shadow: 
+    0 4px 20px rgba(37, 99, 235, 0.3), /* Keep your original shadow */
+    inset 0 0 0 2px rgba(37, 99, 235, 0.5); /* Soft inner focus ring */
+}
 /* 1. Base status badge (Removed hardcoded color) */
 .site-status {
   display: inline-flex;
