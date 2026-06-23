@@ -9,7 +9,7 @@
   --accent-red: #d90000;
   --gradient-accent: linear-gradient(135deg, #f1dde0 0%, #c6d5f3 100%);
 }
-.notify-btn,.submit-btn: 1px solid var(--glass-border);
+.notify-btn,.submit-btn: 0px solid var(--glass-border);
 
  .status-text {
       font-size: 14px;
