@@ -33,6 +33,7 @@
   padding: 0.25rem 0.7rem;
   border-radius: 999px;
   border: 1px solid transparent;
+  animation: pulse-dot 2s ease-in-out infinite;
 }
 
 /* 2. The blinking dot (Inherits color from the parent class) */
