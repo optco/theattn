@@ -10,16 +10,60 @@
   --gradient-accent: linear-gradient(135deg, #f1dde0 0%, #c6d5f3 100%);
 }
 
+/* 1. Base status badge (Removed hardcoded color) */
+.site-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.8rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.6);
+  padding: 0.25rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+}
 
- .blink {
-      font-size: 14px;
-    color: #ff0000;
-    animation: pulse-dot 2s ease-in-out infinite;
+/* 2. The blinking dot (Inherits color from the parent class) */
+.site-status::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+/* 3. Status Modifiers */
+.site-status.status-paused {
+  color: #D90000;
+  background: rgba(217, 0, 0, 0.08);
+  border-color: rgba(217, 0, 0, 0.2);
+}
+
+.site-status.status-beta {
+  color: #FF9226;
+  background: rgba(255, 146, 38, 0.08);
+  border-color: rgba(255, 146, 38, 0.2);
+}
+
+.site-status.status-active {
+  color: #008C00;
+  background: rgba(0, 140, 0, 0.08);
+  border-color: rgba(0, 140, 0, 0.2);
+}
+
+@keyframes pulse-dot {
+  0%, 100% { 
+    opacity: 1; 
+    transform: scale(1); 
   }
-  @keyframes pulse-dot {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.3; }
+  50% { 
+    opacity: 0.4; 
+    transform: scale(0.85); 
   }
+}
+
 .managed-sites-section {
     margin-top: 2.5rem;
     padding-top: 2rem;
