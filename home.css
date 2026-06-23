@@ -11,7 +11,7 @@
 }
 .notify-btn,.submit-btn: 0.1px solid var(--glass-border);
 
- .status-text {
+ .blink {
       font-size: 14px;
     color: #ff0000;
     animation: pulse-dot 2s ease-in-out infinite;
