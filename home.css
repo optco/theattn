@@ -9,6 +9,8 @@
   --accent-red: #d90000;
   --gradient-accent: linear-gradient(135deg, #f1dde0 0%, #c6d5f3 100%);
 }
+.notify-btn,submit-btn: 1px solid var(--glass-border);
+
  .status-text {
       font-size: 14px;
     color: #ff0000;
@@ -234,7 +236,6 @@ body.modal-open {
 .notify-btn {
   padding: 14px 28px;
   border-radius: 12px;
-  border: 1px;
   background: var(--gradient-accent);
   color: #000000;
   font-weight: 700;
@@ -410,7 +411,6 @@ body.modal-open {
   margin-top: 0.5rem;
   padding: 14px 24px;
   border-radius: 12px;
-  border: 1px;
   background: var(--gradient-accent);
   color: #000000;
   font-weight: 700;
