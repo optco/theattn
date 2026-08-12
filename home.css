@@ -128,26 +128,21 @@
 }
 
 .fixed-center-img {
-    /* Fluid height scaling */
-    height: clamp(40px, 8vw, 80px);
+    /* Change this percentage to resize the logo (e.g., 15%, 25%, 30%) */
+    width: 20%; 
     
-    /* ✅ Proportional width — never stretch/compress */
-    width: auto;
+    /* Automatically maintains the original aspect ratio */
+    height: auto; 
     
-    /* ✅ Critical for mobile: never exceed viewport width */
-    max-width: 90vw;
-    
-    /* ✅ Ensure padding/margin don't cause overflow */
-    box-sizing: border-box;
-    
-    /* Centering + spacing */
+    /* Centering and bottom spacing */
     display: block;
     margin: 0 auto 16px;
 }
+
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
