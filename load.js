@@ -64,7 +64,7 @@
       footer.id = 'pl-footer';
       footer.innerHTML = `
         <a href="https://theattn.com/" target="_blank" rel="noopener" title="Contact Us">
-         <img src="https://theattn.com/favicons/favicon-32x32.png" alt="theattn" class="status-text">
+         <img src="https://theattn.com/footer.png" alt="theattn" class="status-text">
         </a>
       `;
       document.body.appendChild(footer);
