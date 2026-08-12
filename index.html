@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>theattn: Tools & Resources</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="home.css">
+  
+  <!-- Standard Favicons (Absolute Paths) -->
+  <link rel="icon" type="image/x-icon" href="https://theattn.com/favicons/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://theattn.com/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://theattn.com/favicons/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://theattn.com/favicons/apple-touch-icon.png">
+  <link rel="manifest" href="https://theattn.com/favicons/site.webmanifest">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div class="liquid-bg"></div>
+    
+    <main class="glass-panel"> 
+        <img src="attn.png" class="fixed-center-img" alt="The ATTN:" />
+
+        <h2 class="landing-title">Tools & Resources</h2>
+        <p class="landing-desc">A collection of tools, calculators, and resources I have built.</p>
+
+        <button class="notify-btn" id="openContact">Contact Us</button>
+    </main>
+ 
+    <!-- Useful Links Strip -->
+    <section class="links-strip">
+        <div class="links-container expanded">
+            <a href="https://shamsi.co.za" target="_blank" rel="noopener noreferrer" class="link-item">
+                <i class="fas fa-house-chimney" aria-hidden="true"></i>
+                <span>Properties</span>
+            </a>
+            <a href="https://akhtar.co.za/poster" target="_blank" rel="noopener noreferrer" class="link-item">
+                <i class="fas fa-image" aria-hidden="true"></i>
+                <span>Poster Maker</span>
+            </a>
+            <a href="https://akhtar.co.za/invoice" target="_blank" rel="noopener noreferrer" class="link-item">
+                <i class="fas fa-file-invoice-dollar" aria-hidden="true"></i>
+                <span>Invoice Maker</span>
+            </a>
+            <a href="https://akhtar.co.za/sicknote" target="_blank" rel="noopener noreferrer" class="link-item">
+                <i class="fas fa-file-pen" aria-hidden="true"></i>
+                <span>Sick Note</span>
+            </a>
+            <a href="https://akhtar.co.za/search" target="_blank" rel="noopener noreferrer" class="link-item">
+                <i class="fas fa-magnifying-glass" aria-hidden="true"></i>
+                <span>Advanced Search</span>
+            </a>
+            <a href="https://gbps.me" target="_blank" rel="noopener noreferrer" class="link-item">
+                <i class="fas fa-gauge-high" aria-hidden="true"></i>
+                <span>Speed Test</span>
+            </a>
+            <a href="https://akhtar.co.za/halal" target="_blank" rel="noopener noreferrer" class="link-item">
+                <i class="fa fa-moon" aria-hidden="true"></i>
+                <span>Halal Stay</span>
+            </a>
+            <a href="chromia.html" target="_blank" rel="noopener noreferrer" class="link-item">
+                <i class="fas fa-swatchbook" aria-hidden="true"></i>
+                <span>Chromia</span>
+            </a>
+            <a href="https://gbps.me/map" target="_blank" rel="noopener noreferrer" class="link-item">
+                <i class="fas fa-globe" aria-hidden="true"></i>
+                <span>Map Tool</span>
+            </a>
+            <a href="profit.html" class="link-item">
+                <i class="fas fa-chart-line" aria-hidden="true"></i>
+                <span>Profit Calculator</span>
+            </a>
+            <a href="https://instagram.com/itesteye" target="_blank" rel="noopener noreferrer" class="link-item">
+                <i class="fab fa-instagram" aria-hidden="true"></i>
+                <span>Follow Akhtar</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Contact Modal -->
+    <div class="modal-overlay" id="contactModal" hidden>
+        <div class="modal-glass">
+            <button class="modal-close" id="closeContact" aria-label="Close">&times;</button>
+            <h2 class="modal-title">Get in touch</h2>
+            <p class="modal-desc">Have a tip, pitch, or question? We read every message.</p>
+            
+            <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+                <input type="hidden" name="access_key" value="65bb33ff-0316-4d93-9879-f4e3d82dfc52">
+                <input type="hidden" name="subject" value="New message via The Attn: Tools & Resources">
+                
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required placeholder="Your name">
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required placeholder="you@example.com">
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required rows="4" placeholder="Your message..."></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const modal = document.getElementById('contactModal');
+        const openBtn = document.getElementById('openContact');
+        const closeBtn = document.getElementById('closeContact');
+
+        function openModal() {
+            modal.hidden = false;
+            document.body.style.overflow = 'hidden';
+            setTimeout(() => modal.classList.add('active'), 10);
+        }
+
+        function closeModal() {
+            modal.classList.remove('active');
+            setTimeout(() => {
+                modal.hidden = true;
+                document.body.style.overflow = '';
+            }, 200);
+        }
+
+        openBtn.addEventListener('click', openModal);
+        closeBtn.addEventListener('click', closeModal);
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeModal();
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !modal.hidden) closeModal();
+        });
+
+        const contactForm = document.querySelector('.contact-form');
+        contactForm.addEventListener('submit', async (e) => {
+            const btn = contactForm.querySelector('.submit-btn');
+            const originalText = btn.textContent;
+            btn.textContent = 'Sending...';
+            btn.disabled = true;
+            
+            setTimeout(() => {
+                btn.textContent = 'Sent ✓';
+                setTimeout(() => {
+                    btn.textContent = originalText;
+                    btn.disabled = false;
+                    closeModal();
+                    contactForm.reset();
+                }, 1500);
+            }, 800);
+        });
+    </script>
+
+<script src="https://akhtar.co.za/load.js"></script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496" integrity="sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ==" data-cf-beacon='{"version":"2024.11.0","token":"cd0bfa81a6964788bb87a585196fc817","r":1}' crossorigin="anonymous"></script>
+</body>
+</html>
