@@ -24,7 +24,7 @@
 
 .fixed-center-img {
     /* Change this percentage to resize the logo (e.g., 15%, 25%, 30%) */
-    width: 90%; 
+    width: 60%; 
     
     /* Automatically maintains the original aspect ratio */
     height: auto; 
