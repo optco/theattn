@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Simple Invoice</title>
+    <title>Quick Invoice</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
     <meta name="keywords" content="invoice, maker, free, professional">
     <meta name="description" content="Free Invoice maker for small businesses.">
@@ -498,7 +498,7 @@
                             <th style="width: 45%;">DESCRIPTION</th>
                             <th class="qty-col">Quantity</th>
                             <th class="cost-col">Unit Price</th>
-                            <th class="amount-col">AMOUNT</th>
+                            <th class="amount-col" id="amountHeader">AMOUNT (ZAR)</th>
                             <th class="action-col"></th>
                         </tr>
                     </thead>
@@ -635,13 +635,27 @@
         function updateCurrency() {
             const select = document.getElementById('currencySelect');
             const customGroup = document.getElementById('customCurrencyGroup');
+            let code = 'ZAR';
+            
             if (select.value === 'custom') {
                 customGroup.style.display = 'block';
-                currentCurrency = document.getElementById('customCurrency').value || 'R';
+                currentCurrency = document.getElementById('customCurrency').value || '';
+                code = currentCurrency || 'CUSTOM';
             } else {
                 customGroup.style.display = 'none';
                 currentCurrency = select.value;
+                const codeMap = {
+                    'R': 'ZAR', '$': 'USD', '€': 'EUR', '£': 'GBP', 
+                    '¥': 'JPY', '₹': 'INR', '₦': 'NGN', 'Rs': 'PKR'
+                };
+                code = codeMap[currentCurrency] || currentCurrency;
             }
+
+            const amountHeader = document.getElementById('amountHeader');
+            if(amountHeader) {
+                amountHeader.textContent = 'AMOUNT (' + code + ')';
+            }
+
             calculateTotals();
         }
 
@@ -705,6 +719,7 @@
         document.addEventListener('DOMContentLoaded', function() {
             calculateTotals();
             updateTextColor(document.getElementById('themeColorPicker').value);
+            updateCurrency();
         });
     </script>
     
