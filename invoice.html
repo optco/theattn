@@ -462,8 +462,8 @@
                 <h3>Configuration</h3>
                 <button class="toggle-controls-btn" aria-label="Toggle tools">▼</button>
             </div>
-            
-            <div class="controls-content">
+           
+            <div class="controls-content"> <button class="btn btn-warning" onclick="resetInvoice()"><i class="fa fa-rotate-left" aria-hidden="true"></i> Reset Invoice</button>
                 <div class="control-group">
                     <label>Invoice Title</label>
                     <select id="titleSelect" onchange="updateTitle()">
@@ -521,7 +521,7 @@
                     <button class="btn btn-primary" onclick="document.getElementById('logoUpload').click()"><i class="fa fa-image" aria-hidden="true"></i> Add Logo</button>
                     <button class="btn btn-primary" onclick="addRow()"><i class="fa fa-plus" aria-hidden="true"></i> Add Row</button>
                     <button class="btn btn-success" onclick="exportPDF()"><i class="fa fa-file-text" aria-hidden="true"></i> Save PDF</button>
-                    <button class="btn btn-warning" onclick="resetInvoice()"><i class="fa fa-rotate-left" aria-hidden="true"></i> Reset Invoice</button>
+                    
                 </div>
             </div>
         </div>
