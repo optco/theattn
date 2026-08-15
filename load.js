@@ -6,8 +6,8 @@
       style.id = 'pl-unified-styles';
       style.textContent = `
         /* --- Loader --- */
-        #pl-indicator { position: fixed; top: 26px; left: 26px; display: flex; flex-direction: column; gap: 8px; z-index: 999999; pointer-events: none; transition: opacity 0.3s ease; }
-        .pl-dot { width: 10px; height: 10px; animation: plBounce 1.2s ease-in-out infinite; border-radius: 50%; }
+        #pl-indicator { position: fixed; top: 26px; right: 26px; display: flex; flex-direction: column; gap: 8px; z-index: 999999; pointer-events: none; transition: opacity 0.3s ease; }
+        .pl-dot { width: 10px; height: 10px; animation: plBounce 1.2s ease-in-out infinite; }
         .pl-dot:nth-child(1) { background: #ff4d4d; }
         .pl-dot:nth-child(2) { background: #ff9f43; animation-delay: 0.15s; }
         .pl-dot:nth-child(3) { background: #2ecc71; animation-delay: 0.3s; }
@@ -18,10 +18,10 @@
         /* --- Floating Round Badge --- */
         #pl-footer { 
           position: fixed; 
-          top: 80px; 
+          top: 26px; 
           left: 26px; 
-          width: 56px;
-          height: 56px;
+          width: 40px;
+          height: 40px;
           background: rgba(255, 255, 255, 0.95); 
           border-radius: 50%; 
           box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
