@@ -418,6 +418,23 @@
         transition: all 0.3s ease;
     }
 
+    .sidebar-logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 15px;
+        padding: 10px;
+        background: #0f172a;
+        border-radius: 8px;
+        border: 1px solid #334155;
+    }
+
+    .sidebar-logo img {
+        max-width: 100%;
+        max-height: 50px;
+        object-fit: contain;
+    }
+
     .controls-header {
         display: flex;
         align-items: center;
@@ -553,6 +570,37 @@
         transform: scale(0.97);
     }
 
+    .btn-reset {
+        width: auto;
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        padding: 6px 12px;
+        margin: 12px auto 0;
+        border: 1px solid #991b1b;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: #fca5a5;
+        background: transparent;
+        transition: all 0.2s;
+        min-height: auto;
+        box-shadow: none;
+    }
+
+    .btn-reset:hover {
+        background: #991b1b;
+        color: #ffffff;
+    }
+
+    .reset-wrapper {
+        text-align: center;
+        padding-top: 10px;
+        border-top: 1px solid #334155;
+        margin-top: 16px;
+    }
+
     .color-presets {
         display: flex;
         gap: 8px;
@@ -654,6 +702,15 @@
             overflow-y: auto;
             display: block;
             background: #1e293b;
+        }
+
+        .sidebar-logo {
+            margin-bottom: 10px;
+            padding: 8px;
+        }
+
+        .sidebar-logo img {
+            max-height: 40px;
         }
 
         .controls-header {
@@ -843,13 +900,23 @@
 
     <div class="main-wrapper">
         <div class="controls" id="controlsPanel">
+            <div class="sidebar-logo">
+                <img src="qi.png" alt="Quick Invoice Logo">
+            </div>
             <div class="controls-header" onclick="toggleControls()">
                 <h3>Configuration</h3>
-                <button class="toggle-controls-btn" aria-label="Toggle tools">▼</button>
+                <button class="toggle-controls-btn" aria-label="Toggle tools">&#9660;</button>
             </div>
 
             <div class="controls-content">
-                 <button class="btn btn-warning" onclick="resetInvoice()"><i class="fa fa-rotate-left" aria-hidden="true"></i> Reset Invoice</button>
+                <div class="control-group">
+                    <label>Actions</label>
+                    <input type="file" id="logoUpload" accept="image/*" style="display: none;">
+                    <button class="btn btn-primary" onclick="document.getElementById('logoUpload').click()"><i class="fa fa-image" aria-hidden="true"></i> Add Logo</button>
+                    <button class="btn btn-primary" onclick="addRow()"><i class="fa fa-plus" aria-hidden="true"></i> Add Row</button>
+                    <button class="btn btn-success" onclick="exportPDF()"><i class="fa fa-file-text" aria-hidden="true"></i> Save PDF</button>
+                </div>
+
                 <div class="control-group">
                     <label>Invoice Title</label>
                     <select id="titleSelect" onchange="updateTitle()">
@@ -906,13 +973,8 @@
                     </div>
                 </div>
 
-                <div class="control-group">
-                    <label>Actions</label>
-                    <input type="file" id="logoUpload" accept="image/*" style="display: none;">
-                    <button class="btn btn-primary" onclick="document.getElementById('logoUpload').click()"><i class="fa fa-image" aria-hidden="true"></i> Add Logo</button>
-                    <button class="btn btn-primary" onclick="addRow()"><i class="fa fa-plus" aria-hidden="true"></i> Add Row</button>
-                    <button class="btn btn-success" onclick="exportPDF()"><i class="fa fa-file-text" aria-hidden="true"></i> Save PDF</button>
-                   
+                <div class="reset-wrapper">
+                    <button class="btn-reset" onclick="resetInvoice()"><i class="fa fa-rotate-left" aria-hidden="true"></i> Reset Invoice</button>
                 </div>
             </div>
         </div>
@@ -1461,5 +1523,6 @@
             });
         });
     </script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496" integrity="sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ==" data-cf-beacon='{"version":"2024.11.0","token":"cd0bfa81a6964788bb87a585196fc817","r":1}' crossorigin="anonymous"></script>
 </body>
 </html>
