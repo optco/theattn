@@ -18,40 +18,37 @@
 
     /* Simplified logo sizing */
     .fixed-center-img {
-      width: 40%; 
+      width: 30%; /* Reduced from 40% for better proportion */
       height: auto; 
       display: block;
-      margin: 0 auto 16px;
+      margin: 0 auto 12px;
       max-width: 90vw;
     }
 
-    /* High contrast text */
+    /* High contrast dark text for light glass background */
     .landing-title {
-      font-size: 1.5rem;
+      font-size: 1.25rem;
       font-weight: 800;
-      color: #000000;
-      margin-bottom: 0.5rem;
+      color: #111111;
+      margin-bottom: 0.25rem;
       text-align: center;
-      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
     }
 
     .landing-desc {
-      font-size: 0.95rem;
-      color: #e0e0e0;
-      margin-bottom: 2rem;
+      font-size: 0.85rem;
+      color: #555555;
+      margin-bottom: 1.25rem;
       text-align: center;
-      text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
     }
 
-    /* Links grid inside glass panel */
+    /* Compact links grid */
     .links-container {
-      max-width: 100%;
       width: 100%;
-      padding: 1rem 0;
-      margin: 0 auto 2rem;
+      padding: 0.5rem 0;
+      margin: 0 auto 1.5rem;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-      gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      gap: 0.75rem;
     }
 
     .link-item {
@@ -59,32 +56,29 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 0.4rem;
-      padding: 1rem 0.5rem;
-      border-radius: 12px;
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      color: #000000;
+      gap: 0.35rem;
+      padding: 0.75rem 0.5rem;
+      border-radius: 8px;
+      background: rgba(0, 0, 0, 0.03);
+      border: 1px solid rgba(0, 0, 0, 0.06);
       text-decoration: none;
-      font-size: 0.8rem;
-      font-weight: 600;
       transition: background 0.2s ease, transform 0.2s ease;
-      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
     }
 
     .link-item:hover {
-      background: rgba(255, 255, 255, 0.18);
-      transform: translateY(-2px);
+      background: rgba(0, 0, 0, 0.08);
+      transform: translateY(-1px);
     }
 
     .link-item i {
-      font-size: 1.3rem;
-      color: #000000;
-      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+      font-size: 1.25rem;
+      color: #222222;
     }
 
     .link-item span {
-      color: #e8e8e8;
+      color: #333333;
+      font-size: 0.75rem;
+      font-weight: 600;
       text-align: center;
       line-height: 1.2;
     }
@@ -93,6 +87,8 @@
     .notify-btn {
       display: block;
       margin: 0 auto;
+      padding: 0.6rem 1.5rem;
+      font-size: 0.9rem;
     }
   </style>
 
@@ -114,7 +110,7 @@
     <h2 class="landing-title">Tools & Resources</h2>
     <p class="landing-desc">A collection of tools, calculators, and resources I have built.</p>
 
-    <!-- Links now inside the glass panel -->
+    <!-- Links inside the glass panel -->
     <div class="links-container">
       <a href="https://shamsi.co.za" target="_blank" rel="noopener noreferrer" class="link-item">
         <i class="fas fa-house-chimney" aria-hidden="true"></i>
