@@ -457,8 +457,8 @@
         right: 0;
         top: 50%;
         transform: translateY(-50%);
-        background: #334155;
-        border: 1px solid #475569;
+        background: #000000;
+        border: 1px solid #ffffff;
         border-radius: 50%;
         width: 26px;
         height: 26px;
@@ -466,13 +466,13 @@
         align-items: center;
         justify-content: center;
         cursor: pointer;
-        color: #cbd5e1;
+        color: #ffffff;
         font-size: 12px;
         transition: all 0.2s ease;
     }
 
     .toggle-controls-btn:hover {
-        background: #475569;
+        background: #1a1a1a;
     }
 
     .controls-content {
@@ -658,6 +658,24 @@
         border-radius: 4px;
     }
 
+    .hex-input {
+        width: 100%;
+        padding: 8px 10px;
+        border: 1px solid #475569;
+        border-radius: 6px;
+        background: #0f172a;
+        font-size: 0.9rem;
+        outline: none;
+        color: #f8fafc;
+        text-transform: uppercase;
+        margin-top: 8px;
+    }
+
+    .hex-input:focus {
+        border-color: #60a5fa;
+        box-shadow: 0 0 0 2px rgba(96, 165, 250, 0.2);
+    }
+
     .controls.collapsed .controls-content {
         max-height: 0;
         opacity: 0;
@@ -675,6 +693,10 @@
 
     .controls.collapsed .toggle-controls-btn {
         transform: translateY(-50%) rotate(180deg);
+    }
+
+    .controls.collapsed .sidebar-logo {
+        display: none;
     }
 
     @media (max-width: 768px) {
@@ -970,6 +992,7 @@
                     </div>
                     <div id="colorPickerWrapper">
                         <input type="color" id="themeColorPicker" value="#2c5282" oninput="updateTextColor(this.value)">
+                        <input type="text" id="hexInput" placeholder="#2C5282" class="hex-input" oninput="updateHexColor(this.value)">
                     </div>
                 </div>
 
@@ -1274,6 +1297,8 @@
             if (el) el.classList.add('active');
             updateTextColor(color);
             document.getElementById('themeColorPicker').value = color;
+            const hexInput = document.getElementById('hexInput');
+            if (hexInput) hexInput.value = color;
             document.getElementById('colorPickerWrapper').classList.remove('show');
 
             if (!isLoading) scheduleSave();
@@ -1281,6 +1306,18 @@
 
         function toggleCustomColor() {
             document.getElementById('colorPickerWrapper').classList.toggle('show');
+        }
+
+        function updateHexColor(value) {
+            let hex = value.trim();
+            if (hex && !hex.startsWith('#')) hex = '#' + hex;
+            const hexRegex = /^#([0-9A-Fa-f]{3}){1,2}$/;
+            if (hexRegex.test(hex)) {
+                document.querySelectorAll('.color-swatch').forEach(s => s.classList.remove('active'));
+                updateTextColor(hex);
+                document.getElementById('themeColorPicker').value = hex;
+                if (!isLoading) scheduleSave();
+            }
         }
 
         function updateTextColor(color) {
@@ -1306,6 +1343,11 @@
             const picker = document.getElementById('themeColorPicker');
             if (picker && color) {
                 picker.value = color;
+            }
+
+            const hexInput = document.getElementById('hexInput');
+            if (hexInput && color && hexInput.value.toUpperCase() !== color.toUpperCase()) {
+                hexInput.value = color;
             }
         }
 
