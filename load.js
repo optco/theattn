@@ -74,7 +74,7 @@
       const footer = document.createElement('div');
       footer.id = 'pl-footer';
       footer.innerHTML = `
-        <a href="https://theattn.com/" target="_blank" rel="noopener" title="Contact Us">
+        <a href="https://theattn.com/" rel="noopener" title="Contact Us">
          <img src="https://theattn.com/footer.png" alt="theattn" class="status-text">
         </a>
       `;
