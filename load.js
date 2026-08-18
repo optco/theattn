@@ -87,7 +87,7 @@
       const bottombar = document.createElement('div');
       bottombar.id = 'pl-bottombar';
       bottombar.innerHTML = `
-        <a href="https://theattn.com/" rel="noopener" title="Contact Us">
+        <a href="https://theattn.com/" rel="noopener" title="theattn.com">
           <img src="https://theattn.com/footer.png" alt="theattn">
           <span id="pl-page-title">${pageTitle}</span>
         </a>
