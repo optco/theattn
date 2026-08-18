@@ -16,7 +16,21 @@
         box-sizing: border-box;
         -webkit-tap-highlight-color: transparent;
     }
+    .toggle-controls-btn .icon-expand {
+        display: none;
+    }
+    
+    .toggle-controls-btn .icon-compress {
+        display: block;
+    }
 
+    .controls.collapsed .toggle-controls-btn .icon-expand {
+        display: block;
+    }
+
+    .controls.collapsed .toggle-controls-btn .icon-compress {
+        display: none;
+    }
     body {
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         background: #e9ecef;
@@ -935,7 +949,10 @@
         <div class="controls" id="controlsPanel">
             <div class="controls-header" onclick="toggleControls()">
                 <h3>Configuration</h3>
-                <button class="toggle-controls-btn" aria-label="Toggle tools"><i class="fa fa-cog"></i></button>
+                <button class="toggle-controls-btn" aria-label="Toggle tools">
+    <i class="fa fa-compress icon-compress"></i>
+    <i class="fa fa-expand icon-expand"></i>
+</button>
             </div>
 
             <div class="controls-content">
