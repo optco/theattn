@@ -7,10 +7,9 @@
       style.textContent = `
         /* --- Loader --- */
         #pl-indicator { position: fixed; top: 26px; right: 26px; display: flex; flex-direction: column; gap: 8px; z-index: 999999; pointer-events: none; transition: opacity 0.3s ease; }
-        .pl-dot { width: 10px; height: 10px; border-radius: 50%; animation: plBounce 1.2s ease-in-out infinite; }
-        .pl-dot:nth-child(1) { background: #222222; }
-        .pl-dot:nth-child(2) { background: #222222; animation-delay: 0.15s; }
-        .pl-dot:nth-child(3) { background: #d90000; animation-delay: 0.3s; }
+        .pl-dot { width: 10px; height: 10px; border-radius: 50%; background: #d90000; animation: plBounce 1.2s ease-in-out infinite; }
+        .pl-dot:nth-child(1) { animation-delay: 0s; }
+        .pl-dot:nth-child(2) { animation-delay: 0.15s; }
         @keyframes plBounce { 0%, 100% { transform: translateY(0); opacity: 1; } 50% { transform: translateY(-8px); opacity: 0.8; } }
         
         /* --- Fixed Bottom Bar --- */
@@ -65,7 +64,7 @@
     if (!document.getElementById('pl-indicator')) {
       const loader = document.createElement('div');
       loader.id = 'pl-indicator';
-      loader.innerHTML = '<div class="pl-dot"></div><div class="pl-dot"></div><div class="pl-dot"></div>';
+      loader.innerHTML = '<div class="pl-dot"></div><div class="pl-dot"></div>';
       document.body.appendChild(loader);
 
       setTimeout(() => {
