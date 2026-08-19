@@ -34,21 +34,21 @@
           animation: plRace2 3s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
         }
         @keyframes plRace1 {
-          0%   { left: -10px; top: 50%; opacity: 0; }
+          0%   { left: -10px; top: calc(50% - 8px); opacity: 0; }
           5%   { opacity: 1; }
           25%  { left: 50%; top: calc(50% - 8px); opacity: 1; }
           65%  { left: 50%; top: calc(50% - 8px); opacity: 1; }
-          90%  { left: -10px; top: calc(50% - 8px); opacity: 1; }
-          100% { left: -10px; top: calc(50% - 8px); opacity: 0; }
+          90%  { left: calc(100vw + 10px); top: calc(50% - 8px); opacity: 1; }
+          100% { left: calc(100vw + 10px); top: calc(50% - 8px); opacity: 0; }
         }
         @keyframes plRace2 {
-          0%   { left: -10px; top: 50%; opacity: 0; }
-          15%  { left: -10px; top: 50%; opacity: 0; }
+          0%   { left: -10px; top: calc(50% + 8px); opacity: 0; }
+          15%  { left: -10px; top: calc(50% + 8px); opacity: 0; }
           20%  { opacity: 1; }
           40%  { left: 50%; top: calc(50% + 8px); opacity: 1; }
           65%  { left: 50%; top: calc(50% + 8px); opacity: 1; }
-          90%  { left: -10px; top: calc(50% + 8px); opacity: 1; }
-          100% { left: -10px; top: calc(50% + 8px); opacity: 0; }
+          92%  { left: calc(100vw + 10px); top: calc(50% + 8px); opacity: 1; }
+          100% { left: calc(100vw + 10px); top: calc(50% + 8px); opacity: 0; }
         }
         
         /* --- Fixed Bottom Bar --- */
