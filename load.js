@@ -8,7 +8,7 @@
         /* --- Loader --- */
         #pl-indicator {
           position: fixed;
-          bottom: 40px;
+          bottom: 20px;
           left: 0;
           right: 0;
           height: 20px;
