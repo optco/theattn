@@ -37,8 +37,9 @@
           0%   { left: -10px; top: calc(50% - 8px); opacity: 0; }
           5%   { opacity: 1; }
           25%  { left: 50%; top: calc(50% - 8px); opacity: 1; }
-          65%  { left: 50%; top: calc(50% - 8px); opacity: 1; }
-          90%  { left: calc(100vw + 10px); top: calc(50% - 8px); opacity: 1; }
+          50%  { left: 50%; top: calc(50% - 8px); opacity: 1; }
+          75%  { left: calc(100vw + 10px); top: calc(50% - 8px); opacity: 1; }
+          80%  { left: calc(100vw + 10px); top: calc(50% - 8px); opacity: 0; }
           100% { left: calc(100vw + 10px); top: calc(50% - 8px); opacity: 0; }
         }
         @keyframes plRace2 {
@@ -47,7 +48,8 @@
           20%  { opacity: 1; }
           40%  { left: 50%; top: calc(50% + 8px); opacity: 1; }
           65%  { left: 50%; top: calc(50% + 8px); opacity: 1; }
-          92%  { left: calc(100vw + 10px); top: calc(50% + 8px); opacity: 1; }
+          90%  { left: calc(100vw + 10px); top: calc(50% + 8px); opacity: 1; }
+          95%  { left: calc(100vw + 10px); top: calc(50% + 8px); opacity: 0; }
           100% { left: calc(100vw + 10px); top: calc(50% + 8px); opacity: 0; }
         }
         
