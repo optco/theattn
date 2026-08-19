@@ -59,7 +59,7 @@
           bottom: 0; 
           left: 0; 
           right: 0; 
-          height: 50px; 
+          height: 30px; 
           background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.85) 30%, rgba(255, 255, 255, 0) 100%);
           z-index: 99999; 
           display: flex; 
@@ -120,7 +120,7 @@
       const cleanTitle = rawTitle.trim();
       const pageTitle = cleanTitle || window.location.pathname.split('/').pop().replace('.html', '') || 'attn:invoice';
 
-      document.body.style.paddingBottom = '50px';
+      document.body.style.paddingBottom = '30px';
 
       const bottombar = document.createElement('div');
       bottombar.id = 'pl-bottombar';
