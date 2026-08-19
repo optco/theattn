@@ -14,8 +14,10 @@
           height: 20px;
           z-index: 999999;
           pointer-events: none;
+          overflow: hidden;
           transition: opacity 0.4s ease;
         }
+
         .pl-dot {
           position: absolute;
           top: 50%;
@@ -26,31 +28,67 @@
           border-radius: 50%;
           background: #d90000;
           opacity: 0;
-          animation: plRace 1.5s ease-in-out infinite;
+          animation-duration: 1.8s;
+          animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          animation-iteration-count: 1;
+          animation-fill-mode: forwards;
         }
-        .pl-dot:nth-child(1) { animation-delay: 0.0s; }
-        .pl-dot:nth-child(2) { animation-delay: 0.2s; }
-        .pl-dot:nth-child(3) { animation-delay: 0.4s; }
-        .pl-dot:nth-child(4) { animation-delay: 0.6s; }
-        .pl-dot:nth-child(5) { animation-delay: 0.8s; }
-        @keyframes plRace {
-          0% { 
-            left: -10px; 
-            opacity: 0; 
+
+        .pl-dot:nth-child(1) {
+          animation-name: plDot1;
+        }
+
+        .pl-dot:nth-child(2) {
+          animation-name: plDot2;
+        }
+
+        @keyframes plDot1 {
+          0% {
+            left: -10px;
+            opacity: 0;
           }
-          10% { 
-            opacity: 1; 
+          8% {
+            opacity: 1;
           }
-          50% { 
-            left: 50%; 
-            opacity: 1; 
+          35% {
+            left: calc(50% - 4px);
+            opacity: 1;
           }
-          90% { 
-            opacity: 1; 
+          55% {
+            left: calc(50% - 4px);
+            opacity: 1;
           }
-          100% { 
-            left: calc(100vw + 10px); 
-            opacity: 0; 
+          90% {
+            opacity: 1;
+          }
+          100% {
+            left: calc(100% + 10px);
+            opacity: 0;
+          }
+        }
+
+        @keyframes plDot2 {
+          0%, 12% {
+            left: -10px;
+            opacity: 0;
+          }
+          20% {
+            opacity: 1;
+          }
+          50% {
+            left: calc(50% - 4px);
+            opacity: 1;
+          }
+          55% {
+            left: calc(50% - 4px);
+            opacity: 1;
+          }
+          90% {
+            opacity: 1;
+          }
+          100% {
+            left: calc(100% + 10px);
+            opacity: 0;
           }
         }
         
@@ -70,9 +108,11 @@
           transform: translateY(100%);
           transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); 
         }
+
         #pl-bottombar.show { 
           transform: translateY(0); 
         }
+
         #pl-bottombar a { 
           display: flex; 
           align-items: center; 
@@ -80,6 +120,7 @@
           color: #000; 
           width: 100%;
         }
+
         #pl-bottombar img { 
           height: 28px; 
           width: auto; 
@@ -87,6 +128,7 @@
           margin-right: 12px; 
           display: block; 
         }
+
         #pl-page-title {
           font-size: 15px;
           font-weight: 600;
@@ -106,13 +148,13 @@
     if (!document.getElementById('pl-indicator')) {
       const loader = document.createElement('div');
       loader.id = 'pl-indicator';
-      loader.innerHTML = '<div class="pl-dot"></div><div class="pl-dot"></div><div class="pl-dot"></div><div class="pl-dot"></div><div class="pl-dot"></div>';
+      loader.innerHTML = '<div class="pl-dot"></div><div class="pl-dot"></div>';
       document.body.appendChild(loader);
 
       setTimeout(() => {
         loader.style.opacity = '0';
         setTimeout(() => loader.remove(), 400); 
-      }, 2500);
+      }, 2300);
     }
 
     // --- BOTTOM BAR ---
@@ -128,11 +170,12 @@
       bottombar.innerHTML = `
         <a href="https://theattn.com/" rel="noopener" title="Contact Us">
           <img src="https://theattn.com/footer.png" alt="theattn">
-          <span id="pl-page-title">${pageTitle}</span>
+          <span id="pl-page-title"></span>
         </a>
       `;
       
       document.body.appendChild(bottombar);
+      bottombar.querySelector('#pl-page-title').textContent = pageTitle;
       
       requestAnimationFrame(() => {
         requestAnimationFrame(() => {
