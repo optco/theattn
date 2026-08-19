@@ -28,27 +28,27 @@
           opacity: 0;
         }
         .pl-dot:nth-child(1) {
-          animation: plRace1 2.5s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+          animation: plRace1 3s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
         }
         .pl-dot:nth-child(2) {
-          animation: plRace2 2.5s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+          animation: plRace2 3s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
         }
         @keyframes plRace1 {
-          0%   { left: -10px; opacity: 0; }
+          0%   { left: -10px; top: 50%; opacity: 0; }
           5%   { opacity: 1; }
-          30%  { left: calc(50% - 6px); opacity: 1; }
-          65%  { left: calc(50% - 6px); opacity: 1; }
-          92%  { left: calc(100vw + 10px); opacity: 0.6; }
-          100% { left: calc(100vw + 10px); opacity: 0; }
+          25%  { left: 50%; top: calc(50% - 8px); opacity: 1; }
+          65%  { left: 50%; top: calc(50% - 8px); opacity: 1; }
+          90%  { left: -10px; top: calc(50% - 8px); opacity: 1; }
+          100% { left: -10px; top: calc(50% - 8px); opacity: 0; }
         }
         @keyframes plRace2 {
-          0%   { left: -10px; opacity: 0; }
-          18%  { left: -10px; opacity: 0; }
-          23%  { opacity: 1; }
-          50%  { left: calc(50% + 6px); opacity: 1; }
-          65%  { left: calc(50% + 6px); opacity: 1; }
-          92%  { left: calc(100vw + 10px); opacity: 0.6; }
-          100% { left: calc(100vw + 10px); opacity: 0; }
+          0%   { left: -10px; top: 50%; opacity: 0; }
+          15%  { left: -10px; top: 50%; opacity: 0; }
+          20%  { opacity: 1; }
+          40%  { left: 50%; top: calc(50% + 8px); opacity: 1; }
+          65%  { left: 50%; top: calc(50% + 8px); opacity: 1; }
+          90%  { left: -10px; top: calc(50% + 8px); opacity: 1; }
+          100% { left: -10px; top: calc(50% + 8px); opacity: 0; }
         }
         
         /* --- Fixed Bottom Bar --- */
@@ -109,7 +109,7 @@
       setTimeout(() => {
         loader.style.opacity = '0';
         setTimeout(() => loader.remove(), 400); 
-      }, 3000);
+      }, 3500);
     }
 
     // --- BOTTOM BAR ---
