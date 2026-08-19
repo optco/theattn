@@ -14,10 +14,8 @@
           height: 20px;
           z-index: 999999;
           pointer-events: none;
-          overflow: hidden;
-          transition: opacity 0.4s ease;
+          transition: opacity 0.3s ease;
         }
-
         .pl-dot {
           position: absolute;
           top: 50%;
@@ -28,68 +26,29 @@
           border-radius: 50%;
           background: #d90000;
           opacity: 0;
-          animation-duration: 1.8s;
-          animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-          animation-iteration-count: 1;
-          animation-fill-mode: forwards;
         }
-
         .pl-dot:nth-child(1) {
-          animation-name: plDot1;
+          animation: plRace1 2.5s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
         }
-
         .pl-dot:nth-child(2) {
-          animation-name: plDot2;
+          animation: plRace2 2.5s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
         }
-
-        @keyframes plDot1 {
-          0% {
-            left: -10px;
-            opacity: 0;
-          }
-          8% {
-            opacity: 1;
-          }
-          35% {
-            left: calc(50% - 4px);
-            opacity: 1;
-          }
-          55% {
-            left: calc(50% - 4px);
-            opacity: 1;
-          }
-          90% {
-            opacity: 1;
-          }
-          100% {
-            left: calc(100% + 10px);
-            opacity: 0;
-          }
+        @keyframes plRace1 {
+          0%   { left: -10px; opacity: 0; }
+          5%   { opacity: 1; }
+          30%  { left: calc(50% - 6px); opacity: 1; }
+          65%  { left: calc(50% - 6px); opacity: 1; }
+          92%  { left: calc(100vw + 10px); opacity: 0.6; }
+          100% { left: calc(100vw + 10px); opacity: 0; }
         }
-
-        @keyframes plDot2 {
-          0%, 12% {
-            left: -10px;
-            opacity: 0;
-          }
-          20% {
-            opacity: 1;
-          }
-          50% {
-            left: calc(50% - 4px);
-            opacity: 1;
-          }
-          55% {
-            left: calc(50% - 4px);
-            opacity: 1;
-          }
-          90% {
-            opacity: 1;
-          }
-          100% {
-            left: calc(100% + 10px);
-            opacity: 0;
-          }
+        @keyframes plRace2 {
+          0%   { left: -10px; opacity: 0; }
+          18%  { left: -10px; opacity: 0; }
+          23%  { opacity: 1; }
+          50%  { left: calc(50% + 6px); opacity: 1; }
+          65%  { left: calc(50% + 6px); opacity: 1; }
+          92%  { left: calc(100vw + 10px); opacity: 0.6; }
+          100% { left: calc(100vw + 10px); opacity: 0; }
         }
         
         /* --- Fixed Bottom Bar --- */
@@ -108,11 +67,9 @@
           transform: translateY(100%);
           transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); 
         }
-
         #pl-bottombar.show { 
           transform: translateY(0); 
         }
-
         #pl-bottombar a { 
           display: flex; 
           align-items: center; 
@@ -120,7 +77,6 @@
           color: #000; 
           width: 100%;
         }
-
         #pl-bottombar img { 
           height: 28px; 
           width: auto; 
@@ -128,7 +84,6 @@
           margin-right: 12px; 
           display: block; 
         }
-
         #pl-page-title {
           font-size: 15px;
           font-weight: 600;
@@ -154,7 +109,7 @@
       setTimeout(() => {
         loader.style.opacity = '0';
         setTimeout(() => loader.remove(), 400); 
-      }, 2300);
+      }, 3000);
     }
 
     // --- BOTTOM BAR ---
@@ -170,12 +125,11 @@
       bottombar.innerHTML = `
         <a href="https://theattn.com/" rel="noopener" title="Contact Us">
           <img src="https://theattn.com/footer.png" alt="theattn">
-          <span id="pl-page-title"></span>
+          <span id="pl-page-title">${pageTitle}</span>
         </a>
       `;
       
       document.body.appendChild(bottombar);
-      bottombar.querySelector('#pl-page-title').textContent = pageTitle;
       
       requestAnimationFrame(() => {
         requestAnimationFrame(() => {
