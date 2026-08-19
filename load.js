@@ -9,34 +9,49 @@
         #pl-indicator {
           position: fixed;
           bottom: 60px;
-          left: 50%;
-          transform: translateX(-50%);
-          display: flex;
-          flex-direction: row;
-          gap: 6px;
+          left: 0;
+          right: 0;
+          height: 20px;
           z-index: 999999;
           pointer-events: none;
           transition: opacity 0.4s ease;
         }
         .pl-dot {
+          position: absolute;
+          top: 50%;
+          left: -10px;
           width: 8px;
           height: 8px;
+          margin-top: -4px;
           border-radius: 50%;
           background: #d90000;
           opacity: 0;
-          animation: plSweep 1.2s ease-in-out infinite;
+          animation: plRace 1.5s ease-in-out infinite;
         }
         .pl-dot:nth-child(1) { animation-delay: 0.0s; }
-        .pl-dot:nth-child(2) { animation-delay: 0.1s; }
-        .pl-dot:nth-child(3) { animation-delay: 0.2s; }
-        .pl-dot:nth-child(4) { animation-delay: 0.3s; }
-        .pl-dot:nth-child(5) { animation-delay: 0.4s; }
-        @keyframes plSweep {
-          0% { transform: translateX(-30px); opacity: 0; }
-          20% { opacity: 1; }
-          50% { transform: translateX(0); opacity: 1; }
-          80% { opacity: 1; }
-          100% { transform: translateX(30px); opacity: 0; }
+        .pl-dot:nth-child(2) { animation-delay: 0.2s; }
+        .pl-dot:nth-child(3) { animation-delay: 0.4s; }
+        .pl-dot:nth-child(4) { animation-delay: 0.6s; }
+        .pl-dot:nth-child(5) { animation-delay: 0.8s; }
+        @keyframes plRace {
+          0% { 
+            left: -10px; 
+            opacity: 0; 
+          }
+          10% { 
+            opacity: 1; 
+          }
+          50% { 
+            left: 50%; 
+            opacity: 1; 
+          }
+          90% { 
+            opacity: 1; 
+          }
+          100% { 
+            left: calc(100vw + 10px); 
+            opacity: 0; 
+          }
         }
         
         /* --- Fixed Bottom Bar --- */
