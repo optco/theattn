@@ -1,9 +1,9 @@
 (function() {
   function init() {
     // --- UNIFIED STYLES ---
-    if (!document.getElementById('pl-bottombar-styles')) {
+    if (!document.getElementById('pl-bottombar-styles-v3')) {
       const style = document.createElement('style');
-      style.id = 'pl-bottombar-styles';
+      style.id = 'pl-bottombar-styles-v3';
       style.textContent = `
         /* --- Loader --- */
         #pl-indicator {
@@ -60,7 +60,11 @@
           left: 0; 
           right: 0; 
           height: 30px; 
-          background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.85) 70%, rgba(255, 255, 255, 0.15) 100%);
+          /* Solid 50% transparent white, no gradient */
+          background: rgba(255, 255, 255, 0.5);
+          /* Optional: adds a subtle blur behind the bar for better readability */
+          backdrop-filter: blur(4px); 
+          -webkit-backdrop-filter: blur(4px);
           z-index: 99999; 
           display: flex; 
           align-items: center; 
@@ -95,7 +99,6 @@
           overflow: hidden;
           text-overflow: ellipsis;
           max-width: 400px;
-          text-shadow: 0 0 4px rgba(255, 255, 255, 0.8);
         }
       `;
       document.head.appendChild(style);
