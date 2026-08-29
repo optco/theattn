@@ -60,7 +60,7 @@
           left: 0; 
           right: 0; 
           height: 30px; 
-          background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.85) 30%, rgba(255, 255, 255, 0) 100%);
+          background: linear-gradient(to right, rgba(255, 255, 255, 1) 10%, rgba(255, 255, 255, 0.85) 30%, rgba(255, 255, 255, 0) 100%);
           z-index: 99999; 
           display: flex; 
           align-items: center; 
