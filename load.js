@@ -61,7 +61,7 @@
           right: 0; 
           height: 30px; 
           /* Solid 50% transparent white, no gradient */
-          background: rgba(255, 255, 255, 0.33);
+          background: rgba(255, 255, 255, 0.15);
           /* Optional: adds a subtle blur behind the bar for better readability */
           backdrop-filter: blur(4px); 
           -webkit-backdrop-filter: blur(4px);
