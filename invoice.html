@@ -368,7 +368,7 @@
 
     .bank-row {
         display: flex;
-        align-items: flex-start;
+        align-items: center;
         gap: 8px;
         margin: 5px 0;
     }
@@ -1086,9 +1086,9 @@
                     <h2 id="invoiceTitle">TAX INVOICE</h2>
                     <div class="invoice-details">
                         <div class="detail-row"><label>DATE</label><input type="date" id="invoiceDate" value=""></div>
+                        <div class="detail-row"><label>DUE DATE</label><input type="date" id="dueDate" value=""></div>
                         <div class="detail-row"><label>INVOICE #</label><input type="text" id="invoiceNumber" value=""></div>
                         <div class="detail-row"><label>CUSTOMER ID</label><input type="text" id="customerId" value=""></div>
-                        <div class="detail-row"><label>DUE DATE</label><input type="date" id="dueDate" value=""></div>
                     </div>
                 </div>
             </div>
@@ -1153,6 +1153,7 @@
         let currentTextColor = '#2c5282';
         let saveTimeout = null;
         let isLoading = false;
+        let isDueDateManual = false;
         const STORAGE_KEY = 'quickInvoiceState_v1';
 
         function scheduleSave() {
@@ -1201,7 +1202,7 @@
                 themeColor: document.getElementById('themeColorPicker').value,
                 logoSrc: logoSrc && logoPreview.style.display !== 'none' ? logoSrc : ''
             };
-        }
+            }
 
         function saveState() {
             try {
@@ -1531,6 +1532,8 @@
             setInput('taxRate', '0.00');
             setInput('otherAmount', '');
 
+            isDueDateManual = false;
+
             const tbody = document.querySelector('#itemsTable tbody');
             tbody.innerHTML = '';
 
@@ -1585,6 +1588,26 @@
             });
         }
 
+        function evaluateDueDateManual(invDateVal, dueDateVal) {
+            if (!invDateVal || !dueDateVal) {
+                isDueDateManual = false;
+                return;
+            }
+            const invParts = invDateVal.split('-');
+            const inv = new Date(invParts[0], invParts[1] - 1, invParts[2]);
+            const expectedDue = new Date(inv);
+            expectedDue.setDate(expectedDue.getDate() + 1);
+            
+            const dueParts = dueDateVal.split('-');
+            const due = new Date(dueParts[0], dueParts[1] - 1, dueParts[2]);
+            
+            if (due.getTime() !== expectedDue.getTime()) {
+                isDueDateManual = true;
+            } else {
+                isDueDateManual = false;
+            }
+        }
+
         document.addEventListener('DOMContentLoaded', function() {
             isLoading = true;
 
@@ -1611,6 +1634,8 @@
                 setInput('clientName', saved.clientName, '');
                 setInput('taxRate', saved.taxRate, '0.00');
                 setInput('otherAmount', saved.otherAmount, '');
+
+                evaluateDueDateManual(saved.invoiceDate || today, saved.dueDate || tomorrow);
 
                 setEditable('topNote', saved.topNote, defaultTopNote);
                 setEditable('bankName', saved.bankName, '');
@@ -1650,6 +1675,7 @@
                 
                 setInput('invoiceDate', today);
                 setInput('dueDate', tomorrow);
+                isDueDateManual = false;
 
                 for (let i = 0; i < 3; i++) {
                     addRow();
@@ -1663,6 +1689,27 @@
             updateTextColor(document.getElementById('themeColorPicker').value);
 
             isLoading = false;
+
+            document.getElementById('dueDate').addEventListener('input', function() {
+                isDueDateManual = true;
+            });
+
+            document.getElementById('invoiceDate').addEventListener('change', function() {
+                if (!isDueDateManual) {
+                    const invDateVal = this.value;
+                    if (invDateVal) {
+                        const invParts = invDateVal.split('-');
+                        const inv = new Date(invParts[0], invParts[1] - 1, invParts[2]);
+                        const due = new Date(inv);
+                        due.setDate(due.getDate() + 1);
+                        const dueStr = due.getFullYear() + '-' + 
+                                       String(due.getMonth() + 1).padStart(2, '0') + '-' + 
+                                       String(due.getDate()).padStart(2, '0');
+                        document.getElementById('dueDate').value = dueStr;
+                        scheduleSave();
+                    }
+                }
+            });
 
             document.addEventListener('input', function(e) {
                 if (e.target.closest('#invoice, #controlsPanel')) {
