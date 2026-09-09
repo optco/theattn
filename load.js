@@ -60,9 +60,7 @@
           left: 0; 
           right: 0; 
           height: 30px; 
-          /* Solid 50% transparent white, no gradient */
           background: rgba(255, 255, 255, 0.05);
-          /* Optional: adds a subtle blur behind the bar for better readability */
           backdrop-filter: blur(4px); 
           -webkit-backdrop-filter: blur(4px);
           z-index: 99999; 
@@ -83,12 +81,12 @@
           color: #000; 
           width: 100%;
         }
-        #pl-bottombar img { 
-          height: 28px; 
-          width: auto; 
-          object-fit: contain; 
+        #pl-bottombar .pl-home-icon { 
+          font-size: 22px; 
+          color: #000000; 
           margin-right: 12px; 
-          display: block; 
+          display: flex;
+          align-items: center;
         }
         #pl-page-title {
           font-size: 15px;
@@ -102,6 +100,15 @@
         }
       `;
       document.head.appendChild(style);
+    }
+
+    // --- FONT AWESOME FALLBACK ---
+    // Ensures the icon renders even if the host page does not load Font Awesome
+    if (!document.querySelector('link[href*="font-awesome"]')) {
+      const faLink = document.createElement('link');
+      faLink.rel = 'stylesheet';
+      faLink.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css';
+      document.head.appendChild(faLink);
     }
     
     // --- LOADER ---
@@ -129,7 +136,7 @@
       bottombar.id = 'pl-bottombar';
       bottombar.innerHTML = `
         <a href="https://theattn.com/" rel="noopener" title="Contact Us">
-          <img src="https://theattn.com/footer.png" alt="theattn">
+          <i class="fa-solid fa-home pl-home-icon"></i>
           <span id="pl-page-title">${pageTitle}</span>
         </a>
       `;
