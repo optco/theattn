@@ -109,14 +109,14 @@
                 <a href="https://shamsi.co.za/ad" target="_blank" rel="noopener noreferrer" class="menu-item">
                     <i class="fas fa-rectangle-ad" aria-hidden="true"></i> AdStudio
                 </a>
-                <a href="https://akhtar.co.za/poster" target="_blank" rel="noopener noreferrer" class="menu-item">
+                <a href="https://theattn.com/poster" target="_blank" rel="noopener noreferrer" class="menu-item">
                     <i class="fas fa-image" aria-hidden="true"></i> Poster Maker
                 </a>
                 <a href="https://theattn.com/invoice" target="_blank" rel="noopener noreferrer" class="menu-item">
                     <i class="fas fa-file-invoice-dollar" aria-hidden="true"></i> Invoice Maker
                 </a>
-                <a href="https://itesteye.com/sicknote" target="_blank" rel="noopener noreferrer" class="menu-item">
-                    <i class="fas fa-file-pen" aria-hidden="true"></i> SickNote Maker
+                <a href="https://itesteye.com/letter" target="_blank" rel="noopener noreferrer" class="menu-item">
+                    <i class="fas fa-file-pen" aria-hidden="true"></i> Letter Maker
                 </a>
                 <a href="https://akhtar.co.za/search" target="_blank" rel="noopener noreferrer" class="menu-item">
                     <i class="fas fa-magnifying-glass" aria-hidden="true"></i> File Search
@@ -127,13 +127,13 @@
                 <a href="https://akhtar.co.za/halal" target="_blank" rel="noopener noreferrer" class="menu-item">
                     <i class="fas fa-moon" aria-hidden="true"></i> Halal Stay
                 </a>
-                <a href="chromia.html" class="menu-item">
+                <a href="https://theattn.com/chromia.html" class="menu-item">
                     <i class="fas fa-swatchbook" aria-hidden="true"></i> Chromia
                 </a>
                 <a href="https://gbps.me/map" target="_blank" rel="noopener noreferrer" class="menu-item">
                     <i class="fas fa-globe" aria-hidden="true"></i> Map Tool
                 </a>
-                <a href="profit.html" class="menu-item">
+                <a href="https://theattn.com/profit.html" class="menu-item">
                     <i class="fas fa-chart-line" aria-hidden="true"></i> Profit Calculator
                 </a>
                 <a href="https://itesteye.com/optometry" target="_blank" rel="noopener noreferrer" class="menu-item">
