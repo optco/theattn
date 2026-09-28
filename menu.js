@@ -100,8 +100,8 @@
         <button class="hamburger-btn" id="menuBtn" aria-label="Menu">☰</button>
         <div class="hamburger-menu" id="hamburgerMenu">
             <div class="menu-links">
-                <a href="/" class="menu-item">
-                    <i class="fas fa-home" aria-hidden="true"></i> Home
+                <a href="https://theattn.com" class="menu-item">
+                    <i class="fas fa-home" aria-hidden="true"></i> a:Home
                 </a>
                 <a href="https://shamsi.co.za" target="_blank" rel="noopener noreferrer" class="menu-item">
                     <i class="fas fa-house-chimney" aria-hidden="true"></i> Properties
