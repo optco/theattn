@@ -92,7 +92,7 @@
           font-size: 15px;
           font-weight: 600;
           color: #111111;
-          font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+          font-family: "Barlow Condensed", sans-serif;
           white-space: nowrap;
           overflow: hidden;
           text-overflow: ellipsis;
