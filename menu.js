@@ -191,7 +191,7 @@
                 <a href="https://theattn.com/profit.html" class="menu-item">
                     <i class="fas fa-chart-line" aria-hidden="true"></i> Profit Calculator
                 </a>
-                <a href="https://itesteye.com/optometry" target="_blank" rel="noopener noreferrer" class="menu-item">
+                <a href="https://itesteye.com/" target="_blank" rel="noopener noreferrer" class="menu-item">
                     <i class="fas fa-eye" aria-hidden="true"></i> Optometry Tools
                 </a>
                 <a href="https://instagram.com/itesteye" target="_blank" rel="noopener noreferrer" class="menu-item">
