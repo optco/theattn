@@ -101,7 +101,7 @@
         <div class="hamburger-menu" id="hamburgerMenu">
             <div class="menu-links">
                 <a href="https://theattn.com" class="menu-item">
-                    <i class="fas fa-home" aria-hidden="true"></i> a:Home
+                    <i class="fas fa-home" aria-hidden="true"></i> TheAttn: Home
                 </a>
                 <a href="https://shamsi.co.za" target="_blank" rel="noopener noreferrer" class="menu-item">
                     <i class="fas fa-house-chimney" aria-hidden="true"></i> Properties
