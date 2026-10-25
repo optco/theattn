@@ -6,18 +6,21 @@
       style.id = 'pl-bottombar-styles-v4';
       style.textContent = `
         /* --- Fixed Logo (top-left) --- */
-        #pl-logo {
-          position: fixed;
-          top: 12px;
-          left: 16px;
-          max-height: 40px;
-          max-width: 160px;
-          width: 100px;
-          height: auto;
-          z-index: 99998;
-          pointer-events: none;
-          user-select: none;
-        }
+       /* --- Fixed Logo (top-left) --- */
+#pl-logo-link {
+  position: fixed;
+  top: 12px;
+  left: 16px;
+  z-index: 99998;
+  display: block;
+  line-height: 0;   /* removes stray gap under the image */
+}
+#pl-logo {
+  display: block;
+  width: 100px;     /* change this to control the logo width */
+  height: auto;
+  user-select: none;
+}
 
         /* --- Loader --- */
         #pl-indicator {
@@ -116,19 +119,27 @@
       document.head.appendChild(style);
     }
 
-    // --- LOGO (only added if /logo.png actually loads) ---
-    if (!document.getElementById('pl-logo')) {
-      const probe = new Image();
-      probe.onload = function() {
-        if (!probe.naturalWidth || document.getElementById('pl-logo')) return;
-        probe.id = 'pl-logo';
-        probe.alt = '';
-        probe.draggable = false;
-        document.body.appendChild(probe);
-      };
-      probe.onerror = function() { /* missing logo: render nothing */ };
-      probe.src = '/logo.png';
-    }
+   // --- LOGO (only added if /logo.png actually loads) ---
+if (!document.getElementById('pl-logo-link')) {
+  const probe = new Image();
+  probe.onload = function() {
+    if (!probe.naturalWidth || document.getElementById('pl-logo-link')) return;
+
+    const link = document.createElement('a');
+    link.id = 'pl-logo-link';
+    link.href = '/index.html';
+    link.setAttribute('aria-label', 'Home');
+
+    probe.id = 'pl-logo';
+    probe.alt = 'Home';
+    probe.draggable = false;
+
+    link.appendChild(probe);
+    document.body.appendChild(link);
+  };
+  probe.onerror = function() { /* missing logo: render nothing */ };
+  probe.src = '/logo.png';
+}
 
     // --- FONT AWESOME FALLBACK ---
     if (!document.querySelector('link[href*="font-awesome"]')) {
