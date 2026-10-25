@@ -1,10 +1,24 @@
 (function() {
   function init() {
     // --- UNIFIED STYLES ---
-    if (!document.getElementById('pl-bottombar-styles-v3')) {
+    if (!document.getElementById('pl-bottombar-styles-v4')) {
       const style = document.createElement('style');
-      style.id = 'pl-bottombar-styles-v3';
+      style.id = 'pl-bottombar-styles-v4';
       style.textContent = `
+        /* --- Fixed Logo (top-left) --- */
+        #pl-logo {
+          position: fixed;
+          top: 12px;
+          left: 16px;
+          max-height: 40px;
+          max-width: 160px;
+          width: auto;
+          height: auto;
+          z-index: 99998;
+          pointer-events: none;
+          user-select: none;
+        }
+
         /* --- Loader --- */
         #pl-indicator {
           position: fixed;
@@ -100,6 +114,20 @@
         }
       `;
       document.head.appendChild(style);
+    }
+
+    // --- LOGO (only added if /logo.png actually loads) ---
+    if (!document.getElementById('pl-logo')) {
+      const probe = new Image();
+      probe.onload = function() {
+        if (!probe.naturalWidth || document.getElementById('pl-logo')) return;
+        probe.id = 'pl-logo';
+        probe.alt = '';
+        probe.draggable = false;
+        document.body.appendChild(probe);
+      };
+      probe.onerror = function() { /* missing logo: render nothing */ };
+      probe.src = '/logo.png';
     }
 
     // --- FONT AWESOME FALLBACK ---
