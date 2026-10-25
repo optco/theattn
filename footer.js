@@ -83,7 +83,7 @@
         }
         #pl-bottombar .pl-logo {
           display: block;
-          width: 20px;          /* change this to control the logo width */
+          width: 50px;          /* change this to control the logo width */
           height: auto;         /* height adjusts automatically */
           max-height: 24px;     /* keeps it inside the 30px bar */
           object-fit: contain;
