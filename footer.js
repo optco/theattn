@@ -1,27 +1,10 @@
 (function() {
   function init() {
     // --- UNIFIED STYLES ---
-    if (!document.getElementById('pl-bottombar-styles-v4')) {
+    if (!document.getElementById('pl-bottombar-styles-v5')) {
       const style = document.createElement('style');
-      style.id = 'pl-bottombar-styles-v4';
+      style.id = 'pl-bottombar-styles-v5';
       style.textContent = `
-        /* --- Fixed Logo (top-left) --- */
-       /* --- Fixed Logo (top-left) --- */
-#pl-logo-link {
-  position: fixed;
-  top: 12px;
-  left: 16px;
-  z-index: 99998;
-  display: block;
-  line-height: 0;   /* removes stray gap under the image */
-}
-#pl-logo {
-  display: block;
-  width: 100px;     /* change this to control the logo width */
-  height: auto;
-  user-select: none;
-}
-
         /* --- Loader --- */
         #pl-indicator {
           position: fixed;
@@ -69,41 +52,43 @@
           95%  { left: calc(100vw + 10px); top: 50%; opacity: 0; }
           100% { left: calc(100vw + 10px); top: 50%; opacity: 0; }
         }
-        
+
         /* --- Fixed Bottom Bar --- */
-        #pl-bottombar { 
-          position: fixed; 
-          bottom: 0; 
-          left: 0; 
-          right: 0; 
-          height: 30px; 
+        #pl-bottombar {
+          position: fixed;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          height: 30px;
           background: rgba(255, 255, 255, 0.05);
-          backdrop-filter: blur(4px); 
+          backdrop-filter: blur(4px);
           -webkit-backdrop-filter: blur(4px);
-          z-index: 99999; 
-          display: flex; 
-          align-items: center; 
-          padding: 0 20px; 
-          box-sizing: border-box;
-          transform: translateY(100%);
-          transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); 
-        }
-        #pl-bottombar.show { 
-          transform: translateY(0); 
-        }
-        #pl-bottombar a { 
-          display: flex; 
-          align-items: center; 
-          text-decoration: none; 
-          color: #000; 
-          width: 100%;
-        }
-        #pl-bottombar .pl-home-icon { 
-          font-size: 22px; 
-          color: #000000; 
-          margin-right: 12px; 
+          z-index: 99999;
           display: flex;
           align-items: center;
+          padding: 0 20px;
+          box-sizing: border-box;
+          transform: translateY(100%);
+          transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        #pl-bottombar.show {
+          transform: translateY(0);
+        }
+        #pl-bottombar a {
+          display: flex;
+          align-items: center;
+          text-decoration: none;
+          color: #000;
+          width: 100%;
+        }
+        #pl-bottombar .pl-logo {
+          display: block;
+          width: 20px;          /* change this to control the logo width */
+          height: auto;         /* height adjusts automatically */
+          max-height: 24px;     /* keeps it inside the 30px bar */
+          object-fit: contain;
+          margin-right: 12px;
+          user-select: none;
         }
         #pl-page-title {
           font-size: 15px;
@@ -119,36 +104,6 @@
       document.head.appendChild(style);
     }
 
-   // --- LOGO (only added if /logo.png actually loads) ---
-if (!document.getElementById('pl-logo-link')) {
-  const probe = new Image();
-  probe.onload = function() {
-    if (!probe.naturalWidth || document.getElementById('pl-logo-link')) return;
-
-    const link = document.createElement('a');
-    link.id = 'pl-logo-link';
-    link.href = '/index.html';
-    link.setAttribute('aria-label', 'Home');
-
-    probe.id = 'pl-logo';
-    probe.alt = 'Home';
-    probe.draggable = false;
-
-    link.appendChild(probe);
-    document.body.appendChild(link);
-  };
-  probe.onerror = function() { /* missing logo: render nothing */ };
-  probe.src = '/logo.png';
-}
-
-    // --- FONT AWESOME FALLBACK ---
-    if (!document.querySelector('link[href*="font-awesome"]')) {
-      const faLink = document.createElement('link');
-      faLink.rel = 'stylesheet';
-      faLink.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css';
-      document.head.appendChild(faLink);
-    }
-    
     // --- LOADER ---
     if (!document.getElementById('pl-indicator')) {
       const loader = document.createElement('div');
@@ -158,7 +113,7 @@ if (!document.getElementById('pl-logo-link')) {
 
       setTimeout(() => {
         loader.style.opacity = '0';
-        setTimeout(() => loader.remove(), 400); 
+        setTimeout(() => loader.remove(), 400);
       }, 3500);
     }
 
@@ -173,14 +128,28 @@ if (!document.getElementById('pl-logo-link')) {
       const bottombar = document.createElement('div');
       bottombar.id = 'pl-bottombar';
       bottombar.innerHTML = `
-        <a href="https://theattn.com/" rel="noopener" title="Contact Us">
-          <i class="fa-solid fa-home pl-home-icon"></i>
+        <a href="/index.html" rel="noopener" title="Home">
           <span id="pl-page-title">${pageTitle}</span>
         </a>
       `;
-      
+
       document.body.appendChild(bottombar);
-      
+
+      // Logo: inserted before the title only if /logo.png actually loads
+      const probe = new Image();
+      probe.onload = function() {
+        if (!probe.naturalWidth) return;
+        probe.className = 'pl-logo';
+        probe.alt = '';
+        probe.draggable = false;
+        const titleEl = document.getElementById('pl-page-title');
+        if (titleEl && titleEl.parentNode) {
+          titleEl.parentNode.insertBefore(probe, titleEl);
+        }
+      };
+      probe.onerror = function() { /* missing logo: render nothing */ };
+      probe.src = '/logo.png';
+
       requestAnimationFrame(() => {
         requestAnimationFrame(() => {
           bottombar.classList.add('show');
