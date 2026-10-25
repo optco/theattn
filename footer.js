@@ -12,7 +12,7 @@
           left: 16px;
           max-height: 40px;
           max-width: 160px;
-          width: auto;
+          width: 100px;
           height: auto;
           z-index: 99998;
           pointer-events: none;
