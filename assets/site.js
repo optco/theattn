@@ -19,7 +19,7 @@
     <div class="datebar"><div class="wrap">${new Date().toLocaleDateString('en-GB',
       {weekday:'long', day:'numeric', month:'long', year:'numeric'})}</div></div>
     <header class="masthead"><div class="wrap">
-      <a class="logo" href="/" aria-label="TheAttn home">The<span>Attn</span></a>
+      <a class="logo" href="/" aria-label="TheAttn home"><img src="/assets/logo.png" alt="TheAttn" height="34"></a>
       <nav class="topics" aria-label="Topics">${TOPICS.map(t => {
         const k = t.toLowerCase();
         return `<a href="/topic.html?t=${k}" class="${k === 'breaking' ? 'is-breaking ' : ''}${k === activeTopic ? 'is-active' : ''}">${t}</a>`;
