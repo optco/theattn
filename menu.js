@@ -147,6 +147,45 @@
             outline: 3px solid var(--hm-accent);
             outline-offset: 2px;
         }
+        
+        :root {
+  --bg-accent: #d9534f;   /* blob colour; change per page if you like */
+  --bg-blue: #6aa7ff;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #e8edf7 0%, #f6e9ee 50%, #e6f1ef 100%);
+  background-attachment: fixed;
+}
+
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  z-index: -1;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+}
+body::before {
+  width: 420px; height: 420px;
+  background: var(--bg-accent);
+  top: -120px; left: -100px;
+  opacity: .28;
+}
+body::after {
+  width: 480px; height: 480px;
+  background: var(--bg-blue);
+  bottom: -160px; right: -120px;
+  opacity: .3;
+}
+
+@media print {
+  body { background: #fff; }
+  body::before, body::after { display: none; }
+}
     `;
     document.head.appendChild(style);
 
