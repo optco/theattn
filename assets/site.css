@@ -1,0 +1,114 @@
+/* TheAttn - news front page styling (BBC/CNN-inspired) */
+:root{
+  --ink:#121212; --paper:#fff; --soft:#f4f4f4; --rule:#dedede; --muted:#5b5b5b;
+  --red:#c8102e; --red-dark:#9d0c24; --bar:#111;
+  --sans:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --wrap:1200px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 16px/1.5 var(--sans)}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+a:focus-visible,button:focus-visible{outline:3px solid var(--red);outline-offset:2px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 20px}
+#site-header{min-height:92px}
+
+/* ---------- Header ---------- */
+.datebar{background:var(--soft);border-bottom:1px solid var(--rule);font-size:.8125rem;color:var(--muted)}
+.datebar .wrap{padding-top:6px;padding-bottom:6px}
+.masthead{background:var(--bar);color:#fff;position:sticky;top:0;z-index:20;border-bottom:3px solid var(--red)}
+.masthead .wrap{display:flex;align-items:center;gap:28px;flex-wrap:wrap}
+.logo{font:800 1.75rem/1 var(--sans);letter-spacing:-.03em;padding:12px 0}
+.logo span{background:var(--red);padding:2px 7px;margin-left:3px}
+.topics{display:flex;gap:2px;flex:1;overflow-x:auto;scrollbar-width:none}
+.topics::-webkit-scrollbar{display:none}
+.topics a{padding:19px 14px 16px;font-weight:600;font-size:.95rem;white-space:nowrap;border-bottom:3px solid transparent}
+.topics a:hover{border-bottom-color:#777}
+.topics a.is-active{border-bottom-color:#fff}
+.topics a.is-breaking::before{content:"";display:inline-block;width:8px;height:8px;margin-right:7px;border-radius:50%;background:var(--red)}
+
+/* ---------- Breaking strip ---------- */
+.breaking{border-bottom:1px solid var(--rule)}
+.breaking a{display:flex;align-items:center;gap:14px;padding:12px 0;font-weight:700;font-size:1.0625rem}
+.breaking a:hover span:last-child{text-decoration:underline}
+
+/* ---------- Shared bits ---------- */
+.meta{display:flex;align-items:center;gap:10px;font-size:.8125rem;color:var(--muted)}
+.tag{font-weight:700;color:var(--red)}
+.tag-breaking{background:var(--red);color:#fff;padding:2px 8px;font-size:.8125rem;font-weight:700}
+.lead a:hover h2,.item a:hover h3,.card a:hover h3{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px}
+.empty,.loading{padding:48px 0;color:var(--muted);font-size:1.0625rem}
+
+/* ---------- Top of front page ---------- */
+.top-grid{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:0 28px;padding:24px 0 8px}
+.lead img{width:100%;aspect-ratio:16/9;object-fit:cover;background:var(--soft)}
+.lead h2{font:800 clamp(1.7rem,3.2vw,2.5rem)/1.1 var(--sans);letter-spacing:-.02em;margin:12px 0 8px}
+.lead p{font:400 1.0625rem/1.5 var(--serif);color:#333;margin:10px 0 0}
+.side{display:flex;flex-direction:column;border-left:1px solid var(--rule);padding-left:28px}
+.item{padding:14px 0;border-top:1px solid var(--rule)}
+.item:first-child{border-top:0;padding-top:0}
+.item a{display:grid;grid-template-columns:minmax(0,1fr) 104px;gap:14px}
+.item.no-img a{grid-template-columns:1fr}
+.item img{width:104px;aspect-ratio:1;object-fit:cover;order:2;background:var(--soft)}
+.item h3{font:700 1.0625rem/1.25 var(--sans);margin:4px 0 0}
+
+/* ---------- Sections and cards ---------- */
+.block{margin-top:32px;border-top:4px solid var(--ink);padding-top:10px}
+.block-title{display:flex;justify-content:space-between;align-items:baseline;font:800 1.5rem/1.2 var(--sans);margin:0 0 16px}
+.block-title .more{font-size:.9rem;font-weight:600;color:var(--red)}
+.block-title .more:hover{text-decoration:underline}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}
+.card img{width:100%;aspect-ratio:16/10;object-fit:cover;background:var(--soft)}
+.card .text{padding-top:10px}
+.card h3{font:700 1.125rem/1.25 var(--sans);margin:6px 0}
+.card p{font:400 .9375rem/1.45 var(--serif);color:#444;margin:0}
+.more-btn{display:block;margin:28px auto 0;padding:12px 28px;background:var(--ink);color:#fff;border:0;font:700 1rem var(--sans);cursor:pointer}
+.more-btn:hover{background:var(--red)}
+
+/* ---------- Story page ---------- */
+.story{max-width:720px;margin:0 auto;padding:32px 0 56px}
+.story h1{font:800 clamp(2rem,5vw,3rem)/1.08 var(--sans);letter-spacing:-.025em;margin:8px 0 12px}
+.story .dek{font:400 1.25rem/1.45 var(--serif);color:#333;margin:0 0 16px}
+.byline{margin:0 0 20px;padding:12px 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);font-size:.875rem;color:var(--muted)}
+.story figure{margin:0 0 24px}
+.story figure img{width:100%;aspect-ratio:16/9;object-fit:cover}
+.story figcaption{padding-top:8px;font-size:.8125rem;color:var(--muted)}
+.story-body{font:400 1.1875rem/1.7 var(--serif)}
+.story-body p{margin:0 0 1.2em}
+.story-body h2{font:800 1.5rem/1.2 var(--sans);margin:1.6em 0 .5em}
+.story-body a{color:var(--red);text-decoration:underline;text-underline-offset:3px}
+.story-body blockquote{margin:1.5em 0;padding-left:20px;border-left:4px solid var(--red);font-style:italic}
+
+/* ---------- Footer ---------- */
+.site-footer{margin-top:56px;padding:32px 0;background:var(--bar);color:#c9c9c9;font-size:.875rem}
+.site-footer nav{display:flex;flex-wrap:wrap;gap:8px 20px;margin-bottom:16px}
+.site-footer nav a{color:#fff;font-weight:600}
+.site-footer nav a:hover{text-decoration:underline}
+.site-footer p{margin:0}
+
+/* ---------- Responsive ---------- */
+@media (max-width:1000px){
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .top-grid{grid-template-columns:1fr}
+  .side{border-left:0;padding-left:0;margin-top:20px;padding-top:16px;border-top:1px solid var(--rule)}
+}
+@media (max-width:700px){
+  #site-header{min-height:0}
+  .masthead{position:static}
+  .masthead .wrap{gap:0}
+  .logo{width:100%}
+  .topics{width:100%;flex:none}
+  .topics a{padding:12px 12px 10px}
+}
+@media (max-width:600px){
+  .grid{grid-template-columns:1fr;gap:0}
+  .card{padding:14px 0;border-top:1px solid var(--rule)}
+  .card a{display:grid;grid-template-columns:minmax(0,1fr) 112px;gap:12px;align-items:start}
+  .card.no-img a{grid-template-columns:1fr}
+  .card img{grid-column:2;grid-row:1;aspect-ratio:1}
+  .card .text{grid-column:1;grid-row:1;padding-top:0}
+  .card p{display:none}
+  .breaking a{font-size:1rem}
+}
