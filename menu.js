@@ -2,8 +2,8 @@
     // 1. Prevent duplicate injection
     if (document.getElementById('hamburgerMenu')) {
         return;
-        // background
     }
+        // background
 :root {
   --bg-accent: #d9534f;   /* blob colour; change per page if you like */
   --bg-blue: #6aa7ff;
