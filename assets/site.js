@@ -34,6 +34,26 @@
       <p>&copy; ${new Date().getFullYear()} TheAttn. All rights reserved.</p>
     </div></footer>`;
 
+  /* ----- More stories (end of story pages) ----- */
+  const story = document.querySelector('article.story');
+  if (story) (async () => {
+    const m = location.pathname.match(/(\d{10})\.html$/);
+    const here = m ? m[1] : '';
+    const topic = (document.querySelector('meta[name="topic"]')?.content || '').toLowerCase();
+    let all;
+    try { all = await (await fetch('/news/manifest.json')).json(); } catch { return; }
+    const others = all.filter(s => s.id !== here);
+    const same = others.filter(s => s.topic.toLowerCase() === topic);
+    const picks = [...same, ...others.filter(s => !same.includes(s))].slice(0, 6);
+    if (!picks.length) return;
+    const sec = document.createElement('section');
+    sec.className = 'more-stories';
+    sec.innerHTML = `<h2 class="block-title">More stories</h2><div class="mini-grid">${picks.map(s =>
+      `<article class="mini${s.image ? '' : ' no-img'}"><a href="${esc(s.url)}">${s.image ? `<img src="${esc(s.image)}" alt="" loading="lazy">` : ''}
+        <div><span class="tag">${esc(s.topic)}</span><h3>${esc(s.title)}</h3><time datetime="${esc(s.date)}">${ago(s.date)}</time></div></a></article>`).join('')}</div>`;
+    story.after(sec);
+  })();
+
   /* ----- Front page / topic page ----- */
   const front = document.getElementById('front');
   if (!front) return;
