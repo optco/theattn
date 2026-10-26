@@ -148,43 +148,59 @@
             outline-offset: 2px;
         }
         
-        :root {
-  --bg-accent: #d9534f;   /* blob colour; change per page if you like */
-  --bg-blue: #6aa7ff;
+      /* ==========================================================
+   Shared page background (liquid glass drift)
+   Link in every page's <head>:
+   <link rel="stylesheet" href="/css/background.css">
+   No extra HTML needed. It draws itself behind the page.
+   ========================================================== */
+
+:root {
+  --bg-base: #f0f4f8;
+  --bg-blue: rgba(37, 99, 235, 0.18);
+  --bg-red: rgba(220, 38, 38, 0.14);
+  --bg-sheen-start: #e2e8f0;
+  --bg-sheen-end: #f8fafc;
+}
+
+html {
+  background: var(--bg-base);
 }
 
 body {
-  margin: 0;
   min-height: 100vh;
-  background: linear-gradient(135deg, #e8edf7 0%, #f6e9ee 50%, #e6f1ef 100%);
-  background-attachment: fixed;
+  background: transparent;
+  overflow-x: hidden;
 }
 
-body::before,
-body::after {
+body::before {
   content: "";
   position: fixed;
+  inset: -20%;
   z-index: -1;
-  border-radius: 50%;
-  filter: blur(80px);
   pointer-events: none;
+  background:
+    radial-gradient(circle at 20% 25%, var(--bg-blue) 0%, transparent 55%),
+    radial-gradient(circle at 80% 75%, var(--bg-red) 0%, transparent 55%),
+    linear-gradient(145deg, var(--bg-sheen-start) 0%, var(--bg-sheen-end) 100%);
+  filter: blur(80px) saturate(1.1);
+  animation: bgFluidDrift 22s ease-in-out infinite alternate;
+  will-change: transform;
 }
-body::before {
-  width: 420px; height: 420px;
-  background: var(--bg-accent);
-  top: -120px; left: -100px;
-  opacity: .28;
+
+@keyframes bgFluidDrift {
+  0%   { transform: translate(0, 0) scale(1); }
+  50%  { transform: translate(-4%, 3%) scale(1.03); }
+  100% { transform: translate(3%, -4%) scale(1); }
 }
-body::after {
-  width: 480px; height: 480px;
-  background: var(--bg-blue);
-  bottom: -160px; right: -120px;
-  opacity: .3;
+
+@media (prefers-reduced-motion: reduce) {
+  body::before { animation: none; }
 }
 
 @media print {
-  body { background: #fff; }
-  body::before, body::after { display: none; }
+  html { background: #fff; }
+  body::before { display: none; }
 }
     `;
     document.head.appendChild(style);
