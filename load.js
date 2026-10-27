@@ -1,7 +1,7 @@
 (function() {
   // Define the exact URLs of the two external JS files
   const scriptsToLoad = [
-    'https://theattn.com/menu.js',
+    // "'https://theattn.com/menu.js',"
     'https://theattn.com/footer.js'
   ];
 
