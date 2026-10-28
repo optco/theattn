@@ -26,6 +26,23 @@
 <link rel="stylesheet" href="/assets/site.css">
 <script src="/assets/site.js" defer></script>
 </head>
+    <script>
+(async () => {
+  const img = document.getElementById('story-img');
+  try {
+    // story id comes from the filename, e.g. 2610280900
+    const id = location.pathname.split('/').pop().replace('.html', '');
+    const res = await fetch('/news/manifest.json', { cache: 'no-cache' });
+    const data = await res.json();
+    const list = Array.isArray(data) ? data : (data.stories || data.items || []);
+    const s = list.find(x => Object.values(x).some(v => typeof v === 'string' && v.includes(id)));
+    if (s && s.image) img.src = s.image;
+    else img.closest('figure').hidden = true;   // no image in manifest: hide the figure
+  } catch (e) {
+    img.closest('figure').hidden = true;
+  }
+})();
+</script>
 <body>
 <div id="site-header"></div>
 <main class="wrap">
@@ -37,10 +54,10 @@
     <p class="byline"><time datetime="2026-10-28T09:00">28 October 2026, 09:00</time> &middot; Source: News24</p>
 
     <!-- OPTION B: photo. Use this instead of Option A, or delete it. -->
-    <figure>
-      <img src="/news/img/2610280900.jpg" alt="Supporters gather at a Tel Aviv arena following the release of election exit polls showing a tied result.">
-      <figcaption>Exit polls showed the opposition bloc and Netanyahu's hard-right camp evenly matched at 51 seats each. (Photo credit: News24)</figcaption>
-    </figure>
+   <figure>
+  <img id="story-img" alt="Supporters gather at a Tel Aviv arena following the release of election exit polls showing a tied result.">
+  <figcaption>Exit polls showed the opposition bloc and Netanyahu's hard-right camp evenly matched at 51 seats each. (Photo credit: News24)</figcaption>
+</figure>
 
     <div class="story-body">
       <p>Israel's opposition candidate Gadi Eisenkot vowed Wednesday to work quickly to form a government, saying voters had rejected Prime Minister Benjamin Netanyahu's divisive rule, but neither bloc secured a majority in the first election since the 7 October attack.</p>
