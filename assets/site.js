@@ -25,7 +25,9 @@ function topicsOf(s) {
   if (hdr) hdr.innerHTML = `
     <div class="datebar"><div class="wrap">${new Date().toLocaleDateString('en-GB',
       {weekday:'long', day:'numeric', month:'long', year:'numeric'})}</div></div>
-    <header class="masthead"><div class="wrap">
+    <header class="masthead"><div class="wrap"><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://gstatic.com" crossorigin>
+<link href="https://googleapis.com" rel="stylesheet">
       <a class="logo" href="/" aria-label="TheAttn home"><img src="/assets/logo.png" alt="TheAttn" height="34"></a>
       <nav class="topics" aria-label="Topics">${TOPICS.map(t => {
         const k = t.toLowerCase();
