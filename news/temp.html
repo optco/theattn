@@ -1,19 +1,14 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <link rel="icon" type="image/x-icon" href="https://theattn.com/favicons/favicon.ico">
-  <link rel="icon" type="image/png" sizes="32x32" href="https://theattn.com/favicons/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="https://theattn.com/favicons/favicon-16x16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="https://theattn.com/favicons/apple-touch-icon.png">
-  <link rel="manifest" href="https://theattn.com/favicons/site.webmanifest">
 <meta charset="utf-8">
-<!-- STORY ID: filename = YYMMDDHHMM.html. Use the SAME id in the 4 places marked [ID] below. -->
+<!-- STORY ID: filename = YYMMDDHHMM.html. Use the SAME id in the places marked [ID] below. -->
 <title>Headline goes here | TheAttn</title>
 <meta name="description" content="One or two sentences shown on the card and under the headline.">
 <meta property="og:title" content="Headline goes here">
 <meta property="og:description" content="One or two sentences shown on the card and under the headline.">
-<!-- [ID] card image. Delete this line if the story has no image. -->
-<meta property="og:image" content="/news/img/YYMMDDHHMM.jpg">
+<!-- Social previews cannot read the manifest: paste the real image URL here (same as "image" in manifest.json). -->
+<meta property="og:image" content="https://example.com/image.jpg">
 <!-- topic: Pakistan, World, Science, Politics, Sports or Breaking -->
 <meta name="topic" content="World">
 <meta name="breaking" content="false">
@@ -36,16 +31,16 @@
     <!-- [ID] datetime format: YYYY-MM-DDTHH:MM -->
     <p class="byline"><time datetime="2026-01-01T00:00">1 January 2026, 00:00</time> &middot; Source: Name of source</p>
 
-    <!-- OPTION A: X (Twitter) embed. Paste the code from publish.twitter.com here. -->
-    <div class="x-embed">
-      <!-- PASTE X EMBED CODE HERE -->
-    </div>
-
-    <!-- OPTION B: photo. Use this instead of Option A, or delete it.
+    <!-- The image src is filled in automatically from /news/manifest.json. Edit only the alt text and caption. -->
     <figure>
-      <img src="/news/img/YYMMDDHHMM.jpg" alt="Describe the photo">
-      <figcaption>Photo caption and credit.</figcaption>
+      <img id="story-img" alt="Describe the photo.">
+      <figcaption>Photo caption. (Photo credit: Name)</figcaption>
     </figure>
+
+    <!-- OPTIONAL: X (Twitter) embed. Delete the figure above if you use this instead.
+    <div class="x-embed">
+      PASTE X EMBED CODE HERE
+    </div>
     -->
 
     <div class="story-body">
@@ -55,5 +50,22 @@
   </article>
 </main>
 <div id="site-footer"></div>
+
+<script>
+(async () => {
+  const img = document.getElementById('story-img');
+  if (!img) return;
+  const hide = () => { const f = img.closest('figure'); if (f) f.hidden = true; };
+  try {
+    // story id comes from the filename, e.g. 2610280900
+    const id = location.pathname.split('/').pop().replace('.html', '');
+    const res = await fetch('/news/manifest.json', { cache: 'no-cache' });
+    const data = await res.json();
+    const list = Array.isArray(data) ? data : (data.stories || data.items || []);
+    const s = list.find(x => Object.values(x).some(v => typeof v === 'string' && v.includes(id)));
+    if (s && s.image) img.src = s.image; else hide();
+  } catch (e) { hide(); }
+})();
+</script>
 </body>
 </html>
