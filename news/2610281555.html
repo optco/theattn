@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<!-- STORY ID: filename = YYMMDDHHMM.html. Use the SAME id in the places marked [ID] below. -->
+<title>Frog Gut Bacteria Eliminates Colorectal Tumors in Mice With 100% Success Rate | TheAttn</title>
+<meta name="description" content="Researchers at JAIST successfully eliminated colorectal tumors in mice using a single injection of Ewingella americana, a bacterium isolated from Japanese tree frogs.">
+<meta property="og:title" content="Frog Gut Bacteria Eliminates Colorectal Tumors in Mice With 100% Success Rate">
+<meta property="og:description" content="Researchers at JAIST successfully eliminated colorectal tumors in mice using a single injection of Ewingella americana, a bacterium isolated from Japanese tree frogs.">
+<!-- Social previews cannot read the manifest: paste the real image URL here (same as "image" in manifest.json). -->
+<meta property="og:image" content="https://theattn.com/news/images/2610281000.jpg">
+<!-- topic: Pakistan, World, Science, Politics, Sports or Breaking -->
+<meta name="topic" content="Science">
+<meta name="breaking" content="false">
+<!-- 2610281000 -->
+<link rel="canonical" href="https://theattn.com/news/2610281000.html">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
+<script src="/assets/site.js" defer></script>
+</head>
+<body>
+<div id="site-header"></div>
+<main class="wrap">
+  <article class="story">
+    <p class="tag">Science</p>
+    <h1>Frog Gut Bacteria Eliminates Colorectal Tumors in Mice With 100% Success Rate</h1>
+    <p class="dek">Researchers at the Japan Advanced Institute of Science and Technology successfully eradicated colorectal tumors in preclinical models using a single injection of bacteria isolated from Japanese tree frogs.</p>
+    <!-- 2610281000 datetime format: YYYY-MM-DDTHH:MM -->
+    <p class="byline"><time datetime="2026-10-28T10:00">28 October 2026, 10:00</time> &middot; Source: TheAttn Science Desk</p>
+
+    <!-- The image src is filled in automatically from /news/manifest.json. Edit only the alt text and caption. -->
+    <figure>
+      <img id="story-img" alt="Microscopic visualization of bacterial therapy targeting tumor cells.">
+      <figcaption>Researchers are exploring bacterial therapies to target the hypoxic core of solid tumors. (Photo credit: JAIST)</figcaption>
+    </figure>
+
+    <div class="story-body">
+      <p>Researchers led by Professor Eijiro Miyako at the Japan Advanced Institute of Science and Technology (JAIST) have successfully eliminated colorectal tumors in mice using a single injection of bacteria isolated from the gut of Japanese tree frogs.</p>
+
+      <p>Published in the journal Gut Microbes, the study focused on the bacterium Ewingella americana, which demonstrated a 100 percent complete response rate in preclinical mouse models.</p>
+
+      <p>The therapy relies on a dual action mechanism that takes advantage of the unique microenvironment found inside solid tumors. Ewingella americana is a facultative anaerobe, meaning it thrives in low oxygen environments. Once injected intravenously, the bacteria navigate leaky tumor blood vessels and selectively multiply inside the hypoxic core of the tumor. The bacteria increase roughly 3,000 fold within 24 hours, destroying cancer cells directly.</p>
+
+      <p>Simultaneously, the presence of the bacteria triggers a potent localized immune response. It recruits immune cells, including T cells, B cells, and neutrophils, to the tumor site. These cells release pro inflammatory cytokines, such as TNF alpha and IFN gamma, which further accelerate cancer cell death.</p>
+
+      <p>The safety profile observed in the study was highly favorable. The bacteria cleared from the bloodstream within approximately 24 hours and did not colonize vital organs such as the liver, kidneys, lungs, or heart. The mice experienced only mild, transient inflammation that resolved within 72 hours, with no evidence of chronic toxicity during a 60 day observation period.</p>
+
+      <p>In the study mouse model, the single dose bacterial injection outperformed standard chemotherapy regimens, such as liposomal doxorubicin, as well as immune checkpoint inhibitors like anti PD L1 antibodies.</p>
+
+      <p>However, critical context is required when interpreting these results. While these preclinical findings show significant promise for bacterial based cancer therapies, this treatment is currently limited to animal models. Human clinical trials have not yet begun.</p>
+
+      <p>It is a well documented blind spot in oncology research that murine models frequently show near perfect efficacy for treatments that fail entirely in human trials. Mouse immune systems and tumor microenvironments differ substantially from those of humans. A 100 percent response rate in mice is an encouraging starting point, but it is not a predictor of human clinical success.</p>
+
+      <p>Researchers are now expanding tests to evaluate the treatment across other solid tumor types, including breast, pancreatic, and skin cancers. They are also working to optimize delivery methods prior to any potential human trials.</p>
+    </div>
+  </article>
+</main>
+<div id="site-footer"></div>
+
+<script>
+(async () => {
+  const img = document.getElementById('story-img');
+  if (!img) return;
+  const hide = () => { const f = img.closest('figure'); if (f) f.hidden = true; };
+  try {
+    // story id comes from the filename, e.g. 2610281000
+    const id = location.pathname.split('/').pop().replace('.html', '');
+    const res = await fetch('/news/manifest.json', { cache: 'no-cache' });
+    const data = await res.json();
+    const list = Array.isArray(data) ? data : (data.stories || data.items || []);
+    const s = list.find(x => Object.values(x).some(v => typeof v === 'string' && v.includes(id)));
+    if (s && s.image) img.src = s.image; else hide();
+  } catch (e) { hide(); }
+})();
+</script>
+</body>
+</html>
