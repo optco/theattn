@@ -26,23 +26,7 @@
 <link rel="stylesheet" href="/assets/site.css">
 <script src="/assets/site.js" defer></script>
 </head>
-    <script>
-(async () => {
-  const img = document.getElementById('story-img');
-  try {
-    // story id comes from the filename, e.g. 2610280900
-    const id = location.pathname.split('/').pop().replace('.html', '');
-    const res = await fetch('/news/manifest.json', { cache: 'no-cache' });
-    const data = await res.json();
-    const list = Array.isArray(data) ? data : (data.stories || data.items || []);
-    const s = list.find(x => Object.values(x).some(v => typeof v === 'string' && v.includes(id)));
-    if (s && s.image) img.src = s.image;
-    else img.closest('figure').hidden = true;   // no image in manifest: hide the figure
-  } catch (e) {
-    img.closest('figure').hidden = true;
-  }
-})();
-</script>
+  
 <body>
 <div id="site-header"></div>
 <main class="wrap">
@@ -109,5 +93,21 @@
   </article>
 </main>
 <div id="site-footer"></div>
+    <script>
+(async () => {
+  const img = document.getElementById('story-img');
+  if (!img) return;
+  const hide = () => { const f = img.closest('figure'); if (f) f.hidden = true; };
+  try {
+    const id = location.pathname.split('/').pop().replace('.html', '');
+    const res = await fetch('/news/manifest.json', { cache: 'no-cache' });
+    const data = await res.json();
+    const list = Array.isArray(data) ? data : (data.stories || data.items || []);
+    const s = list.find(x => Object.values(x).some(v => typeof v === 'string' && v.includes(id)));
+    if (s && s.image) img.src = s.image; else hide();
+  } catch (e) { hide(); }
+})();
+</script>
+</body>
 </body>
 </html>
