@@ -2,10 +2,21 @@
    {
     "id": "2610281129",
     "url": "/news/2610281129.html",
+    "title": "Could GLP-1 drugs be anti-aging medications?",
+    "summary": "Early research suggests GLP-1 medications like semaglutide and tirzepatide may slow biological aging, extending health span beyond just weight loss and blood sugar control.",
+    "image": "https://th-thumbnailer.cdn-si-edu.com/HWbgpwGnqTOSsUbCg0cQtajEceY=/fit-in/1600x0/filters:focal(3840x2176:3841x2177)/https://tf-cmsv2-smithsonianmag-media.s3.amazonaws.com/filer_public/bc/df/bcdf38b1-5940-4466-8703-d20d1d334481/ozempic.jpg",
+    "topic": "Science",
+    "breaking": true,
+    "date": "2026-10-28T11:52"
+  },
+[
+   {
+    "id": "2610281129",
+    "url": "/news/2610281129.html",
     "title": "Israel elections: No majority win as Netanyahu, Eisenkot tied at 51 seats",
     "summary": "Israel’s opposition candidate Gadi Eisenkot vowed to quickly form a government after neither bloc secured a clear majority, while Prime Minister Benjamin Netanyahu alleged electoral fraud.",
     "image": "https://news24cobalt.24.co.za/resources/02aa-21ed10062671-6c67ed627a91-1000/format/inline/afp_20260923_c94b9we_v1_highres_israelpoliticselection.jpeg",
-    "topic": "Politics",
+     "topics": ["Politics", "World"],
     "breaking": true,
     "date": "2026-10-28T11:22"
   },
