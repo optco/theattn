@@ -2,7 +2,7 @@
 :root{
   --ink:#121212; --paper:#fff; --soft:#f4f4f4; --rule:#dedede; --muted:#5b5b5b;
   --red:#c8102e; --red-dark:#9d0c24; --bar:#111;
-  --sans:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --sans: "Space Grotesk","Archivo","Helvetica Neue",Arial,sans-serif;
   --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
   --wrap:1200px;
 }
