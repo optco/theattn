@@ -1,3 +1,10 @@
+// returns an array of topics whether the entry uses "topics" or the old "topic"
+function topicsOf(s) {
+  const t = s.topics ?? s.topic ?? [];
+  return (Array.isArray(t) ? t : String(t).split(','))
+    .map(x => x.trim())
+    .filter(Boolean);
+}
 (() => {
   const TOPICS = ['Breaking','Pakistan','World','Politics','Science','Sports'];
   const params = new URLSearchParams(location.search);
