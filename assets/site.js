@@ -50,6 +50,7 @@ function topicsOf(s) {
       .toLowerCase().split(',').map(x => x.trim()).filter(Boolean);
     let all;
     try { all = await (await fetch('/news/manifest.json')).json(); } catch { return; }
+    all.sort((a, b) => new Date(b.date) - new Date(a.date));
     const others = all.filter(s => s.id !== here);
     const same = others.filter(s => topicsOf(s).some(t => pageTopics.includes(t.toLowerCase())));
     const picks = [...same, ...others.filter(s => !same.includes(s))].slice(0, 6);
@@ -87,6 +88,7 @@ function topicsOf(s) {
       front.innerHTML = '<p class="empty">Stories could not be loaded. Refresh the page to try again.</p>';
       return;
     }
+    all.sort((a, b) => new Date(b.date) - new Date(a.date));
 
     /* Topic page */
     if (activeTopic) {
