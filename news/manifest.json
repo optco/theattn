@@ -1,5 +1,5 @@
 [
-   {
+  {
     "id": "2610281152",
     "url": "/news/2610281152.html",
     "title": "Could GLP-1 drugs be anti-aging medications?",
@@ -7,37 +7,37 @@
     "image": "https://tf-cmsv2-smithsonianmag-media.s3.amazonaws.com/filer_public/bc/df/bcdf38b1-5940-4466-8703-d20d1d334481/ozempic.jpg",
     "topic": "Science",
     "breaking": false,
-    "date": "2026-10-28T11:52"
+    "date": "2026-10-28T11:52:00+02:00"
   },
-   {
+  {
     "id": "2610281129",
     "url": "/news/2610281129.html",
     "title": "Israel elections: No majority win as Netanyahu, Eisenkot tied at 51 seats",
     "summary": "Israel’s opposition candidate Gadi Eisenkot vowed to quickly form a government after neither bloc secured a clear majority, while Prime Minister Benjamin Netanyahu alleged electoral fraud.",
     "image": "https://news24cobalt.24.co.za/resources/02aa-21ed10062671-6c67ed627a91-1000/format/inline/afp_20260923_c94b9we_v1_highres_israelpoliticselection.jpeg",
-      "topics": ["Politics", "World"],
+    "topics": ["Politics", "World"],
     "breaking": false,
-    "date": "2026-10-28T11:22"
+    "date": "2026-10-28T11:22:00+02:00"
   },
   {
     "id": "2610262318",
     "url": "/news/2610262318.html",
     "title": "Mecca pact officials in Tehran in bid to defuse Iran-US and Yemen tensions",
-    "summary": "Saudi, Pakistani and Turkish officials met Iran's president as fears grow of new US strikes and Houthi attacks on Saudi Arabia continue",
+    "summary": "Saudi, Pakistani and Turkish officials met Iran's president as fears grow of new US strikes and Houthi attacks on Saudi Arabia continue.",
     "image": "https://pakistan.shafaqna.com/wp-content/uploads/2026/10/Makkah-Pact-Nations-860x484.jpg",
     "topic": "Politics",
     "breaking": false,
-    "date": "2026-10-26T23:22"
+    "date": "2026-10-26T23:22:00+02:00"
   },
   {
-    "id": "2610261122",
-    "url": "/news/2610261122.html",
-    "title": "NCCIA busts international network exploiting children",
-    "summary": "The National Cyber Crime Investigation Agency (NCCIA) has arrested four suspects linked to an international network accused of exploiting children and producing and selling sexually explicit videos of minors.",
-    "image": "/news/img/2610261122.jpg",
-    "topic": "Pakistan",
+    "id": "2610261120",
+    "url": "/news/2610261120.html",
+    "title": "Lula wins fourth term in Brazil after comeback runoff victory",
+    "summary": "Brazil's president beat Flavio Bolsonaro by more than four million votes, but a challenge to the result and a hostile Congress lie ahead.",
+    "image": "https://www.aljazeera.com/wp-content/uploads/2026/10/image-1792990911.jpg",
+    "topic": "World",
     "breaking": false,
-    "date": "2026-10-25T11:22"
+    "date": "2026-10-25T15:22:00+02:00"
   },
   {
     "id": "2610261047",
@@ -47,16 +47,16 @@
     "image": "/news/img/2610261047.jpg",
     "topic": "Sports",
     "breaking": false,
-    "date": "2026-10-25T12:22"
+    "date": "2026-10-25T12:22:00+02:00"
   },
   {
-    "id": "2610261120",
-    "url": "/news/2610261120.html",
-    "title": "Lula wins fourth term in Brazil after comeback runoff victory",
-    "summary": "Brazil's president beat Flavio Bolsonaro by more than four million votes, but a challenge to the result and a hostile Congress lie ahead",
-    "image": "https://www.aljazeera.com/wp-content/uploads/2026/10/image-1792990911.jpg",
-    "topic": "World",
+    "id": "2610261122",
+    "url": "/news/2610261122.html",
+    "title": "NCCIA busts international network exploiting children",
+    "summary": "The National Cyber Crime Investigation Agency (NCCIA) has arrested four suspects linked to an international network accused of exploiting children and producing and selling sexually explicit videos of minors.",
+    "image": "/news/img/2610261122.jpg",
+    "topic": "Pakistan",
     "breaking": false,
-    "date": "2026-10-25T15:22"
+    "date": "2026-10-25T11:22:00+02:00"
   }
 ]
