@@ -42,7 +42,41 @@ function topicsOf(s) {
       <nav aria-label="Footer">${TOPICS.map(t => `<a href="/topic.html?t=${t.toLowerCase()}">${t}</a>`).join('')}</nav>
       <p>&copy; ${new Date().getFullYear()} TheAttn. All rights reserved.</p>
     </div></footer>`;
+  /* ----- Share buttons ----- */
+  const bylineEl = document.querySelector('article.story .byline');
+  if (bylineEl) {
+    const pageUrl = location.origin + location.pathname;
+    const pageTitle = document.querySelector('article.story h1')?.textContent.trim() || document.title;
+    const u = encodeURIComponent(pageUrl), t = encodeURIComponent(pageTitle);
+    const links = [
+      ['X', `https://twitter.com/intent/tweet?url=${u}&text=${t}`],
+      ['Facebook', `https://www.facebook.com/sharer/sharer.php?u=${u}`],
+      ['WhatsApp', `https://wa.me/?text=${t}%20${u}`],
+      ['LinkedIn', `https://www.linkedin.com/sharing/share-offsite/?url=${u}`],
+      ['Email', `mailto:?subject=${t}&body=${u}`]
+    ];
+    const bar = document.createElement('div');
+    bar.className = 'share';
+    bar.setAttribute('aria-label', 'Share this story');
+    bar.innerHTML = '<span>Share</span>'
+      + (navigator.share ? '<button type="button" class="share-native">Share…</button>' : '')
+      + links.map(([n, h]) => `<a href="${h}"${n === 'Email' ? '' : ' target="_blank" rel="noopener"'}>${n}</a>`).join('')
+      + '<button type="button" class="share-copy">Copy link</button>';
+    bylineEl.after(bar);
 
+    bar.querySelector('.share-native')?.addEventListener('click', () =>
+      navigator.share({ title: pageTitle, url: pageUrl }).catch(() => {}));
+    const copyBtn = bar.querySelector('.share-copy');
+    copyBtn.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(pageUrl);
+        copyBtn.textContent = 'Copied!';
+      } catch {
+        prompt('Copy this link:', pageUrl);
+      }
+      setTimeout(() => { copyBtn.textContent = 'Copy link'; }, 2000);
+    });
+  }
   /* ----- More stories (end of story pages) ----- */
   const story = document.querySelector('article.story');
   if (story) (async () => {
