@@ -6,7 +6,7 @@ function topicsOf(s) {
     .filter(Boolean);
 }
 (() => {
-  const TOPICS = ['Breaking','Pakistan','World','Politics','Science','Sports'];
+  const TOPICS = ['Breaking','Science','Space','Technology'];
   const params = new URLSearchParams(location.search);
   const activeTopic = (params.get('t') || '').toLowerCase();
 
