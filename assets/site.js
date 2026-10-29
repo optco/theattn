@@ -40,7 +40,7 @@ function topicsOf(s) {
   if (ftr) ftr.innerHTML = `
     <footer class="site-footer"><div class="wrap">
       <nav aria-label="Footer">${TOPICS.map(t => `<a href="/topic.html?t=${t.toLowerCase()}">${t}</a>`).join('')}</nav>
-      <p>&copy; ${new Date().getFullYear()} TheAttn. All rights reserved.</p>
+      <p>&copy; ${new Date().getFullYear()} theattn: All rights reserved.</p>
     </div></footer>`;
     /* ----- Share buttons ----- */
   const bylineEl = document.querySelector('article.story .byline');
@@ -66,7 +66,7 @@ function topicsOf(s) {
     const bar = document.createElement('div');
     bar.className = 'share';
     bar.setAttribute('aria-label', 'Share this story');
-    bar.innerHTML = '<span>Share</span>'
+    bar.innerHTML = ''
       + (navigator.share ? '<button type="button" class="share-native" aria-label="Share" title="Share"><i class="fa-solid fa-share-nodes"></i></button>' : '')
       + links.map(([n, icon, h]) => `<a href="${h}" aria-label="Share on ${n}" title="${n}"${n === 'Email' ? '' : ' target="_blank" rel="noopener"'}><i class="${icon}"></i></a>`).join('')
       + '<button type="button" class="share-copy" aria-label="Copy link" title="Copy link"><i class="fa-solid fa-link"></i></button>';
