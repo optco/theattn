@@ -15,7 +15,7 @@ function topicsOf(s) {
     document.head.appendChild(f);
   }
   // Nav + home sections, in this order. Add or remove topics here.
-  const TOPICS = ['Breaking','Pakistan','World','Politics','Science','Technology','Space','Sports'];
+  const TOPICS = ['Breaking','Science','Technology','Space'];
   const params = new URLSearchParams(location.search);
   const activeTopic = (params.get('t') || '').toLowerCase();
 
