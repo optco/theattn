@@ -4,7 +4,7 @@
     "url": "/news/2610301222.html",
     "title": "Columbia Engineers Develop Implantable Smart Stent to Detect and Electrocute Circulating Cancer Cells",
     "summary": "Columbia biomedical engineers have unveiled the Stentinel, an implantable device that catches and destroys circulating tumor cells in the bloodstream before they can seed secondary tumors.",
-    "image": "",
+    "image": "https://media.springernature.com/m685/springer-static/image/art%3A10.1186%2Fs13045-023-01463-z/MediaObjects/13045_2023_1463_Figa_HTML.jpg",
     "topics": [
       "Science",
       "Technology"
@@ -17,11 +17,11 @@
     "url": "/news/2610292336.html",
     "title": "Alphabet suffers worst day ever as AI spending turns cash flow negative",
     "summary": "Shares in Google's parent fell nearly 13%, wiping out about $500 billion in value, after a third-quarter miss on earnings, weaker search growth and a $9.07 billion cash outflow.",
-    "image": "https://finbold.com/cdn-cgi/image/format=auto,quality=85/https://assets.finbold.com/uploads/2026/10/Banking-giant-cuts-Google-stock-price-target-by-12-1024x640.jpg",
+    "image": "https://example.com/image.jpg",
     "topics": [
       "Technology"
     ],
-    "breaking": true,
+    "breaking": false,
     "date": "2026-10-29T23:36:00+02:00"
   },
   {
@@ -29,7 +29,7 @@
     "url": "/news/2610292233.html",
     "title": "Scripps study explores biweekly GLP-1 dosing for weight loss maintenance",
     "summary": "Early data from Scripps Clinic suggests some patients may keep their weight off after stretching GLP-1 injections from weekly to every two weeks, but experts warn the study is small and uncontrolled.",
-    "image": "https://www.scripps.org/sparkle-assets/variants/hi_res_blue-glp-1-devices-1ff427ca8a4e83d81cbbb8264c477ee3_phone_x++-600x600.jpg",
+    "image": "https://example.com/image.jpg",
     "topics": [
       "Science"
     ],
@@ -41,7 +41,7 @@
     "url": "/news/2610292130.html",
     "title": "Retatrutide explained: approval status, how it works, trial results and side effects",
     "summary": "Retatrutide is an investigational weekly injection from Eli Lilly that targets three hormone receptors. It is not yet approved anywhere, and Lilly plans to apply to the FDA in early 2027.",
-    "image": "https://static.scientificamerican.com/dam/asset/d3e7eea9-b92e-4424-ab2f-f7400d1d4c44/Lilly.jpg",
+    "image": "https://example.com/image.jpg",
     "topics": [
       "Science"
     ],
@@ -52,20 +52,20 @@
     "id": "2610281555",
     "url": "/news/2610281555.html",
     "title": "Frog Gut Bacteria Eliminates Colorectal Tumors in Mice With 100% Success Rate",
-    "summary": "Researchers at the Japan Advanced Institute of Science and Technology successfully eradicated colorectal tumors in preclinical models using a single injection of bacteria isolated from Japanese tree frogs.",
-    "image": "https://lifespan.io/wp-content/uploads/2025/12/Japanese-tree-frog.jpg.webp",
+    "summary": "Researchers at JAIST successfully eliminated colorectal tumors in mice using a single injection of Ewingella americana, a bacterium isolated from Japanese tree frogs.",
+    "image": "https://theattn.com/news/images/2610281000.jpg",
     "topics": [
       "Science"
     ],
     "breaking": false,
-    "date": "2026-10-28T15:52:00+02:00"
+    "date": "2026-10-28T15:55:00+02:00"
   },
   {
     "id": "2610281152",
     "url": "/news/2610281152.html",
     "title": "Could GLP-1 drugs be anti-aging medications?",
     "summary": "Early research suggests GLP-1 medications like semaglutide and tirzepatide may slow biological aging, extending health span beyond just weight loss and blood sugar control.",
-    "image": "https://tf-cmsv2-smithsonianmag-media.s3.amazonaws.com/filer_public/bc/df/bcdf38b1-5940-4466-8703-d20d1d334481/ozempic.jpg",
+    "image": "https://theattn.com/news/images/2610280900.jpg",
     "topics": [
       "Science"
     ],
@@ -77,60 +77,59 @@
     "url": "/news/2610281129.html",
     "title": "Israel elections: No majority win as Netanyahu, Eisenkot tied at 51 seats",
     "summary": "Israel’s opposition candidate Gadi Eisenkot vowed to quickly form a government after neither bloc secured a clear majority, while Prime Minister Benjamin Netanyahu alleged electoral fraud.",
-    "image": "https://news24cobalt.24.co.za/resources/02aa-21ed10062671-6c67ed627a91-1000/format/inline/afp_20260923_c94b9we_v1_highres_israelpoliticselection.jpeg",
+    "image": "/news/img/2610280900.jpg",
     "topics": [
-      "Politics",
       "World"
     ],
-    "breaking": false,
-    "date": "2026-10-28T11:22:00+02:00"
+    "breaking": true,
+    "date": "2026-10-28T11:29:00+02:00"
   },
   {
     "id": "2610262318",
     "url": "/news/2610262318.html",
-    "title": "Mecca pact officials in Tehran in bid to defuse Iran-US and Yemen tensions",
-    "summary": "Saudi, Pakistani and Turkish officials met Iran's president as fears grow of new US strikes and Houthi attacks on Saudi Arabia continue.",
-    "image": "https://pakistan.shafaqna.com/wp-content/uploads/2026/10/Makkah-Pact-Nations-860x484.jpg",
-    "topics": [
-      "Politics"
-    ],
-    "breaking": false,
-    "date": "2026-10-26T23:22:00+02:00"
-  },
-  {
-    "id": "2610261120",
-    "url": "/news/2610261120.html",
-    "title": "Lula wins fourth term in Brazil after comeback runoff victory",
-    "summary": "Brazil's president beat Flavio Bolsonaro by more than four million votes, but a challenge to the result and a hostile Congress lie ahead.",
-    "image": "https://www.aljazeera.com/wp-content/uploads/2026/10/image-1792990911.jpg",
+    "title": "Mecca pact officials in Tehran",
+    "summary": "One or two sentences shown on the card and under the headline.",
+    "image": "/news/img/YYMMDDHHMM.jpg",
     "topics": [
       "World"
     ],
     "breaking": false,
-    "date": "2026-10-25T15:22:00+02:00"
+    "date": "2026-10-26T23:18:00+02:00"
+  },
+  {
+    "id": "2610261122",
+    "url": "/news/2610261122.html",
+    "title": "The Attn: NCCIA busts international network exploiting children",
+    "summary": "One or two sentences shown on the card and under the headline.",
+    "image": "/news/img/2610261047.jpg",
+    "topics": [
+      "Pakistan"
+    ],
+    "breaking": false,
+    "date": "2026-10-26T11:22:00+02:00"
+  },
+  {
+    "id": "2610261120",
+    "url": "/news/2610261120.html",
+    "title": "The Attn: Lula wins fourth term in Brazil after comeback runoff victory",
+    "summary": "Brazil's president beat Flavio Bolsonaro by more than four million votes, but a challenge to the result and a hostile Congress lie ahead.",
+    "image": "/news/img/2610261120.jpg",
+    "topics": [
+      "World"
+    ],
+    "breaking": false,
+    "date": "2026-10-26T11:20:00+02:00"
   },
   {
     "id": "2610261047",
     "url": "/news/2610261047.html",
-    "title": "Shadab's unbeaten century wins Pakistan a one-wicket thriller over England",
+    "title": "The Attn: Shadab's unbeaten century wins Pakistan a one-wicket thriller over England",
     "summary": "Shadab Khan hit 113 not out and added a record 89 for the last wicket with Haris Rauf as Pakistan beat England by one wicket in Lahore to reach the Tri-Series final.",
     "image": "/news/img/2610261047.jpg",
     "topics": [
       "Sports"
     ],
     "breaking": false,
-    "date": "2026-10-25T12:22:00+02:00"
-  },
-  {
-    "id": "2610261122",
-    "url": "/news/2610261122.html",
-    "title": "NCCIA busts international network exploiting children",
-    "summary": "The National Cyber Crime Investigation Agency (NCCIA) has arrested four suspects linked to an international network accused of exploiting children and producing and selling sexually explicit videos of minors.",
-    "image": "/news/img/2610261122.jpg",
-    "topics": [
-      "Pakistan"
-    ],
-    "breaking": false,
-    "date": "2026-10-25T11:22:00+02:00"
+    "date": "2026-10-26T10:47:00+02:00"
   }
 ]
