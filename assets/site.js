@@ -14,6 +14,14 @@ function topicsOf(s) {
     f.href = 'https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap';
     document.head.appendChild(f);
   }
+  // Load Font Awesome once, for the footer social icons and the share buttons
+  if (!document.querySelector('link[data-fa]')) {
+    const fa = document.createElement('link');
+    fa.rel = 'stylesheet';
+    fa.dataset.fa = '1';
+    fa.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css';
+    document.head.appendChild(fa);
+  }
   // Nav + home sections, in this order. Add or remove topics here.
   const TOPICS = ['Breaking','Science','Technology','Space'];
   const params = new URLSearchParams(location.search);
@@ -44,24 +52,25 @@ function topicsOf(s) {
     </div></header>`;
 
   /* ----- Footer ----- */
+  const SOCIALS = [
+    ['YouTube',   'fa-brands fa-youtube',     'https://www.youtube.com/@theattn'],
+    ['X',         'fa-brands fa-x-twitter',   'https://x.com/theattn'],
+    ['Facebook',  'fa-brands fa-facebook-f',  'https://www.facebook.com/theattn'],
+    ['Instagram', 'fa-brands fa-instagram',   'https://www.instagram.com/theattn'],
+    ['TikTok',    'fa-brands fa-tiktok',      'https://www.tiktok.com/@theattn']
+  ];
   const ftr = document.getElementById('site-footer');
   if (ftr) ftr.innerHTML = `
     <footer class="site-footer"><div class="wrap">
       <nav aria-label="Footer">${TOPICS.map(t => `<a href="/topic.html?t=${t.toLowerCase()}">${t}</a>`).join('')}</nav>
+      <div class="social" aria-label="Follow TheAttn">${SOCIALS.map(([n, icon, h]) =>
+        `<a href="${h}" target="_blank" rel="noopener" aria-label="TheAttn on ${n}" title="${n}"><i class="${icon}"></i></a>`).join('')}</div>
       <p>&copy; ${new Date().getFullYear()} theattn: All rights reserved.</p>
     </div></footer>`;
 
   /* ----- Share buttons ----- */
   const bylineEl = document.querySelector('article.story .byline');
   if (bylineEl) {
-    // load Font Awesome once
-    if (!document.querySelector('link[data-fa]')) {
-      const fa = document.createElement('link');
-      fa.rel = 'stylesheet';
-      fa.dataset.fa = '1';
-      fa.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css';
-      document.head.appendChild(fa);
-    }
     const pageUrl = location.origin + location.pathname;
     const pageTitle = document.querySelector('article.story h1')?.textContent.trim() || document.title;
     const u = encodeURIComponent(pageUrl), t = encodeURIComponent(pageTitle);
