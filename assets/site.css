@@ -40,7 +40,11 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--red);outline-offset
 .tag-breaking{background:var(--red);color:#fff;padding:2px 8px;font-size:.8125rem;font-weight:700}
 .lead a:hover h2,.item a:hover h3,.card a:hover h3{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px}
 .empty,.loading{padding:48px 0;color:var(--muted);font-size:1.0625rem}
-
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tags .tag{display:inline-block;padding:2px 10px;border-radius:999px;background:#fdecef;color:var(--red);font-size:.75rem;font-weight:700;line-height:1.5}
+a.tag:hover{background:var(--red);color:#fff}
+.meta{flex-wrap:wrap}
+.story > .tags{margin:0 0 8px}
 /* ---------- Top of front page ---------- */
 .top-grid{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:0 28px;padding:24px 0 8px}
 .lead img{width:100%;aspect-ratio:16/9;object-fit:cover;background:var(--soft)}
