@@ -36,7 +36,8 @@ function topicsOf(s) {
     if (m < 1440) return `${Math.floor(m / 60)} hr ago`;
     return new Date(iso).toLocaleDateString('en-GB', {day:'numeric', month:'short', year:'numeric'});
   };
-  const firstTopic = s => esc(topicsOf(s)[0] || '');
+  // All of a story's topics as rounded pills (no commas)
+  const pills = s => `<span class="tags">${topicsOf(s).map(t => `<span class="tag">${esc(t)}</span>`).join('')}</span>`;
 
   /* ----- Header ----- */
   const hdr = document.getElementById('site-header');
@@ -67,6 +68,15 @@ function topicsOf(s) {
         `<a href="${h}" target="_blank" rel="noopener" aria-label="TheAttn on ${n}" title="${n}"><i class="${icon}"></i></a>`).join('')}</div>
       <p>&copy; ${new Date().getFullYear()} theattn: All rights reserved.</p>
     </div></footer>`;
+
+  /* ----- Story page: topic line becomes clickable pills ----- */
+  const storyTag = document.querySelector('article.story > .tag');
+  if (storyTag) {
+    const parts = storyTag.textContent.split(',').map(t => t.trim()).filter(Boolean);
+    storyTag.className = 'tags';
+    storyTag.innerHTML = parts.map(t =>
+      `<a class="tag" href="/topic.html?t=${encodeURIComponent(t.toLowerCase())}">${esc(t)}</a>`).join('');
+  }
 
   /* ----- Share buttons ----- */
   const bylineEl = document.querySelector('article.story .byline');
@@ -123,7 +133,7 @@ function topicsOf(s) {
     sec.className = 'more-stories';
     sec.innerHTML = `<h2 class="block-title">More stories</h2><div class="mini-grid">${picks.map(s =>
       `<article class="mini${s.image ? '' : ' no-img'}"><a href="${esc(s.url)}">${s.image ? `<img src="${esc(s.image)}" alt="" loading="lazy">` : ''}
-        <div><span class="tag">${firstTopic(s)}</span><h3>${esc(s.title)}</h3><time datetime="${esc(s.date)}">${ago(s.date)}</time></div></a></article>`).join('')}</div>`;
+        <div>${pills(s)}<h3>${esc(s.title)}</h3><time datetime="${esc(s.date)}">${ago(s.date)}</time></div></a></article>`).join('')}</div>`;
     story.after(sec);
   })();
 
@@ -133,7 +143,7 @@ function topicsOf(s) {
 
   const meta = s => `<div class="meta">${s.breaking
     ? '<span class="tag-breaking">Breaking</span>'
-    : `<span class="tag">${firstTopic(s)}</span>`}<time datetime="${esc(s.date)}">${ago(s.date)}</time></div>`;
+    : pills(s)}<time datetime="${esc(s.date)}">${ago(s.date)}</time></div>`;
   const img = s => s.image ? `<img src="${esc(s.image)}" alt="" loading="lazy">` : '';
 
   const lead = s => `<article class="lead"><a href="${esc(s.url)}">${s.image ? img(s).replace('loading="lazy"', 'fetchpriority="high"') : ''}
