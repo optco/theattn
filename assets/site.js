@@ -114,7 +114,21 @@ function topicsOf(s) {
       setTimeout(() => { icon.className = 'fa-solid fa-link'; }, 2000);
     });
   }
-
+  /* ----- Story page: show og:image when the story has no figure or X embed ----- */
+  (() => {
+    const art = document.querySelector('article.story');
+    if (!art || art.querySelector('figure, .x-embed')) return;
+    const src = document.querySelector('meta[property="og:image"]')?.content.trim();
+    const anchor = art.querySelector('.share') || art.querySelector('.byline');
+    if (!src || !anchor) return;
+    const fig = document.createElement('figure');
+    const im = document.createElement('img');
+    im.src = src;
+    im.alt = document.querySelector('meta[property="og:title"]')?.content || '';
+    im.onerror = () => { fig.hidden = true; };
+    fig.appendChild(im);
+    anchor.after(fig);
+  })();
   /* ----- More stories (end of story pages) ----- */
   const story = document.querySelector('article.story');
   if (story) (async () => {
