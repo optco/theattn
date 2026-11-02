@@ -23,7 +23,7 @@ function topicsOf(s) {
     document.head.appendChild(fa);
   }
   // Nav + home sections, in this order. Add or remove topics here.
-  const TOPICS = ['Breaking','Science','Technology','Space'];
+  const TOPICS = ['Breaking','Science','Technology','Space','History'];
   const params = new URLSearchParams(location.search);
   const activeTopic = (params.get('t') || '').toLowerCase();
 
@@ -56,7 +56,7 @@ function topicsOf(s) {
     ['YouTube',   'fa-brands fa-youtube',     'https://www.youtube.com/@theattn'],
     ['X',         'fa-brands fa-x-twitter',   'https://x.com/theattn'],
     ['Facebook',  'fa-brands fa-facebook-f',  'https://www.facebook.com/theattn'],
-    ['Instagram', 'fa-brands fa-instagram',   'https://www.instagram.com/theattn'],
+    ['Instagram', 'fa-brands fa-instagram',   'https://www.instagram.com/the.attn'],
     ['TikTok',    'fa-brands fa-tiktok',      'https://www.tiktok.com/@theattn']
   ];
   const ftr = document.getElementById('site-footer');
