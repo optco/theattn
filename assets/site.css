@@ -48,7 +48,7 @@ a.tag:hover{background:var(--red);color:#fff}
 /* ---------- Top of front page ---------- */
 .top-grid{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:0 28px;padding:24px 0 8px}
 .lead img{width:100%;aspect-ratio:16/9;object-fit:cover;background:var(--soft)}
-.lead h2{font:800 clamp(1.7rem,3.2vw,2.5rem)/1.1 var(--sans);letter-spacing:-.02em;margin:12px 0 8px}
+.lead h2{font:800 clamp(1.7rem,3.2vw,2.5rem)/1.1 var(--sans);letter-spacing:-.02em;margin:8px 0 8px}
 .lead p{font:400 1.0625rem/1.5 var(--serif);color:#333;margin:10px 0 0}
 .side{display:flex;flex-direction:column;border-left:1px solid var(--rule);padding-left:28px}
 .item{padding:14px 0;border-top:1px solid var(--rule)}
@@ -57,7 +57,7 @@ a.tag:hover{background:var(--red);color:#fff}
 .item.no-img a{grid-template-columns:1fr}
 .item img{width:104px;aspect-ratio:1;object-fit:cover;order:2;background:var(--soft)}
 .item h3{font:700 1.0625rem/1.25 var(--sans);margin:4px 0 0}
-
+.lead .meta{margin-top:12px}
 /* ---------- Sections and cards ---------- */
 .block{margin-top:32px;border-top:4px solid var(--ink);padding-top:10px}
 .block-title{display:flex;justify-content:space-between;align-items:baseline;font:800 1.5rem/1.2 var(--sans);margin:0 0 16px}
@@ -136,7 +136,7 @@ a.tag:hover{background:var(--red);color:#fff}
   .mini.no-img a{grid-template-columns:1fr}
   .mini img{grid-column:2;grid-row:1;aspect-ratio:1}
   .mini a>div{grid-column:1;grid-row:1}
-  .mini .tags{margin-top:0}
+  .mini .tags{margin-top:10px}
 }
 
 /* ---------- Footer social icons ---------- */
