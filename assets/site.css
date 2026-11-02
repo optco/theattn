@@ -42,7 +42,7 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--red);outline-offset
 .empty,.loading{padding:48px 0;color:var(--muted);font-size:1.0625rem}
 .tags{display:flex;flex-wrap:wrap;gap:6px}
 .tags .tag{display:inline-block;padding:2px 10px;border-radius:999px;background:#ececec;color:#333;font-size:.75rem;font-weight:700;line-height:1.5}
-a.tag:hover{background:#111;color:#fff}
+.tags .tag:hover{background:#111;color:#fff}
 .meta{flex-wrap:wrap}
 .story > .tags{margin:0 0 8px}
 /* ---------- Top of front page ---------- */
