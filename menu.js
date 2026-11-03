@@ -153,7 +153,7 @@
    Link in every page's <head>:
    <link rel="stylesheet" href="/css/background.css">
    No extra HTML needed. It draws itself behind the page.
-   ========================================================== */
+  
 
 :root {
   --bg-base: #f0f4f8;
@@ -167,7 +167,7 @@ html {
   background: var(--bg-base);
 }
 
-/* body {
+ body {
   min-height: 100vh;
   background: transparent;
   overflow-x: hidden;
@@ -186,7 +186,8 @@ body::before {
   filter: blur(80px) saturate(1.1);
   animation: bgFluidDrift 22s ease-in-out infinite alternate;
   will-change: transform;
-} */
+}  
+========================================================== */
 
 @keyframes bgFluidDrift {
   0%   { transform: translate(0, 0) scale(1); }
