@@ -50,7 +50,8 @@ function topicsOf(s) {
         const k = t.toLowerCase();
         return `<a href="/topic.html?t=${k}" class="${k === 'breaking' ? 'is-breaking ' : ''}${k === activeTopic ? 'is-active' : ''}">${t}</a>`;
       }).join('')}</nav>
-    </div></header>`;
+    </div><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7287344098210114"
+     crossorigin="anonymous"></script></header>`;
 
   /* ----- Footer ----- */
   const SOCIALS = [
