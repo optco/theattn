@@ -22,6 +22,15 @@ function topicsOf(s) {
     fa.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css';
     document.head.appendChild(fa);
   }
+  // Load AdSense once
+if (!document.querySelector('script[data-ads]')) {
+  const ad = document.createElement('script');
+  ad.async = true;
+  ad.dataset.ads = '1';
+  ad.crossOrigin = 'anonymous';
+  ad.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7287344098210114';
+  document.head.appendChild(ad);
+}
   // Nav + home sections, in this order. Add or remove topics here.
   const TOPICS = ['Breaking','World','Science','Technology','Space','History'];
   const params = new URLSearchParams(location.search);
@@ -50,8 +59,7 @@ function topicsOf(s) {
         const k = t.toLowerCase();
         return `<a href="/topic.html?t=${k}" class="${k === 'breaking' ? 'is-breaking ' : ''}${k === activeTopic ? 'is-active' : ''}">${t}</a>`;
       }).join('')}</nav>
-    </div><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7287344098210114"
-     crossorigin="anonymous"></script></header>`;
+    </div></header>`;
 
   /* ----- Footer ----- */
   const SOCIALS = [
