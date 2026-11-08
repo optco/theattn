@@ -31,6 +31,15 @@ if (!document.querySelector('script[data-ads]')) {
   ad.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7287344098210114';
   document.head.appendChild(ad);
 }
+    // Advertise the RSS feed on every page
+  if (!document.querySelector('link[type="application/rss+xml"]')) {
+    const rss = document.createElement('link');
+    rss.rel = 'alternate';
+    rss.type = 'application/rss+xml';
+    rss.title = 'TheAttn';
+    rss.href = '/news/feed.xml';
+    document.head.appendChild(rss);
+  }
   // Nav + home sections, in this order. Add or remove topics here.
   const TOPICS = ['Breaking','World','Science','Technology','Space','History'];
   const params = new URLSearchParams(location.search);
@@ -67,7 +76,8 @@ if (!document.querySelector('script[data-ads]')) {
     ['X',         'fa-brands fa-x-twitter',   'https://x.com/theattn'],
     ['Facebook',  'fa-brands fa-facebook-f',  'https://www.facebook.com/theattn'],
     ['Instagram', 'fa-brands fa-instagram',   'https://www.instagram.com/the.attn'],
-    ['TikTok',    'fa-brands fa-tiktok',      'https://www.tiktok.com/@theattn']
+       ['TikTok',    'fa-brands fa-tiktok',      'https://www.tiktok.com/@theattn'],
+    ['RSS',       'fa-solid fa-rss',          '/news/feed.xml']
   ];
   const ftr = document.getElementById('site-footer');
   if (ftr) ftr.innerHTML = `
