@@ -212,7 +212,7 @@ body::before {
         <div class="hamburger-menu" id="hamburgerMenu">
             <div class="menu-links">
                 <a href="https://theattn.com" class="menu-item">
-                    <i class="fas fa-home" aria-hidden="true"></i> TheAttn: Home
+                    <i class="fas fa-home" aria-hidden="true"></i> TheAttn: News
                 </a>
                 <a href="https://shamsi.co.za" target="_blank" rel="noopener noreferrer" class="menu-item">
                     <i class="fas fa-house-chimney" aria-hidden="true"></i> Properties
@@ -233,7 +233,7 @@ body::before {
                     <i class="fas fa-magnifying-glass" aria-hidden="true"></i> File Search
                 </a>
                 <a href="https://gbps.me" target="_blank" rel="noopener noreferrer" class="menu-item">
-                    <i class="fas fa-gauge-high" aria-hidden="true"></i> Speed Test
+                    <i class="fas fa-gauge-high" aria-hidden="true"></i> Tools Home
                 </a>
                 <a href="https://akhtar.co.za/halal" target="_blank" rel="noopener noreferrer" class="menu-item">
                     <i class="fas fa-moon" aria-hidden="true"></i> Halal Stay
