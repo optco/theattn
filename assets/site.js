@@ -133,6 +133,14 @@ if (!document.querySelector('script[data-ads]')) {
       setTimeout(() => { icon.className = 'fa-solid fa-link'; }, 2000);
     });
   }
+    /* ----- Story page: fill <img data-og> from og:image ----- */
+  (() => {
+    const src = document.querySelector('meta[property="og:image"]')?.content.trim();
+    document.querySelectorAll('article.story img[data-og]').forEach(im => {
+      if (src) im.src = src;
+      else im.closest('figure')?.setAttribute('hidden', '');
+    });
+  })();
   /* ----- Story page: show og:image when the story has no figure or X embed ----- */
   (() => {
     const art = document.querySelector('article.story');
