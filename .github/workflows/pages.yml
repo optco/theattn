@@ -14,10 +14,12 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - run: node build-manifest.mjs
-      - name: Commit manifest if changed
+      - name: Build manifest and feed
+        run: node build/build-manifest.mjs
+      - name: Commit manifest and feed if changed
         run: |
           git config user.name "manifest-bot"
           git config user.email "manifest-bot@users.noreply.github.com"
-          git add news/manifest.json news/feed.xml
-          git diff --cached --quiet || (git commit -m "Update manifest" && git push)
+          git add news/manifest.json
+          [ -f news/feed.xml ] && git add news/feed.xml || true
+          git diff --cached --quiet || (git commit -m "Update manifest and feed" && git push)
