@@ -31,6 +31,7 @@ const stories = fs.readdirSync(DIR)
 
 fs.writeFileSync(`${DIR}/manifest.json`, JSON.stringify(stories, null, 2));
 console.log(`manifest.json written with ${stories.length} stories`);
+
 // ---- RSS feed ----
 const SITE = 'https://theattn.com';
 const x = s => String(s ?? '').replace(/&/g,'&amp;').replace(/</g,'&lt;')
