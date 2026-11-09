@@ -41,7 +41,7 @@ if (!document.querySelector('script[data-ads]')) {
     document.head.appendChild(rss);
   }
   // Nav + home sections, in this order. Add or remove topics here.
-  const TOPICS = ['Breaking','World','Science','Technology','Space','Travel','History'];
+  const TOPICS = ['Breaking','World','Science','Technology','Space','Travel','History','Entertainment'];
   const params = new URLSearchParams(location.search);
   const activeTopic = (params.get('t') || '').toLowerCase();
 
