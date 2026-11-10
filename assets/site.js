@@ -31,6 +31,14 @@ if (!document.querySelector('script[data-ads]')) {
   ad.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7287344098210114';
   document.head.appendChild(ad);
 }
+  // Load /load.js once, on every page that uses this script
+if (!document.querySelector('script[data-load]')) {
+  const l = document.createElement('script');
+  l.src = '/load.js';
+  l.defer = true;
+  l.dataset.load = '1';
+  document.head.appendChild(l);
+}
     // Advertise the RSS feed on every page
   if (!document.querySelector('link[type="application/rss+xml"]')) {
     const rss = document.createElement('link');
