@@ -95,7 +95,22 @@ if (!document.querySelector('script[data-load]')) {
         `<a href="${h}" target="_blank" rel="noopener" aria-label="TheAttn on ${n}" title="${n}"><i class="${icon}"></i></a>`).join('')}</div>
       <p>&copy; ${new Date().getFullYear()} theattn: All rights reserved.</p>
     </div></footer>`;
-
+  /* ----- Site-wide visit counter (footer) ----- */
+  (async () => {
+    const p = document.querySelector('.site-footer p');
+    if (!p || location.hostname === 'localhost') return;
+    const API = 'https://views.theattn.com';
+    let seen = false;
+    try { seen = !!sessionStorage.getItem('site-counted'); } catch {}
+    try {
+      const r = await fetch(`${API}/?id=site`, { method: seen ? 'GET' : 'POST' });
+      const { views } = await r.json();
+      try { sessionStorage.setItem('site-counted', '1'); } catch {}
+      const s = document.createElement('span');
+      s.textContent = ` · ${views.toLocaleString('en-GB')} ${views === 1 ? 'visit' : 'visits'}`;
+      p.append(s);
+    } catch {}
+  })();
   /* ----- Story page: topic line becomes clickable pills ----- */
   const storyTag = document.querySelector('article.story > .tag');
   if (storyTag) {
@@ -163,6 +178,24 @@ if (!document.querySelector('script[data-load]')) {
     im.onerror = () => { fig.hidden = true; };
     fig.appendChild(im);
     anchor.after(fig);
+  })();
+    /* ----- Story view counter (byline) ----- */
+  (async () => {
+    const m = location.pathname.match(/(\d{10})\.html$/);
+    const byline = document.querySelector('article.story .byline');
+    if (!m || !byline || location.hostname === 'localhost') return;
+    const API = 'https://views.theattn.com';
+    const key = 'viewed:' + m[1];
+    let seen = false;
+    try { seen = !!localStorage.getItem(key); } catch {}
+    try {
+      const r = await fetch(`${API}/?id=${m[1]}`, { method: seen ? 'GET' : 'POST' });
+      const { views } = await r.json();
+      try { localStorage.setItem(key, '1'); } catch {}
+      const s = document.createElement('span');
+      s.textContent = ` · ${views.toLocaleString('en-GB')} ${views === 1 ? 'view' : 'views'}`;
+      byline.append(s);
+    } catch {}
   })();
   /* ----- More stories (end of story pages) ----- */
   const story = document.querySelector('article.story');
