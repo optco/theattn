@@ -181,7 +181,7 @@ if (!document.querySelector('script[data-load]')) {
   })();
     /* ----- Story view counter (byline) ----- */
   (async () => {
-    const m = location.pathname.match(/(\d{10})\.html$/);
+    const m = location.pathname.match(/(\d{10})(?:\.html)?\/?$/);
     const byline = document.querySelector('article.story .byline');
     if (!m || !byline || location.hostname === 'localhost') return;
     const API = 'https://views.theattn.com';
