@@ -1,13 +1,14 @@
 (function() {
   function init() {
     // --- UNIFIED STYLES ---
-    if (!document.getElementById('pl-bottombar-styles-v6')) {
-      // remove the old version's styles if they are still around
-      const old = document.getElementById('pl-bottombar-styles-v5');
+    if (!document.getElementById('pl-bottombar-styles-v7')) {
+      const old = document.getElementById('pl-bottombar-styles-v6');
       if (old) old.remove();
+      const old5 = document.getElementById('pl-bottombar-styles-v5');
+      if (old5) old5.remove();
 
       const style = document.createElement('style');
-      style.id = 'pl-bottombar-styles-v6';
+      style.id = 'pl-bottombar-styles-v7';
       style.textContent = `
         :root {
           --pl-bar-height: 30px;
@@ -47,12 +48,8 @@
           background: #d90000;
           opacity: 0;
         }
-        .pl-dot:nth-child(1) {
-          animation: plRace1 3s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
-        }
-        .pl-dot:nth-child(2) {
-          animation: plRace2 3s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
-        }
+        .pl-dot:nth-child(1) { animation: plRace1 3s cubic-bezier(0.25, 0.1, 0.25, 1) forwards; }
+        .pl-dot:nth-child(2) { animation: plRace2 3s cubic-bezier(0.25, 0.1, 0.25, 1) forwards; }
         @keyframes plRace1 {
           0%   { left: -10px; top: 50%; opacity: 0; }
           5%   { opacity: 1; }
@@ -85,36 +82,38 @@
           z-index: 99999;
           display: flex;
           align-items: center;
-
-          /* the glass: semi-transparent fill + blur of whatever is behind */
           background: var(--pl-glass-bg);
           -webkit-backdrop-filter: blur(14px) saturate(160%);
           backdrop-filter: blur(14px) saturate(160%);
           border-top: 1px solid var(--pl-glass-border);
           box-shadow: var(--pl-glass-shadow);
-
           transform: translateY(100%);
           transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
         #pl-bottombar.show {
           transform: translateY(0);
         }
+        
         #pl-bottombar a {
           display: flex;
           align-items: center;
           text-decoration: none;
           color: var(--pl-text);
-          width: 100%;
+          flex: 1;
+          min-width: 0; 
         }
+        
         #pl-bottombar .pl-logo {
           display: block;
-          width: 50px;          /* change this to control the logo width */
-          height: auto;         /* height adjusts automatically */
-          max-height: 24px;     /* keeps it inside the 30px bar */
+          width: 50px;
+          height: auto;
+          max-height: 24px;
           object-fit: contain;
           margin-right: 12px;
           user-select: none;
+          flex-shrink: 0;
         }
+        
         #pl-page-title {
           font-size: 15px;
           font-weight: 600;
@@ -123,7 +122,23 @@
           white-space: nowrap;
           overflow: hidden;
           text-overflow: ellipsis;
-          max-width: 400px;
+        }
+        
+        /* --- Right Side Container (Copyright) --- */
+        #pl-bar-right {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          font: 600 14px "Barlow Condensed", sans-serif;
+          color: var(--pl-text);
+          opacity: 0.85;
+          white-space: nowrap;
+          margin-left: auto;
+          flex-shrink: 0;
+        }
+        #pl-copyright {
+          font-size: 13px;
+          opacity: 0.9;
         }
       `;
       document.head.appendChild(style);
@@ -148,7 +163,6 @@
       const cleanTitle = rawTitle.trim();
       const pageTitle = cleanTitle || window.location.pathname.split('/').pop().replace('.html', '') || 'attn:invoice';
 
-      // keep page content from being hidden under the fixed bar
       document.body.style.paddingBottom = 'calc(30px + env(safe-area-inset-bottom, 0px))';
 
       const bottombar = document.createElement('div');
@@ -161,10 +175,22 @@
 
       const titleEl = document.createElement('span');
       titleEl.id = 'pl-page-title';
-      titleEl.textContent = pageTitle;   // textContent avoids injecting HTML from the title
+      titleEl.textContent = pageTitle;
 
       link.appendChild(titleEl);
       bottombar.appendChild(link);
+
+      // --- GLOBAL COPYRIGHT CONTAINER ---
+      const rightContainer = document.createElement('div');
+      rightContainer.id = 'pl-bar-right';
+
+      const copyright = document.createElement('span');
+      copyright.id = 'pl-copyright';
+      copyright.innerHTML = '&copy; 2026 iTestEye.com All rights reserved';
+      
+      rightContainer.appendChild(copyright);
+      bottombar.appendChild(rightContainer);
+
       document.body.appendChild(bottombar);
 
       // Logo: inserted before the title only if /logo.png actually loads
