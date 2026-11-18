@@ -1,8 +1,8 @@
 (function() {
   // Define the exact URLs of the two external JS files
   const scriptsToLoad = [
-    'https://theattn.com/menu.js',
-    'https://theattn.com/footer.js'
+    'https://itesteye.com/menu.js',
+    'https://itesteye.com/footer.js'
   ];
 
   scriptsToLoad.forEach(function(url) {
