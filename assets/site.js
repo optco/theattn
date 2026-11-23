@@ -319,7 +319,7 @@ hdr?.querySelector('.topics a.is-active')?.scrollIntoView({inline:'center', bloc
     front.innerHTML = html;
 
     /* Particle News widget in the top-right column */
-   
+   const side = front.querySelector('.top-grid .side');
     if (side) {
       const slot = document.createElement('div');
       slot.className = 'particle-slot';
@@ -334,6 +334,5 @@ hdr?.querySelector('.topics a.is-active')?.scrollIntoView({inline:'center', bloc
       s.src = 'https://particle.news/feed/embed/07xjw/v1/count=1/widget.js';
       feed.prepend(s);                 // script sits before the link, as in the original embed
     }
-     const side = front.querySelector('.top-grid .side');
   })();
 })();
