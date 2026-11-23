@@ -66,17 +66,18 @@ if (!document.querySelector('script[data-load]')) {
   const pills = s => `<span class="tags">${topicsOf(s).map(t => `<span class="tag">${esc(t)}</span>`).join('')}</span>`;
 
   /* ----- Header ----- */
-  const hdr = document.getElementById('site-header');
-  if (hdr) hdr.innerHTML = `hdr?.querySelector('.topics a.is-active')?.scrollIntoView({inline:'center', block:'nearest'});
-    <div class="datebar"><div class="wrap">${new Date().toLocaleDateString('en-GB',
-      {weekday:'long', day:'numeric', month:'long', year:'numeric'})}</div></div>
-    <header class="masthead"><div class="wrap">
-      <a class="logo" href="/" aria-label="TheAttn home"><img src="/assets/logo.png" alt="TheAttn" height="34"></a>
-      <nav class="topics" aria-label="Topics">${TOPICS.map(t => {
-        const k = t.toLowerCase();
-        return `<a href="/topic.html?t=${k}" class="${k === 'breaking' ? 'is-breaking ' : ''}${k === activeTopic ? 'is-active' : ''}">${t}</a>`;
-      }).join('')}</nav>
-    </div></header>`;
+const hdr = document.getElementById('site-header');
+if (hdr) hdr.innerHTML = `
+  <div class="datebar"><div class="wrap">${new Date().toLocaleDateString('en-GB',
+    {weekday:'long', day:'numeric', month:'long', year:'numeric'})}</div></div>
+  <header class="masthead"><div class="wrap">
+    <a class="logo" href="/" aria-label="TheAttn home"><img src="/assets/logo.png" alt="TheAttn" height="34"></a>
+    <nav class="topics" aria-label="Topics">${TOPICS.map(t => {
+      const k = t.toLowerCase();
+      return `<a href="/topic.html?t=${k}" class="${k === 'breaking' ? 'is-breaking ' : ''}${k === activeTopic ? 'is-active' : ''}">${t}</a>`;
+    }).join('')}</nav>
+  </div></header>`;
+hdr?.querySelector('.topics a.is-active')?.scrollIntoView({inline:'center', block:'nearest'});
 
   /* ----- Footer ----- */
   const SOCIALS = [
