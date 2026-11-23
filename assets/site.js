@@ -315,6 +315,24 @@ hdr?.querySelector('.topics a.is-active')?.scrollIntoView({inline:'center', bloc
       if (list.length) html += `<section class="block"><h2 class="block-title"><a href="/topic.html?t=${k}">${t}</a>
         <a class="more" href="/topic.html?t=${k}">More ${t}</a></h2><div class="grid">${list.map(card).join('')}</div></section>`;
     });
+   
     front.innerHTML = html;
+
+    /* Particle News widget in the top-right column */
+    const side = front.querySelector('.top-grid .side');
+    if (side) {
+      const slot = document.createElement('div');
+      slot.className = 'particle-slot';
+      const feed = document.createElement('particle-news-feed');
+      const a = document.createElement('a');
+      a.href = 'https://particle.news/feed/07xjw';
+      a.textContent = 'Learn all about Front Page Highlights at Particle News';
+      feed.append(a);
+      slot.append(feed);
+      side.append(slot);               // attach first, then load the script
+      const s = document.createElement('script');
+      s.src = 'https://particle.news/feed/embed/07xjw/v1/count=1/widget.js';
+      feed.prepend(s);                 // script sits before the link, as in the original embed
+    }
   })();
 })();
