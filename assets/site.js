@@ -331,7 +331,7 @@ hdr?.querySelector('.topics a.is-active')?.scrollIntoView({inline:'center', bloc
       slot.append(feed);
       side.append(slot);               // attach first, then load the script
       const s = document.createElement('script');
-      s.src = 'https://particle.news/feed/embed/07xjw/v1/count=1/widget.js';
+      s.src = 'https://particle.news/feed/embed/07xjw/v1/count=6/widget.js';
       feed.prepend(s);                 // script sits before the link, as in the original embed
     }
   })();
