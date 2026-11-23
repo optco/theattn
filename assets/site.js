@@ -31,6 +31,14 @@ if (!document.querySelector('script[data-ads]')) {
   ad.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7287344098210114';
   document.head.appendChild(ad);
 }
+  // Load RSS.app ticker widget once
+if (!document.querySelector('script[data-rssapp-ticker]')) {
+  const tk = document.createElement('script');
+  tk.src = 'https://widget.rss.app/v1/ticker.js';
+  tk.async = true;
+  tk.dataset.rssappTicker = '1';
+  document.head.appendChild(tk);
+}
   // Load /load.js once, on every page that uses this script
 if (!document.querySelector('script[data-load]')) {
   const l = document.createElement('script');
@@ -68,8 +76,11 @@ if (!document.querySelector('script[data-load]')) {
   /* ----- Header ----- */
 const hdr = document.getElementById('site-header');
 if (hdr) hdr.innerHTML = `
-  <div class="datebar"><div class="wrap">${new Date().toLocaleDateString('en-GB',
-    {weekday:'long', day:'numeric', month:'long', year:'numeric'})}</div></div>
+  <div class="datebar"><div class="wrap">
+  <span class="datebar-date">${new Date().toLocaleDateString('en-GB',
+    {weekday:'long', day:'numeric', month:'long', year:'numeric'})}</span>
+  <div class="datebar-ticker"><rssapp-ticker id="tzDIcD8VF65J5fSL"></rssapp-ticker></div>
+</div></div>
   <header class="masthead"><div class="wrap">
     <a class="logo" href="/" aria-label="TheAttn home"><img src="/assets/logo.png" alt="TheAttn" height="34"></a>
     <nav class="topics" aria-label="Topics">${TOPICS.map(t => {
