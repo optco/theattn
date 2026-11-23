@@ -157,14 +157,44 @@ hdr?.querySelector('.topics a.is-active')?.scrollIntoView({inline:'center', bloc
       setTimeout(() => { icon.className = 'fa-solid fa-link'; }, 2000);
     });
   }
-    /* ----- Story page: fill <img data-og> from og:image ----- */
-  (() => {
-    const src = document.querySelector('meta[property="og:image"]')?.content.trim();
-    document.querySelectorAll('article.story img[data-og]').forEach(im => {
-      if (src) im.src = src;
-      else im.closest('figure')?.setAttribute('hidden', '');
-    });
-  })();
+  /* ----- Story page: fill <img data-og> and photo credit from og:image ----- */
+(() => {
+  // Pretty names for domains where the raw name reads badly. Add more as needed.
+  const NAMES = {
+    wikimedia: 'Wikimedia Commons',
+    wikipedia: 'Wikipedia',
+    gstatic: 'Google',
+    'i-scmp': 'SCMP',
+    scmp: 'SCMP',
+    eurekalert: 'EurekAlert',
+    abc: 'ABC'
+  };
+  const CC_SLD = ['co','com','org','net','gov','edu','ac'];   // handles co.za, com.au, etc.
+
+  const sld = url => {
+    try {
+      const p = new URL(url).hostname.replace(/^www\./, '').split('.');
+      if (p.length < 2) return '';
+      let i = p.length - 2;
+      if (p.length >= 3 && p[p.length - 1].length === 2 && CC_SLD.includes(p[i])) i--;
+      return p[i];
+    } catch { return ''; }
+  };
+  const credit = url => {
+    const s = sld(url);
+    if (!s) return 'Web';
+    return NAMES[s] || s.charAt(0).toUpperCase() + s.slice(1);
+  };
+
+  const src = document.querySelector('meta[property="og:image"]')?.content.trim();
+  document.querySelectorAll('article.story img[data-og]').forEach(im => {
+    if (src) im.src = src;
+    else im.closest('figure')?.setAttribute('hidden', '');
+  });
+  if (src) document.querySelectorAll('article.story figcaption[data-credit]').forEach(c => {
+    c.textContent = `Photo credit: ${credit(src)}`;
+  });
+})();
   /* ----- Story page: show og:image when the story has no figure or X embed ----- */
   (() => {
     const art = document.querySelector('article.story');
