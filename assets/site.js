@@ -67,7 +67,7 @@ if (!document.querySelector('script[data-load]')) {
 
   /* ----- Header ----- */
   const hdr = document.getElementById('site-header');
-  if (hdr) hdr.innerHTML = `
+  if (hdr) hdr.innerHTML = `hdr?.querySelector('.topics a.is-active')?.scrollIntoView({inline:'center', block:'nearest'});
     <div class="datebar"><div class="wrap">${new Date().toLocaleDateString('en-GB',
       {weekday:'long', day:'numeric', month:'long', year:'numeric'})}</div></div>
     <header class="masthead"><div class="wrap">
